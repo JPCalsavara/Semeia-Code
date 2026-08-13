@@ -119,7 +119,7 @@ section {
 }
 
 .content{
-    max-width: 70%;
+    max-width: 100%;
 }
 
 .content h2{
@@ -145,6 +145,7 @@ section {
     color: var(--branco);
     font-size: 24px;
     max-width: 60%;
+    margin-top: 40px;
 }
 
 .sobre{
@@ -246,104 +247,99 @@ section {
     margin-bottom: 20px;
 }
 
-.t-conteudo-escola h2{
+.conteudo-titulo{
     margin-top: 150px;
+}
+
+.conteudo-titulo h2{
     color: var(--amarelo-mostarda);
-    font-size: 30px;
+    font-size: 50px;
 }
 
-.t-conteudo-escola h3{
-    margin-bottom: 50px;
+.conteudo-titulo h3{
     color: var(--branco);
-    font-size: 18px;
-    font-weight: 10;
+    margin-top: 5px;
+    font-size: 30px;
+    font-weight: 100;
 }
 
-.img-conteudo-escola{
+.cards-conteudo{
     display: flex;
+    margin-top: 60px;
+    gap: 20px;
     justify-content: center;
-    align-items: center;
-    gap: 30px;
-    width: 100%;
 }
 
-.card-escola{
-    border-radius: 18px;
-    padding: 20px;
+.card-conteudo {
+    width: 30%;
     display: flex;
     align-items: center;
-    justify-content: space-between;
     flex-direction: column;
 }
 
-.card-verde{
-    background-color: var(--verde);
-    width: 450px;
-    height: 320px;
+.conteudo-azul{
+    background-color: var(--azul);
+    border-radius: 20px;
+    padding: 50px 50px;
     box-shadow: 0 5px 10px #03162b;
 }
 
-.card-azul{
-    background-color: var(--azul);
-    width: 400px;
-    height: 320px;
-    box-shadow: 0 5px 10px #03162b;    
+.conteudo-verde{
+    background-color: var(--verde);
+    border-radius: 20px;
+    padding: 50px 50px;
+    box-shadow: 0 5px 10px #03162b;
 }
 
-.card-escola h3{
-    color: var(--branco);
-    font-size: 20px;
-    text-align: center;
-    margin-top: 10px;
+.card-conteudo img{
+    height: 100px;
+    width: 100px;
+    padding: 25px;
+    margin: 10px;
 }
 
-.container-foto{
-    width: 100%;
-    overflow: hidden;
-    border-radius: 15px;
-    height: 250px;
-}
-
-.container-foto img{
-    object-fit: cover;
-    width: 100%;
-    height: 100%;
-}
-
-.depoimentos{
+.card-conteudo picture {
+    border-radius: 50%;
     display: flex;
-    gap: 30px;
     justify-content: center;
     align-items: center;
 }
 
-.depoimento{
-    background-color: var(--branco);
-    margin-top: 35px;
-    border-radius: 18px;
-    justify-content: center;
-    text-align: center;
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-    padding: 30px;
-    box-sizing: border-box;
-    box-shadow: 0 5px 10px #03162b;    
+.conteudo-azul picture{
+    background-color: #5F91D6;
 }
 
-.meio{
-    width: 400px;
-    min-height: 200px;
+.conteudo-verde picture{
+    background-color: #6DA674;
 }
 
-.lateral{
-    width: 450px;
-    min-height: 200px;    
-}
-
-.depoimentos p{
+.card-conteudo h3[class="card-titulo"]{
     color: var(--azul-escuro);
-    margin: 0;
+    font-size: 20px;
+    margin-top: 30px;
+}
+
+.card-conteudo h3[class="card-subtitulo"]{
+    color: var(--branco);
+    margin-top: 10px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 100;
+}
+
+.cards-depoimento{
+    display: flex;
+    gap: 20px;
+}
+
+.cards-depoimento p{
+    background-color: var(--branco);
+    margin-top: 40px;
+    border-radius: 12px;
+    padding: 90px 70px;
+    text-align: center;
+    font-size: 10px;
+    box-shadow: 0 5px 10px #03162b;
 }
 
 .areas-atuacao h2{
