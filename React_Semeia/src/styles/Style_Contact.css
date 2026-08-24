@@ -1,0 +1,125 @@
+.contato {
+  padding-bottom: 60px;
+}
+
+.footer {
+  background-color: var(--azul-navbar);
+  border-radius: 12px;
+  padding: 50px 100px;
+}
+
+.footer hr {
+  margin-top: 30px;
+  border: 0;
+  border-top: 3px solid #234B8C;
+}
+
+.footer h3 {
+  color: var(--azul-claro);
+  font-weight: 400;
+  margin-top: 20px;
+  text-align: center;
+  font-size: 14px;
+}
+
+.area-contato {
+  display: flex;
+  justify-content: space-between;
+  gap: 50px;
+}
+
+.semeia-code {
+  flex: 1.5;
+}
+
+.logo-semeia {
+  display: flex;
+  align-items: center;
+}
+
+.logo-semeia img {
+  height: 60px;
+}
+
+.logo-semeia h2 {
+  color: var(--branco);
+  font-size: 20px;
+  margin-left: 10px;
+}
+
+.texto-semeia p {
+  color: var(--azul-claro);
+  font-size: 18px;
+  width: 80%;
+  margin-top: 10px;
+  line-height: 1.5;
+}
+
+.fale-conosco {
+  flex: 1;
+  color: var(--branco);
+  font-size: 15px;
+}
+
+.fale-conosco h2 {
+  color: var(--branco);
+  font-size: 20px;
+}
+
+.icones-contato {
+  display: flex;
+  height: 70px;
+  margin-top: 15px;
+  gap: 20px;
+}
+
+.icones-contato img[alt="WhatsApp"] {
+  background-color: var(--verde);
+  border-radius: 50%;
+  padding: 10px;
+  box-shadow: 0 5px 10px #0a2855;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+}
+
+.icones-contato img[alt="Instagram"] {
+  background-color: var(--azul);
+  border-radius: 50%;
+  padding: 5px;
+  box-shadow: 0 5px 10px #0a2855;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+}
+
+.navegacao {
+  flex: 1;
+}
+
+.navegacao h2 {
+  color: var(--branco);
+  font-size: 20px;
+}
+
+.nav-contato {
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+}
+
+.nav-contato a {
+  color: var(--branco);
+  margin: 5px 0;
+  font-size: 15px;
+  background-color: var(--azul);
+  padding: 10px 15px;
+  text-align: left;
+  border-radius: 10px;
+  border: solid 1px #4287e7;
+  display: block;
+}
+
+.nav-contato a:hover {
+  background-color: #3878d4;
+}

@@ -1,0 +1,96 @@
+.sobre {
+  background-color: var(--azul-claro);
+  border-radius: 12px;
+  padding: 50px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.sobre-texto {
+  flex: 1;
+}
+
+.sobre h2 {
+  text-transform: uppercase;
+  color: var(--verde);
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+.sobre p {
+  color: var(--azul-escuro);
+  font-size: 18px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.sobre-card {
+  flex: 1;
+  background-color: var(--branco);
+  border-radius: 12px;
+  padding: 50px 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+  box-shadow: 0 10px 25px #aac5e1;
+}
+
+.card-item {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.card-icon {
+  background-color: var(--amarelo-claro);
+  border-radius: 50px;
+  display: flex;
+  height: 80px;
+  width: 80px;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  margin-top: 5px;
+}
+
+.card-icon img {
+  height: 40px;
+  object-fit: contain;
+}
+
+.card-info h3 {
+  color: var(--azul-escuro);
+  font-size: 20px;
+  font-weight: 600;
+  margin: 0 0 6px 0;
+}
+
+.card-info p {
+  color: var(--azul-escuro);
+  font-size: 15px;
+  margin: 0;
+}
+
+.sobre-aula {
+  background-color: var(--azul-claro);
+  margin-top: 200px;
+  padding: 60px 200px;
+  border-radius: 12px;
+}
+
+.sobre-aula h2 {
+  text-transform: uppercase;
+  color: var(--verde);
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+.sobre-aula p {
+  color: var(--azul-escuro);
+  font-size: 18px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}

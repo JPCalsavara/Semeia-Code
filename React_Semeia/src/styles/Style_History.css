@@ -1,0 +1,71 @@
+.historia-titulo h2 {
+  text-transform: uppercase;
+  color: var(--verde);
+  font-size: 20px;
+  margin-top: 170px;
+}
+
+.historia-titulo h3 {
+  color: var(--branco);
+  font-size: 60px;
+  margin-top: 10px;
+  width: 85%;
+}
+
+.linha-do-tempo {
+  position: relative;
+  max-width: 800px;
+  margin: 40px auto;
+  padding-left: 20px;
+}
+
+.linha-do-tempo::before {
+  content: '';
+  position: absolute;
+  top: 12px;
+  left: -40px;
+  width: 4px;
+  height: 95%;
+  background-color: var(--verde);
+  z-index: 1;
+}
+
+.item-linha-tempo {
+  position: relative;
+  margin-bottom: 40px;
+}
+
+.linha-imagem {
+  position: absolute;
+  left: -77px;
+  top: 0;
+  width: 38px;
+  height: 38px;
+  z-index: 2;
+}
+
+.linha-imagem img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.linha-texto {
+  text-align: left;
+  margin-left: 20px;
+}
+
+.linha-texto h2 {
+  color: var(--amarelo-mostarda);
+  font-size: 18px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.linha-texto p {
+  color: var(--amarelo-claro);
+  width: 80%;
+  font-size: 15px;
+  line-height: 1.5;
+  margin: 0;
+}
