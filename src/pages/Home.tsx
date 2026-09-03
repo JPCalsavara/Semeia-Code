@@ -4,10 +4,14 @@ type HomeProps = { isVolunteer: boolean };
 
 function Home({ isVolunteer }: HomeProps) {
   return (
-    <div className={`home-container ${isVolunteer ? "volunteer" : ""}`}>
-      <section className="home-container">
-        <div className="content">
-          <h2>PROJETO DE EXTENSÃO UNIVERSITÁRIA DA UNICAMP</h2>
+    <section
+      id="home"
+      className={`home ${isVolunteer ? "volunteer" : ""}`}
+    >
+      <div className="content">
+          <p className="eyebrow">
+            PROJETO DE EXTENSÃO UNIVERSITÁRIA DA UNICAMP
+          </p>
           {isVolunteer ? (
             <>
               <h1>
@@ -32,9 +36,8 @@ function Home({ isVolunteer }: HomeProps) {
               </p>
             </>
           )}
-        </div>
-      </section>
-    </div>
+      </div>
+    </section>
   );
 }
 

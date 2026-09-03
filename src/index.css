@@ -46,7 +46,7 @@ section {
   scroll-margin-top: var(--header-height);
 }
 
-main > .home-container {
+main > .home {
   min-height: 100vh;
   min-height: 100svh;
 }

@@ -15,11 +15,22 @@ describe("conteudo editorial", () => {
       expect(testimonial.company).toBeTruthy();
       expect(testimonial.roleYear).toBeTruthy();
       expect(testimonial.text).toBeTruthy();
+      expect(testimonial.memberId).toBeTruthy();
+      expect(
+        Object.values(membrosVoluntarioPorSemestre)
+          .flat()
+          .some((member) => member.id === testimonial.memberId),
+      ).toBe(true);
     }
   });
 
   it("mantem empresas separadas das funcoes de voluntariado", () => {
-    expect(empresasParceiras).toEqual(["iFood", "EloGroup", "Nubank", "Samsung"]);
+    expect(empresasParceiras).toEqual([
+      "iFood",
+      "EloGroup",
+      "Nubank",
+      "Samsung",
+    ]);
     expect(dadosDosVoluntarios).toHaveLength(3);
   });
 

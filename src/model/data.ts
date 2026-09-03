@@ -46,6 +46,7 @@ export type VolunteerRole = {
 export type Testimonial = { id: string; text: string };
 export type VolunteerTestimonial = {
   id: string;
+  memberId: string;
   name: string;
   company: string;
   roleYear: string;
@@ -114,16 +115,27 @@ export const dadosDosVoluntarios: VolunteerRole[] = rawData.volunteerRoles.map(
 );
 
 export const depoimentosEscola: Testimonial[] = rawData.schoolTestimonials;
-export const depoimentosVoluntario: VolunteerTestimonial[] =
-  rawData.volunteerTestimonials.filter(
-    (testimonial) =>
-      testimonial.name &&
-      testimonial.company &&
-      testimonial.roleYear &&
-      testimonial.text,
-  );
-
 export const membrosVoluntario: VolunteerMember[] = rawData.volunteerMembers;
+const membrosPorId = new Map(
+  membrosVoluntario.map((member) => [member.id, member]),
+);
+
+export const depoimentosVoluntario: VolunteerTestimonial[] = rawData.volunteerTestimonials
+  .map((testimonial) => {
+    const member = membrosPorId.get(testimonial.memberId);
+    if (!member || !testimonial.text.trim()) return null;
+
+    return {
+      id: testimonial.id,
+      memberId: member.id,
+      name: member.name,
+      company: member.company,
+      roleYear: member.role,
+      text: testimonial.text,
+    };
+  })
+  .filter((testimonial): testimonial is VolunteerTestimonial => testimonial !== null);
+
 export const membrosVoluntarioPorSemestre = membrosVoluntario.reduce<
   Record<string, VolunteerMember[]>
 >((groups, member) => {

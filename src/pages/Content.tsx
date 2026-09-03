@@ -48,16 +48,20 @@ function Content({ isVolunteer }: ContentProps) {
             {depoimentosVoluntario.map((depoimento) => (
               <blockquote key={depoimento.id}>
                 <p>{depoimento.text}</p>
-                <footer>
+                <div className="card-depoimento">
                   <strong>{depoimento.name}</strong>
                   <span>{depoimento.roleYear}</span>
                   <span>{depoimento.company}</span>
-                </footer>
+                </div>
               </blockquote>
             ))}
           </div>
 
-          <section className="membros-semestre" aria-labelledby="membros-titulo">
+          <div
+            className="membros-semestre"
+            role="region"
+            aria-labelledby="membros-titulo"
+          >
             <h2 id="membros-titulo">Membros por semestre</h2>
             <div className="membros-semestre-lista">
               {Object.entries(membrosVoluntarioPorSemestre).map(
@@ -69,9 +73,14 @@ function Content({ isVolunteer }: ContentProps) {
                         <article className="card-membro" key={member.id}>
                           <div className="membro-foto">
                             {member.image ? (
-                              <img src={member.image} alt={`Foto de ${member.name}`} />
+                              <img
+                                src={member.image}
+                                alt={`Foto de ${member.name}`}
+                              />
                             ) : (
-                              <span aria-hidden="true">{member.name.charAt(0)}</span>
+                              <span aria-hidden="true">
+                                {member.name.charAt(0)}
+                              </span>
                             )}
                           </div>
                           <h4>{member.name}</h4>
@@ -84,7 +93,7 @@ function Content({ isVolunteer }: ContentProps) {
                 ),
               )}
             </div>
-          </section>
+          </div>
         </>
       ) : (
         <>

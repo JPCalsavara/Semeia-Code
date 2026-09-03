@@ -72,30 +72,22 @@
   "volunteerTestimonials": [
     {
       "id": "volunteer-testimonial-1",
-      "name": "João Calsavara",
-      "company": "Mottu",
-      "roleYear": "Fundador, Professor e Coordenador",
+      "memberId": "member-2025-1-joao",
       "text": "O projeto fundamental para o mim apreender a liderar, aprender na prática a aprender, criar processos, errar, acertar e ir evoluindo junto com o projeto"
     },
     {
       "id": "volunteer-testimonial-2",
-      "name": "Gustavo",
-      "company": "Sansung",
-      "roleYear": "Monitor",
+      "memberId": "member-2025-1-gustavo",
       "text": "O projeto fundamental para o mim apreender a liderar, aprender na prática a aprender, criar processos, errar, acertar e ir evoluindo junto com o projeto"
     },
     {
       "id": "volunteer-testimonial-3",
-      "name": "Renan Rodrigues",
-      "company": "Ifood",
-      "roleYear": "Professor",
+      "memberId": "member-2025-2-renan",
       "text": "O projeto fundamental para o mim apreender a liderar, aprender na prática a aprender, criar processos, errar, acertar e ir evoluindo junto com o projeto"
     },
     {
       "id": "volunteer-testimonial-4",
-      "name": "Celio",
-      "company": "Nubank",
-      "roleYear": "Professor",
+      "memberId": "member-2025-2-celio",
       "text": "O projeto fundamental para o mim apreender a liderar, aprender na prática a aprender, criar processos, errar, acertar e ir evoluindo junto com o projeto"
     }
   ],
