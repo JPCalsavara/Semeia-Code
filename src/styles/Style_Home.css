@@ -1,6 +1,21 @@
 .home {
   display: flex;
+  justify-content: center;
+  align-items: center;
   padding-top: clamp(150px, 22vh, 220px);
+  position: relative;
+  isolation: isolate;
+  background:
+    linear-gradient(90deg, rgba(15, 50, 108, 0.96) 0%, rgba(15, 50, 108, 0.78) 48%, rgba(15, 50, 108, 0.38) 100%),
+    url("/images/fotos/AlunosEmSala.jpeg") center / cover no-repeat;
+}
+
+.home::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(180deg, rgba(15, 50, 108, 0.2), rgba(15, 50, 108, 0.55));
 }
 
 .content {
@@ -45,6 +60,7 @@
 @media (max-width: 700px) {
   .home {
     padding-top: 180px;
+    background-position: 65% center;
   }
 
   .content {

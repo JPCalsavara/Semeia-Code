@@ -2,7 +2,7 @@
   text-transform: uppercase;
   color: var(--verde);
   font-size: 20px;
-  margin-top: clamp(100px, 15vw, 170px);
+  margin-top: clamp(48px, 7vw, 96px);
 }
 
 .historia-titulo h3 {

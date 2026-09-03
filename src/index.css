@@ -291,6 +291,9 @@ main > .home {
     flex: 0 0 auto;
     margin-left: auto;
     position: static;
+    display: flex;
+    align-items: center;
+    gap: 8px;
   }
 
   .menu-toggle {
@@ -323,34 +326,27 @@ main > .home {
   }
 
   .navbar-action {
-    display: none;
-  }
-
-  .navbar.is-open .navbar-action {
     display: block;
   }
 
-  .navbar.is-open .navbar-links,
-  .navbar.is-open .navbar-action {
-    position: static;
-    padding-inline: 0;
-    background-color: transparent;
+  .navbar.is-open .navbar-links {
+    position: absolute;
+    top: calc(100% + 8px);
+    left: 0;
+    right: 0;
+    z-index: 2;
+    padding: 16px 18px;
+    background-color: rgba(19, 56, 117, 0.7);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
   }
 
   .navbar.is-open {
-    position: absolute;
-    top: calc(100% + 8px);
-    right: 0;
-    width: min(260px, calc(100vw - 28px));
-    padding: 16px;
-    border: 1px solid rgba(255, 255, 255, 0.14);
-    border-radius: 12px;
-    background-color: var(--azul-navbar);
-    box-shadow: var(--sombra-suave);
-  }
-
-  .navbar.is-open .navbar-action {
-    margin-top: 16px;
+    position: static;
+    width: auto;
+    padding: 0;
+    background: transparent;
+    box-shadow: none;
   }
 
   .navbar-links a {
