@@ -68,29 +68,45 @@
 
 .icones-contato {
   display: flex;
-  height: 70px;
+  align-items: center;
   margin-top: 15px;
-  gap: 20px;
+  gap: 16px;
 }
 
-.icones-contato a:first-child {
-  background-color: var(--verde);
-  border-radius: 50%;
-  padding: 10px;
-  box-shadow: 0 5px 10px #0a2855;
-  width: 50px;
-  height: 50px;
-  cursor: pointer;
-}
-
-.icones-contato a:last-child {
+.icone-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
   background-color: var(--azul);
-  border-radius: 50%;
-  padding: 5px;
-  box-shadow: 0 5px 10px #0a2855;
-  width: 50px;
-  height: 50px;
+  box-shadow: 0 4px 12px rgba(10, 40, 85, 0.3);
+  transition: transform 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
   cursor: pointer;
+  padding: 8px;
+}
+
+.icone-link:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 18px rgba(10, 40, 85, 0.45);
+  background-color: #24559b;
+}
+
+.icone-link.whatsapp {
+  background-color: var(--verde);
+}
+
+.icone-link.whatsapp:hover {
+  background-color: #557959;
+}
+
+/* Control icon image size nicely */
+.icone-link img {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+  display: block;
 }
 
 .icones-contato a:focus-visible,

@@ -5,14 +5,14 @@ function Data() {
   return (
     <section className="dados" id="dados">
       <div className="dados-impacto">
-        <h2 className="titulo">nosso impacto</h2>
-        <h3 className="subtitulo">Números que mostram o</h3>
-        <h3 className="subtitulo">que estamos semeando</h3>
+        <h2 className="subtitulo">Números Que Mostram O Que Estamos Semeando</h2>
 
         <div className="dados-geral">
           {dadosImpacto.map((item) => (
-            <div key={item.id} className="dados-texto">
-              <h2>{item.number}</h2>
+            <div key={item.id} className="card-impacto">
+              <div className="numero-box">
+                <h2>{item.number}</h2>
+              </div>
               <h3>{item.description}</h3>
             </div>
           ))}

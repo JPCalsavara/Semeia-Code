@@ -26,20 +26,26 @@ function Contact() {
           <div className="fale-conosco">
             <h2>Fale conosco</h2>
             <div className="icones-contato">
-              {iconesContato.whatsapp.url ? (
+              {iconesContato.whatsapp?.url ? (
                 <a
                   href={iconesContato.whatsapp.url}
                   aria-label={iconesContato.whatsapp.label}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="icone-link whatsapp"
                 >
-                  <img src={iconesContato.whatsapp.image} alt="" />
+                  <img src={iconesContato.whatsapp.image} alt={iconesContato.whatsapp.label} />
                 </a>
               ) : null}
-              {iconesContato.instagram.url ? (
+              {iconesContato.instagram?.url ? (
                 <a
                   href={iconesContato.instagram.url}
                   aria-label={iconesContato.instagram.label}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="icone-link instagram"
                 >
-                  <img src={iconesContato.instagram.image} alt="" />
+                  <img src={iconesContato.instagram.image} alt={iconesContato.instagram.label} />
                 </a>
               ) : null}
             </div>

@@ -58,10 +58,7 @@ function Header({ isVolunteer, onToggleVolunteer }: HeaderProps) {
     <header className={`header ${scrolled ? "scrolled" : ""}`}>
       <section>
         <a href="#home" className="logo">
-          <img
-            src="/images/logos/Logo Semeia-Photoroom.png"
-            alt=""
-          />
+          <img src="/images/logos/Logo Semeia-Photoroom.png" alt="" />
           <span>
             SEMEIA
             <br />

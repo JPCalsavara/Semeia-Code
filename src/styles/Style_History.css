@@ -1,99 +1,151 @@
-.historia-titulo h2 {
-  text-transform: uppercase;
-  color: var(--verde);
-  font-size: 20px;
-  margin-top: clamp(48px, 7vw, 96px);
+/* History Section */
+.historia {
+  margin-top: 48px;
+  width: 100%;
 }
 
-.historia-titulo h3 {
-  color: var(--branco);
-  font-size: clamp(3.4rem, 6vw, 6rem);
+.historia-header {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto 48px auto;
+}
+
+.historia-header h2 {
+  color: var(--amarelo-mostarda);
+  font-size: 3.4rem;
+  font-weight: 800;
   margin-top: 10px;
-  width: 85%;
+  letter-spacing: -0.5px;
+  line-height: 1.25;
 }
 
 .linha-do-tempo {
   position: relative;
   max-width: 800px;
-  margin: 40px auto;
-  padding-left: 20px;
+  margin: 0 auto;
+  padding-left: 0;
 }
 
+/* Vertical line passing through the center of all dots (X = 18px) */
 .linha-do-tempo::before {
-  content: '';
+  content: "";
   position: absolute;
-  top: 12px;
-  left: -40px;
+  top: 18px;
+  bottom: 18px;
+  left: 16px;
   width: 4px;
-  height: 95%;
-  background-color: var(--verde);
+  background: linear-gradient(180deg, var(--verde) 0%, var(--amarelo-mostarda) 100%);
+  border-radius: 2px;
   z-index: 1;
 }
 
 .item-linha-tempo {
   position: relative;
-  margin-bottom: 40px;
+  margin-bottom: 36px;
+  padding-left: 64px; /* Reserves space so cards NEVER overlap the dots */
+  display: flex;
+  flex-direction: column;
 }
 
+.item-linha-tempo:last-child {
+  margin-bottom: 0;
+}
+
+/* Green dot marker (X = 0 to 36px, center at 18px) */
 .linha-imagem {
   position: absolute;
-  left: -77px;
-  top: 0;
-  width: 38px;
-  height: 38px;
+  left: 0;
+  top: 22px;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--azul-escuro);
+  border: 3px solid var(--verde);
+  display: flex;
+  align-items: center;
+  justify-content: center;
   z-index: 2;
+  box-shadow: 0 0 12px rgba(100, 141, 104, 0.4);
 }
 
-.linha-imagem img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
+.dot-inner {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: var(--verde);
 }
 
 .linha-texto {
-  text-align: left;
-  margin-left: 20px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 18px;
+  padding: 24px 28px;
+  backdrop-filter: blur(10px);
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+  width: 100%;
 }
 
-.linha-texto h2 {
-  color: var(--amarelo-mostarda);
-  font-size: 18px;
+.item-linha-tempo:hover .linha-texto {
+  transform: translateX(4px);
+  border-color: var(--amarelo-mostarda);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+}
+
+.linha-texto h3 {
+  color: var(--amarelo-claro);
+  font-size: 1.9rem;
   font-weight: 700;
+  margin-bottom: 8px;
   text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
 .linha-texto p {
-  color: var(--amarelo-claro);
-  width: 80%;
-  font-size: 15px;
-  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 1.55rem;
+  line-height: 1.65;
   margin: 0;
 }
 
-@media (max-width: 700px) {
-  .historia-titulo h3 {
-    width: 100%;
+/* RESPONSIVENESS FOR MOBILE */
+@media (max-width: 768px) {
+  .historia-header h2 {
+    font-size: 2.5rem;
   }
 
-  .linha-do-tempo {
-    padding-left: 12px;
+  .item-linha-tempo {
+    padding-left: 48px;
   }
 
   .linha-do-tempo::before {
-    left: -12px;
+    left: 12px;
+    top: 14px;
+    bottom: 14px;
   }
 
   .linha-imagem {
-    left: -30px;
-    width: 30px;
-    height: 30px;
+    left: 0;
+    top: 18px;
+    width: 28px;
+    height: 28px;
+    border-width: 2.5px;
+  }
+
+  .dot-inner {
+    width: 8px;
+    height: 8px;
   }
 
   .linha-texto {
-    margin-left: 12px;
+    padding: 18px 20px;
+    border-radius: 14px;
+  }
+
+  .linha-texto h3 {
+    font-size: 1.6rem;
   }
 
   .linha-texto p {
-    width: 100%;
+    font-size: 1.4rem;
   }
 }

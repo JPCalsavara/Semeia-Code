@@ -27,16 +27,6 @@ function Navbar({
 
   return (
     <nav className={`navbar ${isMenuOpen ? "is-open" : ""}`}>
-      <button
-        type="button"
-        className="menu-toggle"
-        aria-expanded={isMenuOpen}
-        aria-controls="main-navigation-links"
-        onClick={onToggleMenu}
-      >
-        <span className="menu-toggle-icon" aria-hidden="true">☰</span>
-        <span>Menu</span>
-      </button>
       <div id="main-navigation-links" className="navbar-links">
         {navItems.map((item) => (
           <a
@@ -67,6 +57,18 @@ function Navbar({
           {isVolunteer ? "Para escolas" : "Sou Voluntário"}
         </button>
       </div>
+
+      <button
+        type="button"
+        className="menu-toggle"
+        aria-expanded={isMenuOpen}
+        aria-controls="main-navigation-links"
+        onClick={onToggleMenu}
+      >
+        <span className="menu-toggle-icon" aria-hidden="true">
+          ☰
+        </span>
+      </button>
     </nav>
   );
 }
