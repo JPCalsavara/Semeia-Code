@@ -1,7 +1,7 @@
 .dados {
   background-color: var(--azul-claro);
-  margin-top: 200px;
-  padding: 10px 200px;
+  margin-top: clamp(100px, 15vw, 200px);
+  padding: 10px clamp(20px, 10vw, 200px);
   border-radius: 12px;
   max-width: 100%;
 }
@@ -18,7 +18,7 @@
   margin-top: 10px;
   color: var(--azul-escuro);
   text-align: center;
-  font-size: 40px;
+  font-size: clamp(2.8rem, 4vw, 4rem);
   line-height: 1.2;
 }
 
@@ -40,7 +40,7 @@
   color: var(--amarelo-claro);
   font-size: 50px;
   border: 2px solid #245191;
-  box-shadow: 0 5px 10px rgb(97, 133, 174);
+  box-shadow: var(--sombra-suave);
 }
 
 .dados-texto h3 {

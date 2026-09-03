@@ -3,6 +3,7 @@ import {
   dadosDosVoluntarios,
   depoimentosEscola,
   depoimentosVoluntario,
+  empresasParceiras,
 } from "../model/data";
 import "../styles/Style_Content.css";
 
@@ -71,9 +72,19 @@ function Content({ isVolunteer }: ContentProps) {
               </div>
             ))}
           </div>
+
+          <div className="areas-atuacao">
+            <h2>Onde nossos voluntários atuam hoje</h2>
+            <div className="empresas">
+              {empresasParceiras.map((empresa) => (
+                <div key={empresa} className="empresa">
+                  {empresa}
+                </div>
+              ))}
+            </div>
+          </div>
         </>
       )}
-
     </section>
   );
 }

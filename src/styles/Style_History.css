@@ -2,12 +2,12 @@
   text-transform: uppercase;
   color: var(--verde);
   font-size: 20px;
-  margin-top: 170px;
+  margin-top: clamp(100px, 15vw, 170px);
 }
 
 .historia-titulo h3 {
   color: var(--branco);
-  font-size: 60px;
+  font-size: clamp(3.4rem, 6vw, 6rem);
   margin-top: 10px;
   width: 85%;
 }
@@ -68,4 +68,32 @@
   font-size: 15px;
   line-height: 1.5;
   margin: 0;
+}
+
+@media (max-width: 700px) {
+  .historia-titulo h3 {
+    width: 100%;
+  }
+
+  .linha-do-tempo {
+    padding-left: 12px;
+  }
+
+  .linha-do-tempo::before {
+    left: -12px;
+  }
+
+  .linha-imagem {
+    left: -30px;
+    width: 30px;
+    height: 30px;
+  }
+
+  .linha-texto {
+    margin-left: 12px;
+  }
+
+  .linha-texto p {
+    width: 100%;
+  }
 }

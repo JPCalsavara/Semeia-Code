@@ -121,6 +121,7 @@ export const dadosLinhaDoTempo: TimelineData[] = rawData.timeline.map(
     image: iconCirculoVerde,
   }),
 );
+export const empresasParceiras = rawData.partnerCompanies;
 export const iconesContato: Record<"whatsapp" | "instagram", ContactData> = {
   whatsapp: { ...rawData.contacts.whatsapp, image: assets.whatsapp },
   instagram: { ...rawData.contacts.instagram, image: assets.instagram },

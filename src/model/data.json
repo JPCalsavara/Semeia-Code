@@ -72,15 +72,15 @@
   "volunteerTestimonials": [
     {
       "id": "volunteer-testimonial-1",
-      "name": "",
-      "company": "",
-      "roleYear": "",
-      "text": ""
+      "name": "João Calsavara",
+      "company": "Mottu",
+      "roleYear": "Fundador, professor e Coordenador Executivo e Educacional",
+      "text": "O projeto fundamental para o mim apreender a liderar, aprender na prática a aprender, criar processos, errar, acertar e ir evoluindo junto com o projeto"
     }
   ],
   "impact": [
-    { "id": "students", "number": "18", "description": "alunos impactados" },
-    { "id": "organizers", "number": "7", "description": "organizadores" },
+    { "id": "students", "number": "50", "description": "alunos impactados" },
+    { "id": "organizers", "number": "10", "description": "organizadores" },
     { "id": "classes", "number": "2", "description": "turmas simultâneas" }
   ],
   "timeline": [
@@ -105,6 +105,7 @@
       "description": "Estruturação de um conselho consultivo para acompanhar o projeto e apoiar novos coordenadores."
     }
   ],
+  "partnerCompanies": ["iFood", "EloGroup", "Nubank", "Samsung"],
   "contacts": {
     "whatsapp": {
       "label": "Fale conosco pelo WhatsApp",

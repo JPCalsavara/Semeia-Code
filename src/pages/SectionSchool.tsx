@@ -1,5 +1,5 @@
-import CardSchool from '../components/CardSchool';
-import { dadosDasEscolas } from '../model/data';
+import CardSchool from "../components/CardSchool";
+import { dadosDasEscolas } from "../model/data";
 
 function SectionSchool() {
   return (

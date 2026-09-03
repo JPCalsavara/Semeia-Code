@@ -1,5 +1,5 @@
-import { dadosLinhaDoTempo } from '../model/data';
-import '../styles/Style_History.css';
+import { dadosLinhaDoTempo } from "../model/data";
+import "../styles/Style_History.css";
 
 function History() {
   return (
@@ -15,8 +15,8 @@ function History() {
               <img src={item.image} alt="" />
             </div>
             <div className="linha-texto">
-                <h2>{item.title}</h2>
-                <p>{item.description}</p>
+              <h2>{item.title}</h2>
+              <p>{item.description}</p>
             </div>
           </div>
         ))}

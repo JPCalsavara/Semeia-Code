@@ -1,11 +1,11 @@
-import { useState, useEffect } from 'react';
-import Navbar from './Navbar';
+import { useState, useEffect } from "react";
+import Navbar from "./Navbar";
 
 type HeaderProps = { isVolunteer: boolean; onToggleVolunteer: () => void };
 
 function Header({ isVolunteer, onToggleVolunteer }: HeaderProps) {
   const [scrolled, setScrolled] = useState(false);
-  const [activeSection, setActiveSection] = useState('');
+  const [activeSection, setActiveSection] = useState("");
 
   useEffect(() => {
     const handleScroll = () => {
@@ -16,7 +16,7 @@ function Header({ isVolunteer, onToggleVolunteer }: HeaderProps) {
       }
 
       // Detect active section on scroll
-      const sections = ['sobre', 'conteudo', 'dados', 'historia', 'contato'];
+      const sections = ["sobre", "conteudo", "dados", "historia", "contato"];
       const scrollPosition = window.scrollY + 250;
 
       for (let i = sections.length - 1; i >= 0; i--) {
@@ -28,15 +28,15 @@ function Header({ isVolunteer, onToggleVolunteer }: HeaderProps) {
       }
 
       if (window.scrollY < 200) {
-        setActiveSection('');
+        setActiveSection("");
       }
     };
 
-    window.addEventListener('scroll', handleScroll, { passive: true });
+    window.addEventListener("scroll", handleScroll, { passive: true });
     handleScroll();
 
     return () => {
-      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener("scroll", handleScroll);
     };
   }, []);
 
@@ -45,11 +45,18 @@ function Header({ isVolunteer, onToggleVolunteer }: HeaderProps) {
   };
 
   return (
-    <header className={`header ${scrolled ? 'scrolled' : ''}`}>
+    <header className={`header ${scrolled ? "scrolled" : ""}`}>
       <section>
         <a href="#" className="logo">
-          <img src="/images/logos/Logo Semeia-Photoroom.png" alt="Semeia Code" />
-          <span>SEMEIA<br />CODE</span>
+          <img
+            src="/images/logos/Logo Semeia-Photoroom.png"
+            alt="Semeia Code"
+          />
+          <span>
+            SEMEIA
+            <br />
+            CODE
+          </span>
         </a>
         <Navbar
           isVolunteer={isVolunteer}
