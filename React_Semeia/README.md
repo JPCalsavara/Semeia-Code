@@ -1,16 +1,32 @@
-# React + Vite
+# Semeia Code
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Aplicacao institucional do Semeia Code, construida com React, Vite e TypeScript.
 
-Currently, two official plugins are available:
+## Desenvolvimento
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+```bash
+npm install
+npm run dev
+```
 
-## React Compiler
+## Validacao
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+```bash
+npm run typecheck
+npm run lint
+npm run build
+```
 
-## Expanding the ESLint configuration
+O build deve ser executado antes de publicar, pois tambem valida imports com a
+capitalizacao correta e a resolucao dos assets.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Organizacao
+
+- `src/components`: header, navegacao, cards e rodape reutilizaveis.
+- `src/pages`: secoes apresentadas na pagina principal.
+- `src/model/data.json`: conteudo editorial das escolas e voluntarios.
+- `src/model/data.ts`: contratos TypeScript e catalogo de assets.
+- `src/styles`: estilos por secao e regras responsivas.
+
+O conteudo editorial fica separado da apresentacao. Imagens publicas usam a
+pasta `public/images`; icones processados pelo Vite permanecem em `src/assets`.

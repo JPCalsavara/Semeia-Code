@@ -17,11 +17,15 @@ html {
 * {
   margin: 0;
   padding: 0;
-  outline: none;
   border: none;
   text-decoration: none;
   box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
+}
+
+:focus-visible {
+  outline: 3px solid var(--amarelo-claro);
+  outline-offset: 4px;
 }
 
 body {
@@ -232,5 +236,45 @@ section {
   .btn-volunteer {
     padding: 8px 14px;
     font-size: 1.25rem;
+  }
+}
+
+@media (max-width: 700px) {
+  section {
+    padding-inline: 1.5rem;
+  }
+
+  .header {
+    padding: 10px;
+  }
+
+  .header section,
+  .navbar {
+    flex-wrap: wrap;
+  }
+
+  .header section {
+    gap: 12px;
+    padding: 10px 14px;
+  }
+
+  .navbar {
+    margin-left: 0;
+    gap: 12px;
+  }
+
+  .navbar-links {
+    flex-wrap: wrap;
+    gap: 0.5rem 1rem;
+    justify-content: flex-start;
+  }
+
+  .navbar-links a {
+    font-size: 1.2rem;
+  }
+
+  .btn-volunteer {
+    font-size: 1.2rem;
+    padding: 8px 12px;
   }
 }

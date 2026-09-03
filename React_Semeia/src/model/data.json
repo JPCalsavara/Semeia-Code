@@ -1,0 +1,35 @@
+{
+  "cards": [
+    { "id": "free-teaching", "title": "Ensino Gratuito", "description": "Aulas de lógica e programação sem custo para escolas públicas parceiras.", "asset": "plant" },
+    { "id": "active-volunteering", "title": "Voluntariado ativo", "description": "Estudantes universitários como professores, monitores e referência.", "asset": "handshake" },
+    { "id": "continuous-growth", "title": "Crescimento contínuo", "description": "Um projeto que cresce a cada semestre com novas turmas e parcerias.", "asset": "tree" }
+  ],
+  "schools": [
+    { "id": "school-classroom", "name": "Turma em sala", "image": "/images/fotos/AlunosEmSala.jpeg", "color": "card-verde" },
+    { "id": "school-class", "name": "Turma Semeia Code", "image": "/images/fotos/Turma.jpeg", "color": "card-azul" },
+    { "id": "school-certificate", "name": "Alunos certificados", "image": "/images/fotos/AlunosCertificado.jpeg", "color": "card-verde" }
+  ],
+  "volunteerRoles": [
+    { "id": "teacher", "titleLine1": "Professor(a)", "titleLine2": "voluntário(a)", "description": "Ministra as aulas de lógica e programação diretamente com os alunos.", "asset": "school", "color": "conteudo-azul", "alt": "Ícone de professor voluntário" },
+    { "id": "mentor", "titleLine1": "Monitor(a)", "titleLine2": "voluntário(a)", "description": "Apoia os professores no suporte aos alunos.", "asset": "pencil", "color": "conteudo-verde", "alt": "Ícone de monitor voluntário" },
+    { "id": "marketing", "titleLine1": "Marketing", "titleLine2": null, "description": "Cuida da comunicação do projeto.", "asset": "marketing", "color": "conteudo-azul", "alt": "Ícone de marketing" }
+  ],
+  "schoolTestimonials": [],
+  "volunteerTestimonials": [],
+  "impact": [
+    { "id": "students", "number": "18", "description": "alunos impactados" },
+    { "id": "organizers", "number": "7", "description": "organizadores" },
+    { "id": "classes", "number": "2", "description": "turmas simultâneas" }
+  ],
+  "timeline": [
+    { "id": "foundation", "title": "Fundação e estruturação", "description": "Criação do projeto, identidade visual, redes sociais, material didático e prospecção das primeiras escolas." },
+    { "id": "2025-1", "title": "2025.1: primeira edição", "description": "Início das atividades práticas com 3 organizadores da Unicamp, impactando diretamente 18 alunos do ensino médio." },
+    { "id": "2025-2", "title": "2025.2: expansão do projeto", "description": "Crescimento da equipe para 7 membros e abertura de 2 turmas simultâneas, consolidando a gestão pedagógica." },
+    { "id": "transition", "title": "Consolidação e transição", "description": "Estruturação de um conselho consultivo para acompanhar o projeto e apoiar novos coordenadores." }
+  ],
+  "partnerCompanies": ["iFood", "EloGroup", "Nubank", "Samsung"],
+  "contacts": {
+    "whatsapp": { "label": "Fale conosco pelo WhatsApp", "url": null, "asset": "whatsapp" },
+    "instagram": { "label": "Siga o Semeia Code no Instagram", "url": null, "asset": "instagram" }
+  }
+}

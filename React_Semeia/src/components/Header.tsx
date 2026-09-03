@@ -1,7 +1,9 @@
 import { useState, useEffect } from 'react';
 import Navbar from './Navbar';
 
-function Header({ isVolunteer, onToggleVolunteer }) {
+type HeaderProps = { isVolunteer: boolean; onToggleVolunteer: () => void };
+
+function Header({ isVolunteer, onToggleVolunteer }: HeaderProps) {
   const [scrolled, setScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState('');
 
@@ -38,7 +40,7 @@ function Header({ isVolunteer, onToggleVolunteer }) {
     };
   }, []);
 
-  const handleLinkClick = (sectionId) => {
+  const handleLinkClick = (sectionId: string) => {
     setActiveSection(sectionId);
   };
 
@@ -46,7 +48,7 @@ function Header({ isVolunteer, onToggleVolunteer }) {
     <header className={`header ${scrolled ? 'scrolled' : ''}`}>
       <section>
         <a href="#" className="logo">
-          <img src="/images/logos/Logo Semeia-Photoroom.png" alt="logo" />
+          <img src="/images/logos/Logo Semeia-Photoroom.png" alt="Semeia Code" />
           <span>SEMEIA<br />CODE</span>
         </a>
         <Navbar

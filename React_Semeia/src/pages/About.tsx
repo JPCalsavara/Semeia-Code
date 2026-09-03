@@ -1,6 +1,6 @@
 import CardItem from '../components/CardItem';
 import AboutClass from './AboutClass';
-import { dadosDosCards } from '../model/DataCard';
+import { dadosDosCards } from '../model/data';
 import '../styles/Style_About.css';
 
 function About() {
@@ -29,9 +29,9 @@ function About() {
           {dadosDosCards.map((card) => (
             <CardItem
               key={card.id}
-              titulo={card.titulo}
-              descricao={card.descricao}
-              imagem={card.imagem}
+              titulo={card.title}
+              descricao={card.description}
+              imagem={card.image}
             />
           ))}
         </div>

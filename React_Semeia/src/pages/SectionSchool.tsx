@@ -1,5 +1,5 @@
 import CardSchool from '../components/CardSchool';
-import { dadosDasEscolas } from '../model/DataCard';
+import { dadosDasEscolas } from '../model/data';
 
 function SectionSchool() {
   return (
@@ -7,9 +7,9 @@ function SectionSchool() {
       {dadosDasEscolas.map((escola) => (
         <CardSchool
           key={escola.id}
-          nome={escola.nome}
-          imagem={escola.imagem}
-          corDoCard={escola.corDoCard}
+          nome={escola.name}
+          imagem={escola.image}
+          corDoCard={escola.color}
         />
       ))}
     </div>

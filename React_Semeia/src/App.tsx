@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import Header from './components/Header';
-import Home from './pages/home';
+import Home from './pages/Home';
 import About from './pages/About';
 import Content from './pages/Content';
 import Data from './pages/Data';

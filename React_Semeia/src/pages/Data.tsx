@@ -1,4 +1,4 @@
-import { dadosImpacto } from '../model/DataCard';
+import { dadosImpacto } from '../model/data';
 import '../styles/Style_Data.css';
 
 function Data() {
@@ -12,8 +12,8 @@ function Data() {
         <div className="dados-geral">
           {dadosImpacto.map((item) => (
             <div key={item.id} className="dados-texto">
-              <h2>{item.numero}</h2>
-              <h3>{item.descricao}</h3>
+                <h2>{item.number}</h2>
+                <h3>{item.description}</h3>
             </div>
           ))}
         </div>

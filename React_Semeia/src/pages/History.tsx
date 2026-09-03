@@ -1,4 +1,4 @@
-import { dadosLinhaDoTempo } from '../model/DataCard';
+import { dadosLinhaDoTempo } from '../model/data';
 import '../styles/Style_History.css';
 
 function History() {
@@ -12,11 +12,11 @@ function History() {
         {dadosLinhaDoTempo.map((item) => (
           <div key={item.id} className="item-linha-tempo">
             <div className="linha-imagem">
-              <img src={item.imagem} alt="Ponto da linha do tempo" />
+              <img src={item.image} alt="" />
             </div>
             <div className="linha-texto">
-              <h2>{item.titulo}</h2>
-              <p>{item.descricao}</p>
+                <h2>{item.title}</h2>
+                <p>{item.description}</p>
             </div>
           </div>
         ))}

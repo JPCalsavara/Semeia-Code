@@ -1,4 +1,6 @@
-function CardItem({ titulo, descricao, imagem }) {
+type CardItemProps = { titulo: string; descricao: string; imagem: string };
+
+function CardItem({ titulo, descricao, imagem }: CardItemProps) {
   return (
     <div className="card-item">
       <div className="card-icon">

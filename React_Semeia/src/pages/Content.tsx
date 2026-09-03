@@ -4,10 +4,12 @@ import {
   depoimentosEscola,
   depoimentosVoluntario,
   empresasParceiras
-} from '../model/DataCard';
+} from '../model/data';
 import '../styles/Style_Content.css';
 
-function Content({ isVolunteer }) {
+type ContentProps = { isVolunteer: boolean };
+
+function Content({ isVolunteer }: ContentProps) {
   return (
     <section className="conteudo-escola" id="conteudo">
       {isVolunteer ? (
@@ -21,25 +23,25 @@ function Content({ isVolunteer }) {
             {dadosDosVoluntarios.map((voluntario) => (
               <div
                 key={voluntario.id}
-                className={`card-conteudo ${voluntario.corDoCard}`}
+                className={`card-conteudo ${voluntario.color}`}
               >
                 <picture>
-                  <img src={voluntario.imagem} alt={voluntario.alt} />
+                  <img src={voluntario.image} alt={voluntario.alt} />
                 </picture>
                 <h3 className="card-titulo">
-                  <span>{voluntario.tituloLinha1}</span>
-                  {voluntario.tituloLinha2 && (
-                    <span>{voluntario.tituloLinha2}</span>
+                  <span>{voluntario.titleLine1}</span>
+                  {voluntario.titleLine2 && (
+                    <span>{voluntario.titleLine2}</span>
                   )}
                 </h3>
-                <p className="card-subtitulo">{voluntario.descricao}</p>
+                <p className="card-subtitulo">{voluntario.description}</p>
               </div>
             ))}
           </div>
 
           <div className="cards-depoimento">
             {depoimentosVoluntario.map((depoimento) => (
-              <p key={depoimento.id}>{depoimento.texto}</p>
+              <p key={depoimento.id}>{depoimento.text}</p>
             ))}
           </div>
         </>
@@ -56,9 +58,9 @@ function Content({ isVolunteer }) {
             {depoimentosEscola.map((depoimento) => (
               <div
                 key={depoimento.id}
-                className={`depoimento ${depoimento.tipo}`}
+                className="depoimento"
               >
-                <p>{depoimento.texto}</p>
+                <p>{depoimento.text}</p>
               </div>
             ))}
           </div>
@@ -68,8 +70,8 @@ function Content({ isVolunteer }) {
       <div className="areas-atuacao">
         <h2>onde nossos voluntários atuam hoje</h2>
         <div className="empresas">
-          {empresasParceiras.map((empresa, index) => (
-            <div key={index} className="empresa">
+          {empresasParceiras.map((empresa) => (
+            <div key={empresa} className="empresa">
               {empresa}
             </div>
           ))}

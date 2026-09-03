@@ -1,4 +1,11 @@
-function Navbar({ isVolunteer, onToggleVolunteer, activeSection, onLinkClick }) {
+type NavbarProps = {
+  isVolunteer: boolean;
+  onToggleVolunteer: () => void;
+  activeSection: string;
+  onLinkClick?: (sectionId: string) => void;
+};
+
+function Navbar({ isVolunteer, onToggleVolunteer, activeSection, onLinkClick }: NavbarProps) {
   const navItems = [
     { href: '#sobre', id: 'sobre', label: 'Sobre nós' },
     { href: '#conteudo', id: 'conteudo', label: 'Conteúdo' },
@@ -15,6 +22,7 @@ function Navbar({ isVolunteer, onToggleVolunteer, activeSection, onLinkClick }) 
             key={item.id}
             href={item.href}
             className={activeSection === item.id ? 'active' : ''}
+            aria-current={activeSection === item.id ? 'location' : undefined}
             onClick={() => onLinkClick && onLinkClick(item.id)}
           >
             {item.label}
@@ -26,6 +34,7 @@ function Navbar({ isVolunteer, onToggleVolunteer, activeSection, onLinkClick }) 
         <button
           type="button"
           onClick={onToggleVolunteer}
+          aria-pressed={isVolunteer}
           className="btn-volunteer"
         >
           {isVolunteer ? 'Para escolas' : 'Sou Voluntário'}

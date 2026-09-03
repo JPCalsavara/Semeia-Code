@@ -1,11 +1,11 @@
 import Footer from '../components/Footer';
-import { iconesContato } from '../model/DataCard';
+import { iconesContato } from '../model/data';
 import '../styles/Style_Contact.css';
 
 function Contact() {
   return (
     <section className="contato" id="contato">
-      <div className="footer">
+      <footer className="footer">
         <div className="area-contato">
           <div className="semeia-code">
             <div className="logo-semeia">
@@ -23,8 +23,16 @@ function Contact() {
           <div className="fale-conosco">
             <h2>Fale conosco</h2>
             <div className="icones-contato">
-              <img src={iconesContato.whatsapp} alt="WhatsApp" />
-              <img src={iconesContato.instagram} alt="Instagram" />
+                {iconesContato.whatsapp.url ? (
+                  <a href={iconesContato.whatsapp.url} aria-label={iconesContato.whatsapp.label}>
+                    <img src={iconesContato.whatsapp.image} alt="" />
+                  </a>
+                ) : null}
+                {iconesContato.instagram.url ? (
+                  <a href={iconesContato.instagram.url} aria-label={iconesContato.instagram.label}>
+                    <img src={iconesContato.instagram.image} alt="" />
+                  </a>
+                ) : null}
             </div>
           </div>
 
@@ -42,7 +50,7 @@ function Contact() {
         </div>
 
         <Footer />
-      </div>
+      </footer>
     </section>
   );
 }
