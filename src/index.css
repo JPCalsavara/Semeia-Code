@@ -332,8 +332,8 @@ main > .home {
   .navbar.is-open .navbar-links {
     position: absolute;
     top: calc(100% + 8px);
-    left: 0;
-    right: 0;
+    left: -14px;
+    right: -14px;
     z-index: 2;
     padding: 16px 18px;
     background-color: rgba(19, 56, 117, 0.7);
