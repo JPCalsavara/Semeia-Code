@@ -48,7 +48,11 @@ function Content({ isVolunteer }: ContentProps) {
               ([semester, testimonials]) => (
                 <div className="semester-group" key={semester}>
                   <h3>{semester}</h3>
-                  <div className="cards-depoimento">
+                  <div
+                    className="cards-depoimento"
+                    tabIndex={0}
+                    aria-label={`Depoimentos de voluntários de ${semester}`}
+                  >
                     {testimonials.map((depoimento) => (
                       <blockquote key={depoimento.id}>
                         <div className="voluntario-foto">

@@ -218,8 +218,13 @@
   gap: 20px;
   overflow-x: auto;
   padding: 0 0 24px;
+  cursor: grab;
   scroll-snap-type: x mandatory;
   scrollbar-color: var(--amarelo-mostarda) transparent;
+}
+
+.cards-depoimento:active {
+  cursor: grabbing;
 }
 
 .depoimentos-voluntarios {

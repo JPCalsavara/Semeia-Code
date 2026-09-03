@@ -60,7 +60,7 @@ function Header({ isVolunteer, onToggleVolunteer }: HeaderProps) {
         <a href="#home" className="logo">
           <img
             src="/images/logos/Logo Semeia-Photoroom.png"
-            alt="Semeia Code"
+            alt=""
           />
           <span>
             SEMEIA
