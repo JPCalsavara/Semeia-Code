@@ -2,7 +2,7 @@ import { describe, expect, it } from "vitest";
 import {
   dadosDosVoluntarios,
   depoimentosVoluntario,
-  depoimentosVoluntarioPorSemestre,
+  membrosVoluntarioPorSemestre,
   empresasParceiras,
 } from "./data";
 
@@ -15,8 +15,6 @@ describe("conteudo editorial", () => {
       expect(testimonial.company).toBeTruthy();
       expect(testimonial.roleYear).toBeTruthy();
       expect(testimonial.text).toBeTruthy();
-      expect(testimonial).toHaveProperty("semester");
-      expect(testimonial).toHaveProperty("image");
     }
   });
 
@@ -26,13 +24,19 @@ describe("conteudo editorial", () => {
   });
 
   it("organiza dois membros por semestre", () => {
-    expect(Object.keys(depoimentosVoluntarioPorSemestre)).toEqual([
+    expect(Object.keys(membrosVoluntarioPorSemestre)).toEqual([
       "2025.1",
       "2025.2",
     ]);
 
-    for (const testimonials of Object.values(depoimentosVoluntarioPorSemestre)) {
-      expect(testimonials).toHaveLength(2);
+    for (const members of Object.values(membrosVoluntarioPorSemestre)) {
+      expect(members).toHaveLength(2);
+      for (const member of members) {
+        expect(member.name).toBeTruthy();
+        expect(member.role).toBeTruthy();
+        expect(member.company).toBeTruthy();
+        expect(member).toHaveProperty("image");
+      }
     }
   });
 });

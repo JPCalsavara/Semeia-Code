@@ -262,6 +262,79 @@
   color: var(--azul-escuro);
 }
 
+.membros-semestre {
+  width: 100%;
+  max-width: none;
+  margin-top: 72px;
+  padding: 48px 0;
+  border-top: 1px solid rgba(255, 243, 163, 0.3);
+}
+
+.membros-semestre > h2 {
+  margin-bottom: 36px;
+  color: var(--amarelo-mostarda);
+  font-size: 3rem;
+  text-align: center;
+}
+
+.membros-semestre-lista {
+  display: grid;
+  gap: 36px;
+  max-width: var(--conteudo-maximo);
+  margin: 0 auto;
+}
+
+.cards-membros {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.card-membro {
+  display: grid;
+  grid-template-columns: 96px 1fr;
+  align-items: center;
+  column-gap: 20px;
+  padding: 22px;
+  border-radius: 16px;
+  background: var(--azul-claro);
+  color: var(--azul-escuro);
+}
+
+.membro-foto {
+  grid-row: span 3;
+  width: 88px;
+  height: 88px;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  border: 4px solid var(--amarelo-mostarda);
+  border-radius: 50%;
+  background: var(--branco);
+  color: var(--azul-escuro);
+  font-size: 3rem;
+  font-weight: 700;
+}
+
+.membro-foto img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card-membro h4 {
+  font-size: 1.8rem;
+}
+
+.card-membro p,
+.card-membro > span {
+  font-size: 1.4rem;
+}
+
+.card-membro > span {
+  color: var(--verde);
+}
+
 .voluntario-foto {
   width: 88px;
   height: 88px;
@@ -373,5 +446,13 @@
 
   .cards-depoimento blockquote {
     flex-basis: min(86vw, 360px);
+  }
+
+  .membros-semestre {
+    padding-inline: 1.5rem;
+  }
+
+  .cards-membros {
+    grid-template-columns: 1fr;
   }
 }

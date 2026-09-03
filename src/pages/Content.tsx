@@ -2,7 +2,8 @@ import SectionSchool from "./SectionSchool";
 import {
   dadosDosVoluntarios,
   depoimentosEscola,
-  depoimentosVoluntarioPorSemestre,
+  depoimentosVoluntario,
+  membrosVoluntarioPorSemestre,
   empresasParceiras,
 } from "../model/data";
 import "../styles/Style_Content.css";
@@ -43,38 +44,47 @@ function Content({ isVolunteer }: ContentProps) {
             <h2>Onde nossos voluntários atuam hoje</h2>
           </div>
 
-          <div className="depoimentos-voluntarios">
-            {Object.entries(depoimentosVoluntarioPorSemestre).map(
-              ([semester, testimonials]) => (
-                <div className="semester-group" key={semester}>
-                  <h3>{semester}</h3>
-                  <div
-                    className="cards-depoimento"
-                    tabIndex={0}
-                    aria-label={`Depoimentos de voluntários de ${semester}`}
-                  >
-                    {testimonials.map((depoimento) => (
-                      <blockquote key={depoimento.id}>
-                        <div className="voluntario-foto">
-                          {depoimento.image ? (
-                            <img src={depoimento.image} alt={`Foto de ${depoimento.name}`} />
-                          ) : (
-                            <span aria-hidden="true">{depoimento.name.charAt(0)}</span>
-                          )}
-                        </div>
-                        <p>{depoimento.text}</p>
-                        <footer>
-                          <strong>{depoimento.name}</strong>
-                          <span>{depoimento.company}</span>
-                          <span>{depoimento.roleYear}</span>
-                        </footer>
-                      </blockquote>
-                    ))}
-                  </div>
-                </div>
-              ),
-            )}
+          <div className="cards-depoimento">
+            {depoimentosVoluntario.map((depoimento) => (
+              <blockquote key={depoimento.id}>
+                <p>{depoimento.text}</p>
+                <footer>
+                  <strong>{depoimento.name}</strong>
+                  <span>{depoimento.roleYear}</span>
+                  <span>{depoimento.company}</span>
+                </footer>
+              </blockquote>
+            ))}
           </div>
+
+          <section className="membros-semestre" aria-labelledby="membros-titulo">
+            <h2 id="membros-titulo">Membros por semestre</h2>
+            <div className="membros-semestre-lista">
+              {Object.entries(membrosVoluntarioPorSemestre).map(
+                ([semester, members]) => (
+                  <div className="semester-group" key={semester}>
+                    <h3>{semester}</h3>
+                    <div className="cards-membros">
+                      {members.map((member) => (
+                        <article className="card-membro" key={member.id}>
+                          <div className="membro-foto">
+                            {member.image ? (
+                              <img src={member.image} alt={`Foto de ${member.name}`} />
+                            ) : (
+                              <span aria-hidden="true">{member.name.charAt(0)}</span>
+                            )}
+                          </div>
+                          <h4>{member.name}</h4>
+                          <p>{member.role}</p>
+                          <span>{member.company}</span>
+                        </article>
+                      ))}
+                    </div>
+                  </div>
+                ),
+              )}
+            </div>
+          </section>
         </>
       ) : (
         <>
