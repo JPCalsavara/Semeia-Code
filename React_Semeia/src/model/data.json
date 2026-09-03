@@ -105,7 +105,6 @@
       "description": "Estruturação de um conselho consultivo para acompanhar o projeto e apoiar novos coordenadores."
     }
   ],
-  "partnerCompanies": ["iFood", "EloGroup", "Nubank", "Samsung"],
   "contacts": {
     "whatsapp": {
       "label": "Fale conosco pelo WhatsApp",

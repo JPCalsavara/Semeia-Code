@@ -265,29 +265,9 @@
 .areas-atuacao h2 {
   font-size: 20px;
   color: var(--branco);
-  margin-top: 120px;
+  margin-top: 80px;
   text-transform: uppercase;
   text-align: center;
-}
-
-.empresas {
-  margin-top: 20px;
-  color: var(--branco);
-  display: flex;
-  gap: 30px;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-  font-size: 35px;
-}
-
-.empresa {
-  background-color: var(--amarelo-mostarda);
-  width: min(250px, 100%);
-  padding: 14px 0;
-  border-radius: 50px;
-  text-align: center;
-  border: 1px solid #f8d167;
 }
 
 /* Responsive */
@@ -321,8 +301,4 @@
     padding: 24px 18px;
   }
 
-  .empresas {
-    gap: 16px;
-    font-size: 2.4rem;
-  }
 }
