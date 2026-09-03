@@ -267,7 +267,7 @@
   width: 100%;
   max-width: none;
   margin-top: 72px;
-  padding: 48px 0;
+  padding: 48px max(1.5rem, 2vw);
   border-top: 1px solid rgba(255, 243, 163, 0.3);
 }
 
@@ -289,13 +289,16 @@
   display: flex;
   overflow-x: auto;
   gap: 20px;
+  width: 100%;
   padding-bottom: 16px;
+  overscroll-behavior-inline: contain;
   scroll-snap-type: x mandatory;
   scrollbar-color: var(--amarelo-mostarda) transparent;
 }
 
 .card-membro {
   flex: 0 0 calc((100% - 20px) / 2);
+  min-width: 0;
   scroll-snap-align: start;
   display: grid;
   grid-template-columns: 96px 1fr;
@@ -442,6 +445,13 @@
   }
 
   .card-membro {
-    flex-basis: min(84vw, 340px);
+    flex: 0 0 100%;
+    grid-template-columns: 80px minmax(0, 1fr);
+    padding: 18px;
+  }
+
+  .membro-foto {
+    width: 72px;
+    height: 72px;
   }
 }
