@@ -73,22 +73,22 @@
     {
       "id": "volunteer-testimonial-1",
       "memberId": "member-2025-1-joao",
-      "text": "O projeto fundamental para o mim apreender a liderar, aprender na prática a aprender, criar processos, errar, acertar e ir evoluindo junto com o projeto"
+      "text": "O projeto foi fundamental para mim aprender a liderar, aprender na prática a aprender, criar processos, errar, acertar e ir evoluindo junto com o projeto."
     },
     {
       "id": "volunteer-testimonial-2",
-      "memberId": "member-2025-1-gustavo",
-      "text": "O projeto fundamental para o mim apreender a liderar, aprender na prática a aprender, criar processos, errar, acertar e ir evoluindo junto com o projeto"
+      "memberId": "member-2025-1-renan",
+      "text": "Vivenciar o ensino de tecnologia nas escolas públicas foi uma experiência enriquecedora que fortaleceu minhas habilidades de comunicação e trabalho em equipe."
     },
     {
       "id": "volunteer-testimonial-3",
-      "memberId": "member-2025-2-renan",
-      "text": "O projeto fundamental para o mim apreender a liderar, aprender na prática a aprender, criar processos, errar, acertar e ir evoluindo junto com o projeto"
+      "memberId": "member-2025-2-celio",
+      "text": "Poder contribuir diretamente com o aprendizado de jovens e ver o brilho no olho deles ao executarem o primeiro código não tem preço."
     },
     {
       "id": "volunteer-testimonial-4",
-      "memberId": "member-2025-2-celio",
-      "text": "O projeto fundamental para o mim apreender a liderar, aprender na prática a aprender, criar processos, errar, acertar e ir evoluindo junto com o projeto"
+      "memberId": "member-2025-2-daniel",
+      "text": "Evoluí imensamente como profissional e como pessoa. O Semeia Code gera um impacto real na comunidade e na nossa formação."
     }
   ],
   "volunteerMembers": [
@@ -101,19 +101,27 @@
       "image": null
     },
     {
-      "id": "member-2025-1-gustavo",
+      "id": "member-2025-1-renan",
       "semester": "2025.1",
-      "name": "Gustavo",
-      "company": "Sansung",
+      "name": "Renan Rodrigues",
+      "company": "iFood",
+      "role": "Professor",
+      "image": null
+    },
+    {
+      "id": "member-2025-1-gabriel",
+      "semester": "2025.1",
+      "name": "Gabriel Reis",
+      "company": "Arco",
       "role": "Monitor",
       "image": null
     },
     {
-      "id": "member-2025-2-renan",
+      "id": "member-2025-2-samuel",
       "semester": "2025.2",
-      "name": "Renan Rodrigues",
-      "company": "Ifood",
-      "role": "Professor",
+      "name": "Samuel Lima",
+      "company": "Raízen",
+      "role": "Monitor",
       "image": null
     },
     {
@@ -122,6 +130,126 @@
       "name": "Celio",
       "company": "Nubank",
       "role": "Professor",
+      "image": null
+    },
+    {
+      "id": "member-2025-2-daniel",
+      "semester": "2025.2",
+      "name": "Daniel",
+      "company": "Elo Group",
+      "role": "Professor",
+      "image": null
+    },
+    {
+      "id": "member-2025-2-vinicius",
+      "semester": "2025.2",
+      "name": "Vinícius Romão",
+      "company": null,
+      "role": "Monitor",
+      "image": null
+    },
+    {
+      "id": "member-2025-2-maria",
+      "semester": "2025.2",
+      "name": "Maria",
+      "company": null,
+      "role": "Monitor",
+      "image": null
+    },
+    {
+      "id": "member-2025-2-alex",
+      "semester": "2025.2",
+      "name": "Alex",
+      "company": null,
+      "role": "Professor",
+      "image": null
+    },
+    {
+      "id": "member-2026-1-joao-guilherme",
+      "semester": "2026.1",
+      "name": "João Guilherme",
+      "company": null,
+      "role": "Professor",
+      "image": null
+    },
+    {
+      "id": "member-2026-2-daniel-aniceto",
+      "semester": "2026.2",
+      "name": "Daniel Aniceto",
+      "company": null,
+      "role": "Diretor Executivo",
+      "image": null
+    },
+    {
+      "id": "member-2026-2-vinicius-romao",
+      "semester": "2026.2",
+      "name": "Vinícius Romão",
+      "company": null,
+      "role": "Diretor Educacional",
+      "image": null
+    },
+    {
+      "id": "member-2026-2-alex",
+      "semester": "2026.2",
+      "name": "Alex",
+      "company": null,
+      "role": "Professor",
+      "image": null
+    },
+    {
+      "id": "member-2026-2-guilherme",
+      "semester": "2026.2",
+      "name": "Guilherme",
+      "company": null,
+      "role": "Professor",
+      "image": null
+    },
+    {
+      "id": "member-2026-2-rafael-s",
+      "semester": "2026.2",
+      "name": "Rafael S.",
+      "company": null,
+      "role": "Professor",
+      "image": null
+    },
+    {
+      "id": "member-2026-2-rafael-v",
+      "semester": "2026.2",
+      "name": "Rafael V.",
+      "company": null,
+      "role": "Professor",
+      "image": null
+    },
+    {
+      "id": "member-2026-2-kaua",
+      "semester": "2026.2",
+      "name": "Kauã",
+      "company": null,
+      "role": "Monitor",
+      "image": null
+    },
+    {
+      "id": "member-2026-2-luiza",
+      "semester": "2026.2",
+      "name": "Luiza",
+      "company": null,
+      "role": "Monitora",
+      "image": null
+    },
+    {
+      "id": "member-2026-2-thiago",
+      "semester": "2026.2",
+      "name": "Thiago",
+      "company": null,
+      "role": "Monitor",
+      "image": null
+    },
+    {
+      "id": "member-2026-2-yasmin",
+      "semester": "2026.2",
+      "name": "Yasmin",
+      "company": null,
+      "role": "Monitora",
       "image": null
     }
   ],
@@ -152,7 +280,7 @@
       "description": "Estruturação de um conselho consultivo para acompanhar o projeto e apoiar novos coordenadores."
     }
   ],
-  "partnerCompanies": ["iFood", "EloGroup", "Nubank", "Samsung"],
+  "partnerCompanies": ["iFood", "EloGroup", "Nubank", "Samsung", "Mottu", "Arco", "Raízen"],
   "contacts": {
     "whatsapp": {
       "label": "Fale conosco pelo WhatsApp",
@@ -161,7 +289,7 @@
     },
     "instagram": {
       "label": "Siga o Semeia Code no Instagram",
-      "url": null,
+      "url": "https://www.instagram.com/semeiacode/",
       "asset": "instagram"
     }
   }
