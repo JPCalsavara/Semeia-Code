@@ -138,8 +138,9 @@
   border-radius: 28px;
   padding: 55px 28px 45px;
   box-shadow: 0 12px 28px rgba(0, 0, 0, 0.4);
-  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
-              box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition:
+    transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   box-sizing: border-box;
 }
 
@@ -215,6 +216,7 @@
 .cards-depoimento {
   display: flex;
   gap: 20px;
+  flex-wrap: wrap;
 }
 
 .cards-depoimento p {
@@ -226,6 +228,37 @@
   font-size: 14px;
   box-shadow: 0 5px 10px #03162b;
   color: var(--azul-escuro);
+}
+
+.cards-depoimento blockquote {
+  flex: 1;
+  background-color: var(--branco);
+  margin-top: 40px;
+  border-radius: 12px;
+  padding: 40px 32px;
+  text-align: center;
+  font-size: 14px;
+  box-shadow: 0 5px 10px #03162b;
+  color: var(--azul-escuro);
+}
+
+.cards-depoimento blockquote p {
+  background: transparent;
+  margin: 0;
+  padding: 0;
+  box-shadow: none;
+}
+
+.cards-depoimento footer {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-top: 24px;
+  font-size: 1.3rem;
+}
+
+.cards-depoimento footer span {
+  color: var(--verde);
 }
 
 /* Areas de atuação (shared) */

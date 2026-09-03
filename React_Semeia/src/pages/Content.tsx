@@ -1,11 +1,11 @@
-import SectionSchool from './SectionSchool';
+import SectionSchool from "./SectionSchool";
 import {
   dadosDosVoluntarios,
   depoimentosEscola,
   depoimentosVoluntario,
-  empresasParceiras
-} from '../model/data';
-import '../styles/Style_Content.css';
+  empresasParceiras,
+} from "../model/data";
+import "../styles/Style_Content.css";
 
 type ContentProps = { isVolunteer: boolean };
 
@@ -41,7 +41,14 @@ function Content({ isVolunteer }: ContentProps) {
 
           <div className="cards-depoimento">
             {depoimentosVoluntario.map((depoimento) => (
-              <p key={depoimento.id}>{depoimento.text}</p>
+              <blockquote key={depoimento.id}>
+                <p>{depoimento.text}</p>
+                <footer>
+                  <strong>{depoimento.name}</strong>
+                  <span>{depoimento.company}</span>
+                  <span>{depoimento.roleYear}</span>
+                </footer>
+              </blockquote>
             ))}
           </div>
         </>
@@ -56,10 +63,7 @@ function Content({ isVolunteer }: ContentProps) {
 
           <div className="depoimentos">
             {depoimentosEscola.map((depoimento) => (
-              <div
-                key={depoimento.id}
-                className="depoimento"
-              >
+              <div key={depoimento.id} className="depoimento">
                 <p>{depoimento.text}</p>
               </div>
             ))}
