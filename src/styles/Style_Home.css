@@ -1,6 +1,5 @@
 .home {
   display: flex;
-  min-height: min(80vh, 760px);
   padding-top: clamp(150px, 22vh, 220px);
 }
 
@@ -45,7 +44,6 @@
 
 @media (max-width: 700px) {
   .home {
-    min-height: 680px;
     padding-top: 180px;
   }
 
