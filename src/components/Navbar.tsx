@@ -3,6 +3,9 @@ type NavbarProps = {
   onToggleVolunteer: () => void;
   activeSection: string;
   onLinkClick?: (sectionId: string) => void;
+  isMenuOpen: boolean;
+  onToggleMenu: () => void;
+  onCloseMenu: () => void;
 };
 
 function Navbar({
@@ -10,6 +13,9 @@ function Navbar({
   onToggleVolunteer,
   activeSection,
   onLinkClick,
+  isMenuOpen,
+  onToggleMenu,
+  onCloseMenu,
 }: NavbarProps) {
   const navItems = [
     { href: "#sobre", id: "sobre", label: "Sobre nós" },
@@ -20,15 +26,28 @@ function Navbar({
   ];
 
   return (
-    <nav className="navbar">
-      <div className="navbar-links">
+    <nav className={`navbar ${isMenuOpen ? "is-open" : ""}`}>
+      <button
+        type="button"
+        className="menu-toggle"
+        aria-expanded={isMenuOpen}
+        aria-controls="main-navigation-links"
+        onClick={onToggleMenu}
+      >
+        <span className="menu-toggle-icon" aria-hidden="true">☰</span>
+        <span>Menu</span>
+      </button>
+      <div id="main-navigation-links" className="navbar-links">
         {navItems.map((item) => (
           <a
             key={item.id}
             href={item.href}
             className={activeSection === item.id ? "active" : ""}
             aria-current={activeSection === item.id ? "location" : undefined}
-            onClick={() => onLinkClick && onLinkClick(item.id)}
+            onClick={() => {
+              onLinkClick?.(item.id);
+              onCloseMenu();
+            }}
           >
             {item.label}
           </a>
@@ -38,7 +57,10 @@ function Navbar({
       <div className="navbar-action">
         <button
           type="button"
-          onClick={onToggleVolunteer}
+          onClick={() => {
+            onToggleVolunteer();
+            onCloseMenu();
+          }}
           aria-pressed={isVolunteer}
           className="btn-volunteer"
         >

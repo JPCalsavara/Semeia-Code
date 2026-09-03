@@ -6,6 +6,7 @@ type HeaderProps = { isVolunteer: boolean; onToggleVolunteer: () => void };
 function Header({ isVolunteer, onToggleVolunteer }: HeaderProps) {
   const [scrolled, setScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState("");
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -40,6 +41,15 @@ function Header({ isVolunteer, onToggleVolunteer }: HeaderProps) {
     };
   }, []);
 
+  useEffect(() => {
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") setIsMenuOpen(false);
+    };
+
+    document.addEventListener("keydown", handleKeyDown);
+    return () => document.removeEventListener("keydown", handleKeyDown);
+  }, []);
+
   const handleLinkClick = (sectionId: string) => {
     setActiveSection(sectionId);
   };
@@ -47,7 +57,7 @@ function Header({ isVolunteer, onToggleVolunteer }: HeaderProps) {
   return (
     <header className={`header ${scrolled ? "scrolled" : ""}`}>
       <section>
-        <a href="#" className="logo">
+        <a href="#home" className="logo">
           <img
             src="/images/logos/Logo Semeia-Photoroom.png"
             alt="Semeia Code"
@@ -63,6 +73,9 @@ function Header({ isVolunteer, onToggleVolunteer }: HeaderProps) {
           onToggleVolunteer={onToggleVolunteer}
           activeSection={activeSection}
           onLinkClick={handleLinkClick}
+          isMenuOpen={isMenuOpen}
+          onToggleMenu={() => setIsMenuOpen((open) => !open)}
+          onCloseMenu={() => setIsMenuOpen(false)}
         />
       </section>
     </header>

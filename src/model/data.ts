@@ -46,6 +46,8 @@ export type VolunteerRole = {
 export type Testimonial = { id: string; text: string };
 export type VolunteerTestimonial = {
   id: string;
+  semester: string;
+  image: string | null;
   name: string;
   company: string;
   roleYear: string;
@@ -113,7 +115,18 @@ export const depoimentosVoluntario: VolunteerTestimonial[] =
       testimonial.company &&
       testimonial.roleYear &&
       testimonial.text,
-  );
+  ).map((testimonial) => ({
+    ...testimonial,
+    image: testimonial.image ?? null,
+  }));
+
+export const depoimentosVoluntarioPorSemestre = depoimentosVoluntario.reduce<
+  Record<string, VolunteerTestimonial[]>
+>((groups, testimonial) => {
+  groups[testimonial.semester] ??= [];
+  groups[testimonial.semester].push(testimonial);
+  return groups;
+}, {});
 export const dadosImpacto: ImpactData[] = rawData.impact;
 export const dadosLinhaDoTempo: TimelineData[] = rawData.timeline.map(
   (item) => ({

@@ -2,7 +2,7 @@ import SectionSchool from "./SectionSchool";
 import {
   dadosDosVoluntarios,
   depoimentosEscola,
-  depoimentosVoluntario,
+  depoimentosVoluntarioPorSemestre,
   empresasParceiras,
 } from "../model/data";
 import "../styles/Style_Content.css";
@@ -43,17 +43,33 @@ function Content({ isVolunteer }: ContentProps) {
             <h2>Onde nossos voluntários atuam hoje</h2>
           </div>
 
-          <div className="cards-depoimento">
-            {depoimentosVoluntario.map((depoimento) => (
-              <blockquote key={depoimento.id}>
-                <p>{depoimento.text}</p>
-                <footer>
-                  <strong>{depoimento.name}</strong>
-                  <span>{depoimento.company}</span>
-                  <span>{depoimento.roleYear}</span>
-                </footer>
-              </blockquote>
-            ))}
+          <div className="depoimentos-voluntarios">
+            {Object.entries(depoimentosVoluntarioPorSemestre).map(
+              ([semester, testimonials]) => (
+                <div className="semester-group" key={semester}>
+                  <h3>{semester}</h3>
+                  <div className="cards-depoimento">
+                    {testimonials.map((depoimento) => (
+                      <blockquote key={depoimento.id}>
+                        <div className="voluntario-foto">
+                          {depoimento.image ? (
+                            <img src={depoimento.image} alt={`Foto de ${depoimento.name}`} />
+                          ) : (
+                            <span aria-hidden="true">{depoimento.name.charAt(0)}</span>
+                          )}
+                        </div>
+                        <p>{depoimento.text}</p>
+                        <footer>
+                          <strong>{depoimento.name}</strong>
+                          <span>{depoimento.company}</span>
+                          <span>{depoimento.roleYear}</span>
+                        </footer>
+                      </blockquote>
+                    ))}
+                  </div>
+                </div>
+              ),
+            )}
           </div>
         </>
       ) : (
