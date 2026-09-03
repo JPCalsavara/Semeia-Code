@@ -130,7 +130,7 @@ export const depoimentosVoluntario: VolunteerTestimonial[] = rawData.volunteerTe
       memberId: member.id,
       name: member.name,
       company: member.company,
-      roleYear: member.role,
+      roleYear: `${member.role} - ${member.semester}`,
       text: testimonial.text,
     };
   })

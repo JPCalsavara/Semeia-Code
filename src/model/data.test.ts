@@ -14,6 +14,7 @@ describe("conteudo editorial", () => {
       expect(testimonial.name).toBeTruthy();
       expect(testimonial.company).toBeTruthy();
       expect(testimonial.roleYear).toBeTruthy();
+      expect(testimonial.roleYear).toContain("2025.");
       expect(testimonial.text).toBeTruthy();
       expect(testimonial.memberId).toBeTruthy();
       expect(
