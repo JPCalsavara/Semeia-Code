@@ -197,7 +197,7 @@ function Content({ isVolunteer }: ContentProps) {
             <h2>Onde Nossos Voluntários Atuam Hoje</h2>
             <div className="empresas">
               {empresasParceiras.map((empresa) => (
-                <div key={empresa} className="empresa-chip">
+                <div key={empresa} className="semester-badge">
                   <span>{empresa}</span>
                 </div>
               ))}
