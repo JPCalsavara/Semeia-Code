@@ -1,8 +1,12 @@
+import { useAudience } from "../context/AudienceContext";
 import "../styles/Style_Home.css";
 
-type HomeProps = { isVolunteer: boolean };
+type HomeProps = { isVolunteer?: boolean };
 
-function Home({ isVolunteer }: HomeProps) {
+function Home({ isVolunteer: propIsVolunteer }: HomeProps = {}) {
+  const audience = useAudience();
+  const isVolunteer = propIsVolunteer ?? audience.isVolunteer;
+
   return (
     <section id="home" className={`home ${isVolunteer ? "volunteer" : ""}`}>
       <div className="content">

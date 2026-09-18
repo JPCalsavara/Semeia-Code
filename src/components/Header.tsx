@@ -1,9 +1,19 @@
 import { useState, useEffect } from "react";
 import Navbar from "./Navbar";
+import { useAudience } from "../context/AudienceContext";
 
-type HeaderProps = { isVolunteer: boolean; onToggleVolunteer: () => void };
+type HeaderProps = {
+  isVolunteer?: boolean;
+  onToggleVolunteer?: () => void;
+};
 
-function Header({ isVolunteer, onToggleVolunteer }: HeaderProps) {
+function Header({
+  isVolunteer: propIsVolunteer,
+  onToggleVolunteer: propOnToggle,
+}: HeaderProps = {}) {
+  const audience = useAudience();
+  const isVolunteer = propIsVolunteer ?? audience.isVolunteer;
+  const onToggleVolunteer = propOnToggle ?? audience.toggleAudience;
   const [scrolled, setScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState("");
   const [isMenuOpen, setIsMenuOpen] = useState(false);

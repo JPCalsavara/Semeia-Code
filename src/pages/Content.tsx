@@ -1,17 +1,21 @@
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import SectionSchool from "./SectionSchool";
 import {
   dadosDosVoluntarios,
   depoimentosEscola,
   depoimentosVoluntario,
-  membrosVoluntarioPorSemestre,
+  getSemestresComMembrosOrdenados,
   empresasParceiras,
 } from "../model/data";
+import { useAudience } from "../context/AudienceContext";
 import "../styles/Style_Content.css";
 
-type ContentProps = { isVolunteer: boolean };
+type ContentProps = { isVolunteer?: boolean };
 
-function Content({ isVolunteer }: ContentProps) {
+function Content({ isVolunteer: propIsVolunteer }: ContentProps = {}) {
+  const audience = useAudience();
+  const isVolunteer = propIsVolunteer ?? audience.isVolunteer;
+
   const [sliderIndex, setSliderIndex] = useState(0);
   const totalDepoimentos = depoimentosVoluntario.length;
   const maxIndex = Math.max(0, totalDepoimentos - 3);
@@ -22,6 +26,24 @@ function Content({ isVolunteer }: ContentProps) {
 
   const handleNextDepoimento = () => {
     setSliderIndex((prev) => (prev < maxIndex ? prev + 1 : 0));
+  };
+
+  const semestresOrdenados = useMemo(
+    () => getSemestresComMembrosOrdenados(),
+    [],
+  );
+  const [semestreIndex, setSemestreIndex] = useState(0);
+  const totalSemestres = semestresOrdenados.length;
+  const currentSemesterEntry = semestresOrdenados[semestreIndex];
+  const currentSemester = currentSemesterEntry?.semester ?? "";
+  const currentMembers = currentSemesterEntry?.members ?? [];
+
+  const handlePrevSemestre = () => {
+    setSemestreIndex((prev) => (prev > 0 ? prev - 1 : totalSemestres - 1));
+  };
+
+  const handleNextSemestre = () => {
+    setSemestreIndex((prev) => (prev < totalSemestres - 1 ? prev + 1 : 0));
   };
 
   return (
@@ -135,40 +157,72 @@ function Content({ isVolunteer }: ContentProps) {
               <h2 id="membros-titulo">Todos os voluntários</h2>
             </div>
 
-            <div className="membros-semestre-lista">
-              {Object.entries(membrosVoluntarioPorSemestre)
-                .sort(([semesterA], [semesterB]) => semesterB.localeCompare(semesterA))
-                .map(([semester, members]) => (
-                  <div className="semester-group" key={semester}>
-                    <div className="semester-badge">Semestre {semester}</div>
-                    <div className="cards-membros">
-                      {members.map((member) => (
-                        <article className="card-membro" key={member.id}>
-                          <div className="membro-foto">
-                            {member.image ? (
-                              <img
-                                src={member.image}
-                                alt={`Foto de ${member.name}`}
-                              />
-                            ) : (
-                              <span aria-hidden="true">
-                                {member.name.charAt(0)}
-                              </span>
-                            )}
-                          </div>
-                          <div className="membro-info">
-                            <h4>{member.name}</h4>
-                            <p className="membro-cargo">{member.role}</p>
-                            {member.company && (
-                              <span className="membro-empresa">{member.company}</span>
-                            )}
-                          </div>
-                        </article>
-                      ))}
-                    </div>
-                  </div>
-                ))}
-            </div>
+            {currentSemester && (
+              <div className="semester-group" key={currentSemester}>
+                <div className="semester-badge">
+                  Semestre {currentSemester}
+                  {semestreIndex === 0 ? " (Atual)" : ""}
+                </div>
+                <div className="cards-membros">
+                  {currentMembers.map((member) => (
+                    <article className="card-membro" key={member.id}>
+                      <div className="membro-foto">
+                        {member.image ? (
+                          <img
+                            src={member.image}
+                            alt={`Foto de ${member.name}`}
+                          />
+                        ) : (
+                          <span aria-hidden="true">
+                            {member.name.charAt(0)}
+                          </span>
+                        )}
+                      </div>
+                      <div className="membro-info">
+                        <h4>{member.name}</h4>
+                        <p className="membro-cargo">{member.role}</p>
+                        {member.company && (
+                          <span className="membro-empresa">{member.company}</span>
+                        )}
+                      </div>
+                    </article>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {totalSemestres > 1 && (
+              <div className="slider-controles">
+                <button
+                  type="button"
+                  onClick={handlePrevSemestre}
+                  className="slider-btn prev"
+                  aria-label="Semestre anterior"
+                >
+                  ‹
+                </button>
+                <div className="slider-dots">
+                  {semestresOrdenados.map((group, idx) => (
+                    <button
+                      key={group.semester}
+                      type="button"
+                      className={`slider-dot ${idx === semestreIndex ? "active" : ""}`}
+                      onClick={() => setSemestreIndex(idx)}
+                      aria-label={`Ir para semestre ${group.semester}`}
+                      title={`Semestre ${group.semester}`}
+                    />
+                  ))}
+                </div>
+                <button
+                  type="button"
+                  onClick={handleNextSemestre}
+                  className="slider-btn next"
+                  aria-label="Próximo semestre"
+                >
+                  ›
+                </button>
+              </div>
+            )}
           </div>
         </>
       ) : (

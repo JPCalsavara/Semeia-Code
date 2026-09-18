@@ -67,6 +67,17 @@ export type TimelineData = {
   description: string;
   image: string;
 };
+export type DetailedTimelineItem = {
+  id: string;
+  semester?: string;
+  period: string;
+  title: string;
+  role: string;
+  location: string;
+  image: string;
+  description: string;
+  highlights: string[];
+};
 export type ContactData = { label: string; url: string | null; image: string };
 
 const assets: Record<AssetName, string> = {
@@ -154,8 +165,53 @@ export const dadosLinhaDoTempo: TimelineData[] = rawData.timeline.map(
     image: iconCirculoVerde,
   }),
 );
+export const dadosLinhaDoTempoVoluntario: DetailedTimelineItem[] =
+  rawData.volunteerTimeline;
 export const empresasParceiras = rawData.partnerCompanies;
 export const iconesContato: Record<"whatsapp" | "instagram", ContactData> = {
   whatsapp: { ...rawData.contacts.whatsapp, image: assets.whatsapp },
   instagram: { ...rawData.contacts.instagram, image: assets.instagram },
 };
+
+export type Audience = "schools" | "volunteers";
+
+export type SemesterMembersGroup = {
+  semester: string;
+  isCurrent: boolean;
+  members: VolunteerMember[];
+};
+
+export function getSemestresComMembrosOrdenados(): SemesterMembersGroup[] {
+  const semestres = Object.keys(membrosVoluntarioPorSemestre).sort((a, b) =>
+    b.localeCompare(a),
+  );
+
+  return semestres.map((semester, index) => ({
+    semester,
+    isCurrent: index === 0,
+    members: membrosVoluntarioPorSemestre[semester] ?? [],
+  }));
+}
+
+export function getLinhaDoTempo(audience: Audience | boolean) {
+  const isVol =
+    typeof audience === "boolean" ? audience : audience === "volunteers";
+  return isVol ? dadosLinhaDoTempoVoluntario : dadosLinhaDoTempo;
+}
+
+export function getDepoimentosVoluntarios(): VolunteerTestimonial[] {
+  return depoimentosVoluntario;
+}
+
+export function getDepoimentosEscola(): Testimonial[] {
+  return depoimentosEscola;
+}
+
+export function getPapeisVoluntario(): VolunteerRole[] {
+  return dadosDosVoluntarios;
+}
+
+export function getEscolasAtendidas(): SchoolData[] {
+  return dadosDasEscolas;
+}
+

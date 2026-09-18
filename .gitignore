@@ -22,3 +22,10 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Temporary test / scan reports
+diff.txt
+report.md
+sonar-report.json
+context_harness.json
+

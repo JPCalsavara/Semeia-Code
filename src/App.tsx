@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import Header from './components/Header';
 import Home from './pages/Home';
 import About from './pages/About';
@@ -6,26 +5,21 @@ import Content from './pages/Content';
 import Data from './pages/Data';
 import History from './pages/History';
 import Contact from './pages/Contact';
+import { AudienceProvider } from './context/AudienceProvider';
 
 function App() {
-  const [isVolunteer, setIsVolunteer] = useState(false);
-
-  const toggleVolunteer = () => {
-    setIsVolunteer((prev) => !prev);
-  };
-
   return (
-    <>
-      <Header isVolunteer={isVolunteer} onToggleVolunteer={toggleVolunteer} />
+    <AudienceProvider>
+      <Header />
       <main>
-        <Home isVolunteer={isVolunteer} />
+        <Home />
         <About />
-        <Content isVolunteer={isVolunteer} />
+        <Content />
         <Data />
         <History />
         <Contact />
       </main>
-    </>
+    </AudienceProvider>
   );
 }
 
