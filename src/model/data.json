@@ -87,7 +87,7 @@
     },
     {
       "id": "volunteer-testimonial-4",
-      "memberId": "member-2025-2-daniel",
+      "memberId": "member-2026-1-daniel",
       "text": "Evoluí imensamente como profissional e como pessoa. O Semeia Code gera um impacto real na comunidade e na nossa formação."
     }
   ],
@@ -133,22 +133,6 @@
       "image": null
     },
     {
-      "id": "member-2025-2-daniel",
-      "semester": "2025.2",
-      "name": "Daniel",
-      "company": "Elo Group",
-      "role": "Professor",
-      "image": null
-    },
-    {
-      "id": "member-2025-2-vinicius",
-      "semester": "2025.2",
-      "name": "Vinícius Romão",
-      "company": null,
-      "role": "Monitor",
-      "image": null
-    },
-    {
       "id": "member-2025-2-maria",
       "semester": "2025.2",
       "name": "Maria",
@@ -162,6 +146,22 @@
       "name": "Alex",
       "company": null,
       "role": "Professor",
+      "image": null
+    },
+    {
+      "id": "member-2026-1-daniel",
+      "semester": "2026.1",
+      "name": "Daniel",
+      "company": "Elo Group",
+      "role": "Professor",
+      "image": null
+    },
+    {
+      "id": "member-2026-1-vinicius",
+      "semester": "2026.1",
+      "name": "Vinícius Romão",
+      "company": null,
+      "role": "Monitor",
       "image": null
     },
     {
@@ -260,24 +260,107 @@
   ],
   "timeline": [
     {
-      "id": "foundation",
-      "title": "Fundação e estruturação",
-      "description": "Criação do projeto, identidade visual, redes sociais, material didático e prospecção das primeiras escolas."
+      "id": "2024-2",
+      "title": "2024.2: Fundação e estruturação",
+      "description": "Fundação do Semeia Code na FT Unicamp por João Calsavara e Prof. Dr. Guilherme Palermo, estruturando o projeto, metodologia e primeiras parcerias."
     },
     {
       "id": "2025-1",
-      "title": "2025.1: primeira edição",
-      "description": "Início das atividades práticas com 3 organizadores da Unicamp, impactando diretamente 18 alunos do ensino médio."
+      "title": "2025.1: Primeira turma na E. E. Ely",
+      "description": "Início das atividades práticas presenciais com 13 alunos do ensino médio, ministrando aulas de lógica e programação em Python."
     },
     {
       "id": "2025-2",
-      "title": "2025.2: expansão do projeto",
-      "description": "Crescimento da equipe para 7 membros e abertura de 2 turmas simultâneas, consolidando a gestão pedagógica."
+      "title": "2025.2: Expansão do projeto",
+      "description": "Aulas noturnas na E. E. Ely e edição especial na Nexus, ampliando a equipe voluntária e consolidando a gestão pedagógica."
     },
     {
-      "id": "transition",
-      "title": "Consolidação e transição",
-      "description": "Estruturação de um conselho consultivo para acompanhar o projeto e apoiar novos coordenadores."
+      "id": "2026-1",
+      "title": "2026.1: Recorde de 40 alunos e transição",
+      "description": "Entrada de Daniel e Vinícius Romão, maior classe da história com 40 alunos simultâneos e início da transição de liderança do projeto."
+    },
+    {
+      "id": "2026-2",
+      "title": "2026.2: Escola Brasil - Prog 1 e Prog 2",
+      "description": "Atuação na Escola Estadual Brasil com 2 cursos distintos (Prog 1 e Prog 2) com mais de 15 alunos em cada turma, sob a liderança de Daniel e Vinícius Romão."
+    }
+  ],
+  "volunteerTimeline": [
+    {
+      "id": "2024-2-fundacao",
+      "semester": "2024.2",
+      "period": "Jul 2024 - Fev 2025",
+      "title": "Fundação e Estruturação",
+      "role": "Fundadores: João Calsavara e Prof. Dr. Guilherme Palermo",
+      "location": "FT Unicamp · Limeira, SP",
+      "image": "/images/fotos/ComeçoSemeiaCode.jpg",
+      "description": "Concepção e estruturação do projeto de extensão Semeia Code na Faculdade de Tecnologia da Unicamp, fundado por João Calsavara e pelo Prof. Dr. Guilherme Palermo. A etapa inicial foi dedicada à escrita científica, estruturação pedagógica e seleção dos primeiros voluntários.",
+      "highlights": [
+        "Fundação oficial por João Calsavara e pelo Prof. Dr. Guilherme Palermo na FT Unicamp.",
+        "Escrita científica e formatação do projeto de extensão universitária.",
+        "Definição do modelo pedagógico e prospecção das primeiras escolas públicas parceiras."
+      ]
+    },
+    {
+      "id": "2025-1-primeira-turma",
+      "semester": "2025.1",
+      "period": "Mar 2025 - Jun 2025",
+      "title": "1ª Turma na E. E. Ely",
+      "role": "Professor e Coordenador: João Calsavara",
+      "location": "E. E. Ely · Limeira, SP",
+      "image": "/images/fotos/PrimeiraTurmaSemeia.jpg",
+      "description": "Início das atividades presenciais com a primeira turma na E. E. Ely em Limeira, ministrando 8 aulas práticas de lógica e programação em Python com apoio dedicado de voluntários.",
+      "highlights": [
+        "Primeira turma concluída com 13 alunos atendidos na E. E. Ely.",
+        "8 aulas práticas ministradas em laboratório com fundamentos de Python.",
+        "Atuação pioneira de universitários como professores e monitores em sala de aula."
+      ]
+    },
+    {
+      "id": "2025-2-segunda-turma",
+      "semester": "2025.2",
+      "period": "Jul 2025 - Dez 2025",
+      "title": "2ª Turma e Expansão",
+      "role": "Coordenador Executivo e Educacional: João Calsavara",
+      "location": "Limeira, SP",
+      "image": "/images/fotos/SegundaTurmaSemeia.jpg",
+      "description": "Expansão das atividades do projeto, implantação de turmas no período noturno na E. E. Ely e realização de aula especial na Nexus, organização voltada para jovens com altas habilidades.",
+      "highlights": [
+        "Reestruturação dos cargos internos, modelo de reuniões e processos seletivos.",
+        "Aulas no período noturno na E. E. Ely e aula especial na Nexus.",
+        "Condução dos processos seletivos de novos voluntários e amadurecimento pedagógico."
+      ]
+    },
+    {
+      "id": "2026-1-terceira-turma",
+      "semester": "2026.1",
+      "period": "Fev 2026 - Jul 2026",
+      "title": "3ª Turma: Recorde de Alunos e Entrada da Gestão",
+      "role": "Entrada na Equipe: Daniel e Vinícius Romão",
+      "location": "Limeira, SP",
+      "image": "/images/fotos/Turma.jpeg",
+      "description": "Entrada de Daniel e Vinícius Romão na equipe e realização da maior classe da história do projeto, atendendo 40 alunos da rede pública e marcando o início da transição de liderança.",
+      "highlights": [
+        "Entrada de Daniel e Vinícius Romão no projeto Semeia Code em 2026.1.",
+        "Maior classe da história do projeto com recorde de 40 alunos atendidos simultaneamente.",
+        "Primeira passagem de liderança do projeto para Vinícius Romão e Daniel."
+      ]
+    },
+    {
+      "id": "2026-2-quarta-turma",
+      "semester": "2026.2",
+      "period": "Ago 2026 - Presente",
+      "title": "Expansão na Escola Brasil: Prog 1 e Prog 2",
+      "role": "Diretoria: Daniel Aniceto e Vinícius Romão | Conselho: João Calsavara e Prof. Dr. Guilherme Palermo",
+      "location": "E. E. Brasil · Limeira, SP",
+      "image": "/images/fotos/AlunosEmSala.jpeg",
+      "description": "Consolidação da nova diretoria executiva e educacional com atuação na Escola Estadual Brasil, oferecendo simultaneamente dois cursos distintos (Prog 1 e Prog 2) com mais de 15 alunos em cada, totalizando mais de 30 jovens atendidos.",
+      "highlights": [
+        "Dois cursos simultâneos na Escola Estadual Brasil: Prog 1 e Prog 2.",
+        "Mais de 15 alunos matriculados em cada curso (mais de 30 alunos capacitados no semestre).",
+        "Plena gestão assumida por Daniel Aniceto (Diretor Executivo) e Vinícius Romão (Diretor Educacional), com 10 voluntários ativos.",
+        "Apoio consultivo contínuo dos fundadores João Calsavara e Prof. Dr. Guilherme Palermo."
+      ]
     }
   ],
   "partnerCompanies": ["iFood", "EloGroup", "Nubank", "Samsung", "Mottu", "Arco", "Raízen"],
