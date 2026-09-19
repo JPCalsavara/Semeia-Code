@@ -1,0 +1,89 @@
+.home {
+  width: 100%;
+  max-width: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: clamp(150px, 22vh, 220px);
+  position: relative;
+  isolation: isolate;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(15, 50, 108, 0.96) 0%,
+      rgba(15, 50, 108, 0.78) 48%,
+      rgba(15, 50, 108, 0.38) 100%
+    ),
+    url("/images/fotos/AlunosEmSala.jpeg") center / cover no-repeat;
+}
+
+.home::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(
+    180deg,
+    rgba(15, 50, 108, 0.2),
+    rgba(15, 50, 108, 0.55)
+  );
+}
+
+.content {
+  max-width: 70%;
+}
+
+.home.volunteer .content {
+  max-width: 100%;
+}
+
+.content .eyebrow {
+  color: var(--verde);
+  text-transform: uppercase;
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.content h1 {
+  color: var(--branco);
+  font-size: clamp(4rem, 5.5rem, 7.2rem);
+  line-height: 1.08;
+  margin-bottom: 12px;
+  max-width: 1000px;
+}
+
+.content span {
+  color: var(--amarelo-mostarda);
+}
+
+.content p {
+  color: var(--branco);
+  font-size: clamp(1.7rem, 2vw, 2.2rem);
+  line-height: 1.55;
+  max-width: 680px;
+}
+
+.home.volunteer .content p {
+  margin-top: 40px;
+}
+
+@media (max-width: 700px) {
+  .home {
+    padding-top: 180px;
+    background-position: 65% center;
+  }
+
+  .content {
+    max-width: 100%;
+  }
+
+  .content .eyebrow {
+    font-size: 1.5rem;
+    line-height: 1.4;
+  }
+
+  .content h1 {
+    font-size: clamp(3.4rem, 12vw, 5rem);
+  }
+}

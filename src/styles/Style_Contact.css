@@ -1,0 +1,162 @@
+.contato {
+  padding-bottom: 60px;
+}
+
+.footer {
+  background-color: var(--azul-navbar);
+  border-radius: 12px;
+  padding: 50px 100px;
+}
+
+.footer hr {
+  margin-top: 30px;
+  border: 0;
+  border-top: 3px solid #234b8c;
+}
+
+.footer h3 {
+  color: var(--azul-claro);
+  font-weight: 400;
+  margin-top: 20px;
+  text-align: center;
+  font-size: 14px;
+}
+
+.area-contato {
+  display: flex;
+  justify-content: space-between;
+  gap: 50px;
+}
+
+.semeia-code {
+  flex: 1.5;
+}
+
+.logo-semeia {
+  display: flex;
+  align-items: center;
+}
+
+.logo-semeia img {
+  height: 60px;
+}
+
+.logo-semeia h2 {
+  color: var(--branco);
+  font-size: 20px;
+  margin-left: 10px;
+}
+
+.texto-semeia p {
+  color: var(--azul-claro);
+  font-size: 18px;
+  width: 80%;
+  margin-top: 10px;
+  line-height: 1.5;
+}
+
+.fale-conosco {
+  flex: 1;
+  color: var(--branco);
+  font-size: 15px;
+}
+
+.fale-conosco h2 {
+  color: var(--branco);
+  font-size: 20px;
+}
+
+.icones-contato {
+  display: flex;
+  align-items: center;
+  margin-top: 15px;
+  gap: 16px;
+}
+
+.icone-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background-color: var(--azul);
+  box-shadow: 0 4px 12px rgba(10, 40, 85, 0.3);
+  transition: transform 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+  cursor: pointer;
+  padding: 8px;
+}
+
+.icone-link:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 18px rgba(10, 40, 85, 0.45);
+  background-color: #24559b;
+}
+
+.icone-link.whatsapp {
+  background-color: var(--verde);
+}
+
+.icone-link.whatsapp:hover {
+  background-color: #557959;
+}
+
+/* Control icon image size nicely */
+.icone-link img {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+  display: block;
+}
+
+.icones-contato a:focus-visible,
+.nav-contato a:focus-visible {
+  outline: 3px solid var(--amarelo-claro);
+  outline-offset: 3px;
+}
+
+.navegacao {
+  flex: 1;
+}
+
+.navegacao h2 {
+  color: var(--branco);
+  font-size: 20px;
+}
+
+.nav-contato {
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+}
+
+.nav-contato a {
+  color: var(--branco);
+  margin: 5px 0;
+  font-size: 15px;
+  background-color: var(--azul);
+  padding: 10px 15px;
+  text-align: left;
+  border-radius: 10px;
+  border: solid 1px #4287e7;
+  display: block;
+}
+
+.nav-contato a:hover {
+  background-color: #3878d4;
+}
+
+@media (max-width: 700px) {
+  .footer {
+    padding: 32px 24px;
+  }
+
+  .area-contato {
+    flex-direction: column;
+    gap: 32px;
+  }
+
+  .texto-semeia p {
+    width: 100%;
+  }
+}

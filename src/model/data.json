@@ -1,0 +1,397 @@
+{
+  "cards": [
+    {
+      "id": 1,
+      "title": "Ensino Gratuito",
+      "description": "Aulas de lógica e programação sem custo para escolas públicas parceiras.",
+      "asset": "plant"
+    },
+    {
+      "id": 2,
+      "title": "Voluntariado ativo",
+      "description": "Estudantes universitários como professores, monitores e referência.",
+      "asset": "handshake"
+    },
+    {
+      "id": 3,
+      "title": "Crescimento contínuo",
+      "description": "Um projeto que cresce a cada semestre com novas turmas e parcerias.",
+      "asset": "tree"
+    }
+  ],
+  "schools": [
+    {
+      "id": 1,
+      "name": "Prof. Roberto Paschoalick",
+      "image": "/images/fotos/AlunosEmSala.jpeg",
+      "color": "card-verde"
+    },
+    {
+      "id": 2,
+      "name": "Deputado Ary Pedroso",
+      "image": "/images/fotos/Turma.jpeg",
+      "color": "card-azul"
+    },
+    {
+      "id": 3,
+      "name": "Brasil",
+      "image": "/images/fotos/AlunosCertificado.jpeg",
+      "color": "card-verde"
+    }
+  ],
+  "volunteerRoles": [
+    {
+      "id": 1,
+      "titleLine1": "Professor(a)",
+      "titleLine2": "voluntário(a)",
+      "description": "Ministra as aulas de lógica e programação diretamente com os alunos.",
+      "asset": "school",
+      "color": "conteudo-azul",
+      "alt": "Ícone de professor voluntário"
+    },
+    {
+      "id": 2,
+      "titleLine1": "Monitor(a)",
+      "titleLine2": "voluntário(a)",
+      "description": "Apoia os professores no suporte aos alunos.",
+      "asset": "pencil",
+      "color": "conteudo-verde",
+      "alt": "Ícone de monitor voluntário"
+    },
+    {
+      "id": 3,
+      "titleLine1": "Marketing",
+      "titleLine2": null,
+      "description": "Cuida da comunicação do projeto.",
+      "asset": "marketing",
+      "color": "conteudo-azul",
+      "alt": "Ícone de marketing"
+    }
+  ],
+  "schoolTestimonials": [],
+  "volunteerTestimonials": [
+    {
+      "id": 1,
+      "memberId": 1,
+      "semester": "2025.1",
+      "text": "O projeto foi fundamental para mim aprender a liderar, aprender na prática a aprender, criar processos, errar, acertar e ir evoluindo junto com o projeto."
+    },
+    {
+      "id": 2,
+      "memberId": 2,
+      "semester": "2025.1",
+      "text": "O projeto fortaleceu meu currículo e ajudou em minhas entrevistas de processos seletivos com uma experiência real que causou impacto no ramo de tecnologia."
+    },
+    {
+      "id": 3,
+      "memberId": 7,
+      "semester": "2025.2",
+      "text": "Poder contribuir diretamente com o aprendizado de jovens e ver o brilho no olho deles ao executarem o primeiro código não tem preço."
+    },
+    {
+      "id": 4,
+      "memberId": 4,
+      "semester": "2026.1",
+      "text": "Evoluí imensamente como profissional e como pessoa. O Semeia Code gera um impacto real na comunidade e na nossa formação."
+    }
+  ],
+  "volunteerMembers": [
+    {
+      "id": 1,
+      "name": "João Calsavara",
+      "company": "Mottu",
+      "semestre": ["2025.1", "2025.2"],
+      "cargos": [
+        "Fundador, Professor e Coordenador",
+        "Coordenador Executivo e Educacional"
+      ],
+      "image": "/images/membros/JoaoCalsavara.jpg",
+      "linkedin": "https://www.linkedin.com/in/jo%C3%A3o-pedro-leite-calsavara-b951b6230/"
+    },
+    {
+      "id": 2,
+      "name": "Renan Rodrigues",
+      "company": "iFood",
+      "semestre": ["2025.1"],
+      "cargos": ["Professor"],
+      "image": "/images/membros/RenanRodrigues.jpeg",
+      "linkedin": "https://www.linkedin.com/in/renan-felipe-rodrigues/"
+    },
+    {
+      "id": 3,
+      "name": "Gabriel Reis",
+      "company": "Arco",
+      "semestre": ["2025.1"],
+      "cargos": ["Monitor"],
+      "image": null,
+      "linkedin": "https://www.linkedin.com/in/gabriel-reis-dev/"
+    },
+    {
+      "id": 4,
+      "name": "Daniel Aniceto",
+      "company": "Elo Group",
+      "semestre": ["2025.2", "2026.1", "2026.2"],
+      "cargos": ["Professor", "Professor", "Diretor Executivo"],
+      "image": "/images/membros/Daniel.jpeg",
+      "linkedin": "https://www.linkedin.com/in/daniel-aniceto-rosell-48bb48305/"
+    },
+    {
+      "id": 5,
+      "name": "Vinícius Romão",
+      "company": null,
+      "semestre": ["2025.2", "2026.1", "2026.2"],
+      "cargos": ["Professor", "Monitor", "Diretor Educacional"],
+      "image": "/images/membros/ViniciusRomão.jpeg",
+      "linkedin": "https://www.linkedin.com/in/viniciusromaoti/"
+    },
+    {
+      "id": 6,
+      "name": "Samuel Lima",
+      "company": "Raízen",
+      "semestre": ["2025.2"],
+      "cargos": ["Monitor"],
+      "image": null,
+      "linkedin": null
+    },
+    {
+      "id": 7,
+      "name": "Celio Junior",
+      "company": "Nubank",
+      "semestre": ["2025.2"],
+      "cargos": ["Professor"],
+      "image": null,
+      "linkedin": "https://www.linkedin.com/in/devcelio/"
+    },
+    {
+      "id": 8,
+      "name": "Maria Stella",
+      "company": null,
+      "semestre": ["2025.2"],
+      "cargos": ["Monitora"],
+      "image": null,
+      "linkedin": null
+    },
+    {
+      "id": 9,
+      "name": "Alex Freire",
+      "company": null,
+      "semestre": ["2025.2", "2026.2"],
+      "cargos": ["Professor", "Professor"],
+      "image": "/images/membros/AlexFreire.jpeg",
+      "linkedin": "https://www.linkedin.com/in/alex-freire-2b4150324/"
+    },
+    {
+      "id": 10,
+      "name": "João Guilherme",
+      "company": null,
+      "semestre": ["2026.1"],
+      "cargos": ["Professor"],
+      "image": "/images/membros/JohnGui.jpeg",
+      "linkedin": "https://www.linkedin.com/in/joaoguilhermefernandesfrota/"
+    },
+    {
+      "id": 11,
+      "name": "João Mamade",
+      "company": null,
+      "semestre": ["2026.1"],
+      "cargos": ["Professor"],
+      "image": null,
+      "linkedin": "https://www.linkedin.com/in/jo%C3%A3o-pedro-mamede-silva-a4121a266/"
+    },
+    {
+      "id": 12,
+      "name": "Gustavo",
+      "company": null,
+      "semestre": ["2026.1"],
+      "cargos": ["Professor"],
+      "image": "/images/membros/Gustavo.jpeg",
+      "linkedin": "https://www.linkedin.com/in/gustadmdev/"
+    },
+    {
+      "id": 13,
+      "name": "Rafael Santiago",
+      "company": null,
+      "semestre": ["2026.1", "2026.2"],
+      "cargos": ["Professor", "Professor"],
+      "image": "/images/membros/Santiago.jpeg",
+      "linkedin": "https://www.linkedin.com/in/rafaelsantiagodev/"
+    },
+    {
+      "id": 14,
+      "name": "Luiza Brum",
+      "company": null,
+      "semestre": ["2026.1", "2026.2"],
+      "cargos": ["Monitora", "Monitora"],
+      "image": "/images/membros/LuizaBrum.jpeg",
+      "linkedin": "https://www.linkedin.com/in/luiza-brum-pires-de-brito-798b15376/"
+    },
+    {
+      "id": 15,
+      "name": "Thiago Nakaba",
+      "company": null,
+      "semestre": ["2026.1", "2026.2"],
+      "cargos": ["Monitor", "Monitor"],
+      "image": "/images/membros/ThiagoNakaba.jpeg",
+      "linkedin": "https://www.linkedin.com/in/thiagonakaba/"
+    },
+    {
+      "id": 16,
+      "name": "Guilherme Massucatto",
+      "company": null,
+      "semestre": ["2026.2"],
+      "cargos": ["Professor"],
+      "image": "/images/membros/GuilhermeMassucatto.jpeg",
+      "linkedin": "https://www.linkedin.com/in/guilherme-stafocher-massucatto-10ab16376/"
+    },
+    {
+      "id": 17,
+      "name": "Rafael Vergueiro",
+      "company": null,
+      "semestre": ["2026.2"],
+      "cargos": ["Professor"],
+      "image": "/images/membros/RafaelLet.jpeg",
+      "linkedin": "https://www.linkedin.com/in/rafael-vribeiro7/"
+    },
+    {
+      "id": 18,
+      "name": "Kauã Andrade",
+      "company": null,
+      "semestre": ["2026.2"],
+      "cargos": ["Monitor"],
+      "image": "/images/membros/Kaua.jpeg",
+      "linkedin": "linkedin.com/in/kaua-silva-andrade/?lipi=urn%3Ali%3Apage%3Ad_flagship3_detail_base%3BbeQGRa8dR3uJ8F%2FWsQngBA%3D%3D"
+    },
+    {
+      "id": 19,
+      "name": "Yasmin Betioli",
+      "company": null,
+      "semestre": ["2026.2"],
+      "cargos": ["Monitora"],
+      "image": "/images/membros/YasminBetioli.jpeg",
+      "linkedin": null
+    }
+  ],
+  "impact": [
+    { "id": 1, "number": "50", "description": "alunos impactados" },
+    { "id": 2, "number": "10", "description": "organizadores" },
+    { "id": 3, "number": "2", "description": "turmas simultâneas" }
+  ],
+  "timeline": [
+    {
+      "id": 1,
+      "title": "2024.2: Fundação e estruturação",
+      "description": "Fundação do Semeia Code na FT Unicamp por João Calsavara e Prof. Dr. Guilherme Palermo, estruturando o projeto, metodologia e primeiras parcerias."
+    },
+    {
+      "id": 2,
+      "title": "2025.1: Primeira turma na E. E. Ely",
+      "description": "Início das atividades práticas presenciais com 13 alunos do ensino médio, ministrando aulas de lógica e programação em Python."
+    },
+    {
+      "id": 3,
+      "title": "2025.2: Expansão do projeto",
+      "description": "Aulas noturnas na E. E. Ely e edição especial na Nexus, ampliando a equipe voluntária e consolidando a gestão pedagógica."
+    },
+    {
+      "id": 4,
+      "title": "2026.1: Recorde de 40 alunos e transição",
+      "description": "Entrada de Daniel e Vinícius Romão, maior classe da história com 40 alunos simultâneos e início da transição de liderança do projeto."
+    },
+    {
+      "id": 5,
+      "title": "2026.2: Escola Brasil - Prog 1 e Prog 2",
+      "description": "Atuação na Escola Estadual Brasil com 2 cursos distintos (Prog 1 e Prog 2) com mais de 15 alunos em cada turma, sob a liderança de Daniel e Vinícius Romão."
+    }
+  ],
+  "volunteerTimeline": [
+    {
+      "id": 1,
+      "semester": "2024.2",
+      "period": "Jul 2024 - Fev 2025",
+      "title": "Fundação e Estruturação",
+      "role": "Fundadores: João Calsavara e Prof. Dr. Guilherme Palermo",
+      "location": "FT Unicamp · Limeira, SP",
+      "image": "/images/fotos/ComeçoSemeiaCode.jpg",
+      "description": "Concepção e estruturação do projeto de extensão Semeia Code na Faculdade de Tecnologia da Unicamp, fundado por João Calsavara e pelo Prof. Dr. Guilherme Palermo. A etapa inicial foi dedicada à escrita científica, estruturação pedagógica e seleção dos primeiros voluntários.",
+      "highlights": [
+        "Fundação oficial por João Calsavara e pelo Prof. Dr. Guilherme Palermo na FT Unicamp.",
+        "Escrita científica e formatação do projeto de extensão universitária.",
+        "Definição do modelo pedagógico e prospecção das primeiras escolas públicas parceiras."
+      ]
+    },
+    {
+      "id": 2,
+      "semester": "2025.1",
+      "period": "Mar 2025 - Jun 2025",
+      "title": "1ª Turma na E. E. Ely",
+      "role": "Professor e Coordenador: João Calsavara",
+      "location": "E. E. Ely · Limeira, SP",
+      "image": "/images/fotos/PrimeiraTurmaSemeia.jpg",
+      "description": "Início das atividades presenciais com a primeira turma na E. E. Ely em Limeira, ministrando 8 aulas práticas de lógica e programação em Python com apoio dedicado de voluntários.",
+      "highlights": [
+        "Primeira turma concluída com 13 alunos atendidos na E. E. Ely.",
+        "8 aulas práticas ministradas em laboratório com fundamentos de Python.",
+        "Atuação pioneira de universitários como professores e monitores em sala de aula."
+      ]
+    },
+    {
+      "id": 3,
+      "semester": "2025.2",
+      "period": "Jul 2025 - Dez 2025",
+      "title": "2ª Turma e Expansão",
+      "role": "Coordenador Executivo e Educacional: João Calsavara",
+      "location": "Limeira, SP",
+      "image": "/images/fotos/SegundaTurmaSemeia.jpg",
+      "description": "Expansão das atividades do projeto, implantação de turmas no período noturno na E. E. Ely e realização de aula especial na Nexus, organização voltada para jovens com altas habilidades.",
+      "highlights": [
+        "Reestruturação dos cargos internos, modelo de reuniões e processos seletivos.",
+        "Aulas no período noturno na E. E. Ely e aula especial na Nexus.",
+        "Condução dos processos seletivos de novos voluntários e amadurecimento pedagógico."
+      ]
+    },
+    {
+      "id": 4,
+      "semester": "2026.1",
+      "period": "Fev 2026 - Jul 2026",
+      "title": "3ª Turma: Recorde de Alunos e Entrada da Gestão",
+      "role": "Entrada na Equipe: Daniel e Vinícius Romão",
+      "location": "Limeira, SP",
+      "image": "/images/fotos/Turma.jpeg",
+      "description": "Entrada de Daniel e Vinícius Romão na equipe e realização da maior classe da história do projeto, atendendo 40 alunos da rede pública e marcando o início da transição de liderança.",
+      "highlights": [
+        "Entrada de Daniel e Vinícius Romão no projeto Semeia Code em 2026.1.",
+        "Maior classe da história do projeto com recorde de 40 alunos atendidos simultaneamente.",
+        "Primeira passagem de liderança do projeto para Vinícius Romão e Daniel."
+      ]
+    },
+    {
+      "id": 5,
+      "semester": "2026.2",
+      "period": "Ago 2026 - Presente",
+      "title": "Expansão na Escola Brasil: Prog 1 e Prog 2",
+      "role": "Diretoria: Daniel Aniceto e Vinícius Romão | Conselho: João Calsavara e Prof. Dr. Guilherme Palermo",
+      "location": "E. E. Brasil · Limeira, SP",
+      "image": "/images/fotos/AlunosEmSala.jpeg",
+      "description": "Consolidação da nova diretoria executiva e educacional com atuação na Escola Estadual Brasil, oferecendo simultaneamente dois cursos distintos (Prog 1 e Prog 2) com mais de 15 alunos em cada, totalizando mais de 30 jovens atendidos.",
+      "highlights": [
+        "Dois cursos simultâneos na Escola Estadual Brasil: Prog 1 e Prog 2.",
+        "Mais de 15 alunos matriculados em cada curso (mais de 30 alunos capacitados no semestre).",
+        "Plena gestão assumida por Daniel Aniceto (Diretor Executivo) e Vinícius Romão (Diretor Educacional), com 10 voluntários ativos.",
+        "Apoio consultivo contínuo dos fundadores João Calsavara e Prof. Dr. Guilherme Palermo."
+      ]
+    }
+  ],
+  "partnerCompanies": ["iFood", "EloGroup", "Nubank", "Samsung", "Mottu", "Arco", "Raízen"],
+  "contacts": {
+    "whatsapp": {
+      "label": "Fale conosco pelo WhatsApp",
+      "url": null,
+      "asset": "whatsapp"
+    },
+    "instagram": {
+      "label": "Siga o Semeia Code no Instagram",
+      "url": "https://www.instagram.com/semeiacode/",
+      "asset": "instagram"
+    }
+  }
+}
