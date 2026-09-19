@@ -1,3 +1,4 @@
+import { Analytics } from '@vercel/analytics/react';
 import Header from './components/Header';
 import Home from './pages/Home';
 import About from './pages/About';
@@ -19,6 +20,7 @@ function App() {
         <History />
         <Contact />
       </main>
+      <Analytics />
     </AudienceProvider>
   );
 }
