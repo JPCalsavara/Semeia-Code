@@ -6,9 +6,9 @@ function AboutClass() {
   return (
     <section className="sobre-aula" id="sobre-aula">
       <div className="sobre-aula-header">
-        <h2>Como Funcionam Nossas Aulas</h2>
+        <h2>Nossas aulas</h2>
         <p className="sobre-aula-subtitle">
-          Um processo totalmente colaborativo e prático que conecta a universidade às escolas públicas parceiras.
+          O processo é totalmente colaborativo: os universitários buscam ativamente as instituições parceiras, alinham o conteúdo pedagógico e agendam os melhores horários para as atividades.
         </p>
       </div>
 

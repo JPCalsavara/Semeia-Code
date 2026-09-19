@@ -14,17 +14,10 @@ function History({ isVolunteer: propIsVolunteer }: HistoryProps = {}) {
     <section className="historia" id="historia">
       <ScrollReveal>
         <div className="historia-header">
-          <h2>
-            {isVolunteer
-              ? "Nossa Trajetória e Evolução"
-              : "A História do Projeto, Semestre a Semestre"}
-          </h2>
-          {isVolunteer && (
-            <p className="historia-subtitle">
-              Da idealização científica às salas de aula: conheça como o Semeia
-              Code nasceu, cresceu e formou novos líderes.
-            </p>
-          )}
+          <h2>Linha do tempo</h2>
+          <p className="historia-subtitle">
+            A história do projeto, semestre a semestre
+          </p>
         </div>
       </ScrollReveal>
 

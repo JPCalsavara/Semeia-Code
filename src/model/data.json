@@ -385,7 +385,7 @@
   "contacts": {
     "whatsapp": {
       "label": "Fale conosco pelo WhatsApp",
-      "url": null,
+      "url": "https://wa.me/?text=Ol%C3%A1%2C+gostaria+de+saber+mais+sobre+o+Semeia+Code!",
       "asset": "whatsapp"
     },
     "instagram": {

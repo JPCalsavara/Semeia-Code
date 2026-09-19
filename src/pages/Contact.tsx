@@ -28,9 +28,9 @@ function Contact() {
           <div className="fale-conosco">
             <h2>Fale conosco</h2>
             <div className="icones-contato">
-              {iconesContato.whatsapp?.url ? (
+              {iconesContato.whatsapp && (
                 <a
-                  href={iconesContato.whatsapp.url}
+                  href={iconesContato.whatsapp.url || "https://wa.me/?text=Ol%C3%A1%2C+gostaria+de+saber+mais+sobre+o+Semeia+Code!"}
                   aria-label={iconesContato.whatsapp.label}
                   target="_blank"
                   rel="noopener noreferrer"
@@ -38,7 +38,7 @@ function Contact() {
                 >
                   <img src={iconesContato.whatsapp.image} alt={iconesContato.whatsapp.label} />
                 </a>
-              ) : null}
+              )}
               {iconesContato.instagram?.url ? (
                 <a
                   href={iconesContato.instagram.url}

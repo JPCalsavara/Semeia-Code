@@ -172,9 +172,9 @@ function Content({ isVolunteer: propIsVolunteer }: ContentProps = {}) {
         <>
           <ScrollReveal>
             <div className="conteudo-header">
-              <h2>Onde Você Pode Atuar</h2>
+              <h2>Onde você pode atuar</h2>
               <p className="conteudo-subtitle">
-                Conheça os papéis no Semeia Code e veja como voluntários transformam vidas e fortalecem suas habilidades.
+                Cargos abertos para quem quer somar ao projeto.
               </p>
             </div>
           </ScrollReveal>
@@ -374,9 +374,9 @@ function Content({ isVolunteer: propIsVolunteer }: ContentProps = {}) {
         <>
           <ScrollReveal>
             <div className="conteudo-header">
-              <h2>Cada Turma, Uma História</h2>
+              <h2>Cada turma, uma história</h2>
               <p className="conteudo-subtitle">
-                Registros e vivências das turmas de escolas públicas acompanhadas pelo Semeia Code.
+                Fotos e depoimentos de turmas que já passaram pelo projeto.
               </p>
             </div>
           </ScrollReveal>
@@ -398,7 +398,7 @@ function Content({ isVolunteer: propIsVolunteer }: ContentProps = {}) {
 
           <ScrollReveal>
             <div className="areas-atuacao">
-              <h2>Onde Nossos Voluntários Atuam Hoje</h2>
+              <h2>Onde nossos voluntários atuam hoje</h2>
               <div className="empresas">
                 {empresasParceiras.map((empresa) => (
                   <div key={empresa} className="semester-badge">

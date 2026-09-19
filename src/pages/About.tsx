@@ -11,7 +11,7 @@ function About() {
         <ScrollReveal>
           <div className="sobre-header">
             <span className="badge-tag">SOBRE O PROJETO</span>
-            <h2>Transformando vidas através da programação</h2>
+            <h2>Sobre nós</h2>
           </div>
         </ScrollReveal>
 
@@ -19,15 +19,15 @@ function About() {
           <ScrollReveal delay={0.1}>
             <div className="sobre-texto">
               <p className="lead-paragraph">
-                O <strong>Semeia Code</strong> nasceu dentro da <strong>Faculdade de Tecnologia Unicamp</strong> com a missão de aproximar estudantes de escolas públicas do universo da programação — de forma 100% gratuita e com acompanhamento próximo de voluntários.
+                O <strong>Semeia Code</strong> nasceu dentro da <strong>Faculdade de Tecnologia Unicamp</strong> com a missão de aproximar estudantes de escolas públicas do universo da programação, sem custo e com acompanhamento próximo de estudantes de tecnologia voluntários.
               </p>
 
               <p>
-                Acreditamos que ensinar lógica de programação é ensinar a <strong>resolver problemas</strong>, e que essa habilidade pode mudar o rumo de quem talvez nunca tivesse tido essa oportunidade.
+                Acreditamos que ensinar lógica de programação é ensinar a <strong>resolver problemas</strong>, e que essa habilidade pode mudar o rumo de quem talvez nunca tivesse tido essa chance.
               </p>
 
               <p>
-                Hoje, somos uma rede engajada que busca o apoio de escolas para semear conhecimento e despertar novos talentos em mentes jovens.
+                Hoje, somos uma rede que busca o apoio de escolas para semear conhecimento em mentes jovens.
               </p>
             </div>
           </ScrollReveal>
