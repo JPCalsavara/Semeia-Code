@@ -1,6 +1,4 @@
 import { useMemo, useState, useRef, PointerEvent } from "react";
-import { useLenis } from "lenis/react";
-import { AnimatePresence, motion, useReducedMotion } from "motion/react";
 import SectionSchool from "./SectionSchool";
 import {
   dadosDosVoluntarios,
@@ -12,7 +10,6 @@ import {
 import { useAudience } from "../context/AudienceContext";
 import { ScrollReveal } from "../components/effects/ScrollReveal";
 import { SpotlightCard } from "../components/effects/SpotlightCard";
-import { SemesterMembersTrack } from "../components/effects/SemesterMembersTrack";
 import "../styles/Style_Content.css";
 
 type ContentProps = { isVolunteer?: boolean };
@@ -20,8 +17,6 @@ type ContentProps = { isVolunteer?: boolean };
 function Content({ isVolunteer: propIsVolunteer }: ContentProps = {}) {
   const audience = useAudience();
   const isVolunteer = propIsVolunteer ?? audience.isVolunteer;
-  const lenis = useLenis();
-  const shouldReduceMotion = useReducedMotion();
 
   const depoimentosSliderRef = useRef<HTMLDivElement>(null);
   const [sliderIndex, setSliderIndex] = useState(0);
@@ -135,36 +130,6 @@ function Content({ isVolunteer: propIsVolunteer }: ContentProps = {}) {
     () => getSemestresComMembrosOrdenados(),
     [],
   );
-  const [semestreIndex, setSemestreIndex] = useState(0);
-  const totalSemestres = semestresOrdenados.length;
-  const currentSemesterEntry = semestresOrdenados[semestreIndex];
-  const currentSemester = currentSemesterEntry?.semester ?? "";
-  const currentMembers = currentSemesterEntry?.members ?? [];
-
-  const scrollToVoluntarios = () => {
-    const el = document.getElementById("membros-titulo");
-    if (!el) return;
-    if (lenis) {
-      lenis.scrollTo(el, { offset: -140, duration: 0.9 });
-    } else {
-      el.scrollIntoView({ behavior: "smooth", block: "start" });
-    }
-  };
-
-  const handlePrevSemestre = () => {
-    setSemestreIndex((prev) => (prev > 0 ? prev - 1 : totalSemestres - 1));
-    scrollToVoluntarios();
-  };
-
-  const handleNextSemestre = () => {
-    setSemestreIndex((prev) => (prev < totalSemestres - 1 ? prev + 1 : 0));
-    scrollToVoluntarios();
-  };
-
-  const handleSelectSemestre = (idx: number) => {
-    setSemestreIndex(idx);
-    scrollToVoluntarios();
-  };
 
   return (
     <section className="conteudo-escola" id="conteudo">
@@ -305,69 +270,69 @@ function Content({ isVolunteer: propIsVolunteer }: ContentProps = {}) {
             role="region"
             aria-labelledby="membros-titulo"
           >
-            <div className="secao-subtitulo">
-              <h2 id="membros-titulo">Todos os voluntários</h2>
-            </div>
-
-            <AnimatePresence mode="wait">
-              {currentSemester && (
-                <motion.div
-                  className="semester-group"
-                  key={currentSemester}
-                  initial={
-                    shouldReduceMotion
-                      ? false
-                      : { opacity: 0, y: 16, filter: "blur(6px)" }
-                  }
-                  animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-                  exit={
-                    shouldReduceMotion
-                      ? undefined
-                      : { opacity: 0, y: -16, filter: "blur(6px)" }
-                  }
-                  transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
-                >
-                  <SemesterMembersTrack
-                    members={currentMembers}
-                    semester={currentSemester}
-                    isCurrent={semestreIndex === 0}
-                  />
-                </motion.div>
-              )}
-            </AnimatePresence>
-
-            {totalSemestres > 1 && (
-              <div className="slider-controles">
-                <button
-                  type="button"
-                  onClick={handlePrevSemestre}
-                  className="slider-btn prev"
-                  aria-label="Semestre anterior"
-                >
-                  ‹
-                </button>
-                <div className="slider-dots">
-                  {semestresOrdenados.map((group, idx) => (
-                    <button
-                      key={group.semester}
-                      type="button"
-                      className={`slider-dot ${idx === semestreIndex ? "active" : ""}`}
-                      onClick={() => handleSelectSemestre(idx)}
-                      aria-label={`Ir para semestre ${group.semester}`}
-                      title={`Semestre ${group.semester}`}
-                    />
-                  ))}
-                </div>
-                <button
-                  type="button"
-                  onClick={handleNextSemestre}
-                  className="slider-btn next"
-                  aria-label="Próximo semestre"
-                >
-                  ›
-                </button>
+            <ScrollReveal>
+              <div className="secao-subtitulo">
+                <h2 id="membros-titulo">Todos os voluntários</h2>
               </div>
-            )}
+            </ScrollReveal>
+
+            <div className="membros-semestre-lista">
+              {semestresOrdenados.map((group) => (
+                <div className="semester-group" key={group.semester}>
+                  <div className="semester-badge">
+                    Semestre {group.semester}
+                    {group.isCurrent ? " (Atual)" : ""}
+                  </div>
+                  <div className="cards-membros">
+                    {group.members.map((member) => (
+                      <SpotlightCard className="card-membro" key={member.id}>
+                        <div className="membro-foto">
+                          {member.image ? (
+                            <img
+                              src={member.image}
+                              alt={`Foto de ${member.name}`}
+                              loading="lazy"
+                            />
+                          ) : (
+                            <span aria-hidden="true">
+                              {member.name.charAt(0)}
+                            </span>
+                          )}
+                        </div>
+                        <div className="membro-corpo">
+                          <div className="membro-info">
+                            <h4>{member.name}</h4>
+                            <p className="membro-cargo">{member.role}</p>
+                            {member.company && (
+                              <span className="membro-empresa">{member.company}</span>
+                            )}
+                          </div>
+                          {member.linkedin && (
+                            <a
+                              href={member.linkedin}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="membro-linkedin"
+                              aria-label={`Perfil no LinkedIn de ${member.name}`}
+                              title={`Perfil no LinkedIn de ${member.name}`}
+                            >
+                              <svg
+                                className="linkedin-icon"
+                                viewBox="0 0 24 24"
+                                fill="currentColor"
+                                aria-hidden="true"
+                              >
+                                <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                              </svg>
+                            </a>
+                          )}
+                        </div>
+                      </SpotlightCard>
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
         </>
       ) : (
