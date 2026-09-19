@@ -22,36 +22,31 @@
   "schools": [
     {
       "id": 1,
-      "name": "Prof. Roberto Paschoalick",
-      "image": "/images/fotos/AlunosEmSalaEscolaBrasil2026-1.jpeg",
-      "images": [
-        "/images/fotos/AlunosEmSalaEscolaBrasil2026-1.jpeg",
-        "/images/fotos/TurmaEly2025-1.jpeg",
-        "/images/fotos/PrimeiraTurmaSemeia.jpg"
-      ],
-      "color": "card-verde"
-    },
-    {
-      "id": 2,
-      "name": "Deputado Ary Pedroso",
+      "name": "Ely",
       "image": "/images/fotos/TurmaEly2025-1.jpeg",
       "images": [
-        "/images/fotos/TurmaEly2025-1.jpeg",
-        "/images/fotos/SegundaTurmaSemeia.jpg",
-        "/images/fotos/AlunosCertificadoEscolaBrasil2026.1.jpeg"
-      ],
+        "/images/fotos/TurmaEly2025-1.jpeg"],
       "color": "card-azul"
     },
     {
-      "id": 3,
+      "id": 2,
       "name": "Brasil",
       "image": "/images/fotos/AlunosCertificadoEscolaBrasil2026.1.jpeg",
       "images": [
         "/images/fotos/AlunosCertificadoEscolaBrasil2026.1.jpeg",
-        "/images/fotos/AlunosEmSalaEscolaBrasil2026-1.jpeg",
-        "/images/fotos/ComeçoSemeiaCode.jpg"
+        "/images/fotos/AlunosEmSalaEscolaBrasil2026-1.jpeg"
       ],
       "color": "card-verde"
+    },
+    {
+      "id": 3,
+      "name": "Nexus",
+      "image": "/images/fotos/AlunosCertificadoEscolaBrasil2026.1.jpeg",
+      "images": [
+        "/images/fotos/AlunosCertificadoEscolaBrasil2026.1.jpeg",
+        "/images/fotos/AlunosEmSalaEscolaBrasil2026-1.jpeg"
+      ],
+      "color": "card-azul"
     }
   ],
   "volunteerRoles": [
@@ -287,9 +282,9 @@
     }
   ],
   "impact": [
-    { "id": 1, "number": "50", "description": "alunos impactados" },
-    { "id": 2, "number": "10", "description": "organizadores" },
-    { "id": 3, "number": "2", "description": "turmas simultâneas" }
+    { "id": 1, "number": "80", "description": "alunos impactados" },
+    { "id": 2, "number": "18", "description": "Voluntários" },
+    { "id": 3, "number": "7", "description": "Turmas realizadas" }
   ],
   "timeline": [
     {

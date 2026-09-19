@@ -29,6 +29,11 @@
   gap: 1rem;
 }
 
+.linha-do-tempo > * {
+  position: relative;
+  z-index: 2;
+}
+
 /* Vertical line passing through the center of all dots (X = 18px) */
 .linha-do-tempo::before {
   content: "";
@@ -44,6 +49,7 @@
 
 .item-linha-tempo {
   position: relative;
+  z-index: 2;
   margin-bottom: 0;
   padding-left: 64px; /* Reserves space so cards NEVER overlap the dots */
   display: flex;
@@ -67,7 +73,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 2;
+  z-index: 3;
   box-shadow: 0 0 12px rgba(100, 141, 104, 0.4);
 }
 
