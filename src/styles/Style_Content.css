@@ -151,8 +151,7 @@
   overflow-y: hidden;
   border-radius: 20px;
   padding: 12px 4px;
-  scroll-behavior: smooth;
-  scroll-snap-type: x mandatory;
+  scroll-behavior: auto;
   -webkit-overflow-scrolling: touch;
   scrollbar-width: none;
   -ms-overflow-style: none;
@@ -167,8 +166,6 @@
 
 .cards-depoimento-slider.is-dragging {
   cursor: grabbing;
-  scroll-behavior: auto;
-  scroll-snap-type: none;
 }
 
 .cards-depoimento-track {
@@ -183,7 +180,6 @@
   max-width: 380px;
   flex: 0 0 370px;
   box-sizing: border-box;
-  scroll-snap-align: start;
   user-select: none;
   -webkit-user-select: none;
 }

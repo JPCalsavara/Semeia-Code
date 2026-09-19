@@ -1,4 +1,11 @@
-import { useMemo, useState, useRef, PointerEvent } from "react";
+import {
+  useMemo,
+  useState,
+  useRef,
+  useEffect,
+  useCallback,
+  PointerEvent,
+} from "react";
 import SectionSchool from "./SectionSchool";
 import {
   dadosDosVoluntarios,
@@ -19,111 +26,133 @@ function Content({ isVolunteer: propIsVolunteer }: ContentProps = {}) {
   const isVolunteer = propIsVolunteer ?? audience.isVolunteer;
 
   const depoimentosSliderRef = useRef<HTMLDivElement>(null);
-  const [sliderIndex, setSliderIndex] = useState(0);
+  const trackRef = useRef<HTMLDivElement>(null);
+  const isHoveredRef = useRef(false);
+  const isDraggingRef = useRef(false);
   const [isDraggingDepoimentos, setIsDraggingDepoimentos] = useState(false);
-  const totalDepoimentos = depoimentosVoluntario.length;
-  const holdIntervalRef = useRef<number | null>(null);
+  const dragStartRef = useRef<{ startX: number; scrollLeft: number }>({
+    startX: 0,
+    scrollLeft: 0,
+  });
 
-  const getCardStepWidth = () => {
-    if (!depoimentosSliderRef.current) return 370 + 24;
-    const card = depoimentosSliderRef.current.querySelector(".card-quote") as HTMLElement | null;
-    if (!card) return 370 + 24;
-    const gap = 24;
-    return card.offsetWidth + gap;
-  };
+  const repeatedDepoimentos = useMemo(() => {
+    return [0, 1, 2, 3].flatMap((setIndex) =>
+      depoimentosVoluntario.map((depoimento) => ({
+        ...depoimento,
+        loopKey: `loop-${setIndex}-${depoimento.id}`,
+      })),
+    );
+  }, []);
 
-  const scrollDepoimentoToIndex = (index: number) => {
-    if (!depoimentosSliderRef.current) return;
-    const step = getCardStepWidth();
-    depoimentosSliderRef.current.scrollTo({
-      left: index * step,
-      behavior: "smooth",
-    });
-    setSliderIndex(index);
-  };
+  const getSingleSetWidth = useCallback(() => {
+    if (!trackRef.current) return 0;
+    const cards = trackRef.current.querySelectorAll<HTMLElement>(".card-quote");
+    const total = depoimentosVoluntario.length;
+    if (cards.length >= total * 2 && cards[0] && cards[total]) {
+      const measured = cards[total].offsetLeft - cards[0].offsetLeft;
+      if (measured > 0) return measured;
+    }
+    return 0;
+  }, []);
 
-  const handlePrevDepoimento = () => {
-    const newIdx = sliderIndex > 0 ? sliderIndex - 1 : totalDepoimentos - 1;
-    scrollDepoimentoToIndex(newIdx);
-  };
+  useEffect(() => {
+    const container = depoimentosSliderRef.current;
+    if (!container) return;
 
-  const handleNextDepoimento = () => {
-    const newIdx = sliderIndex < totalDepoimentos - 1 ? sliderIndex + 1 : 0;
-    scrollDepoimentoToIndex(newIdx);
-  };
+    const initTimer = setTimeout(() => {
+      if (container) {
+        const singleWidth = getSingleSetWidth();
+        if (singleWidth > 0 && container.scrollLeft === 0) {
+          container.scrollLeft = singleWidth;
+        }
+      }
+    }, 60);
 
-  // Segurar para rolar continuamente (Apple MacBook Pro style)
-  const handleStartHold = (direction: "prev" | "next") => {
-    if (holdIntervalRef.current) clearInterval(holdIntervalRef.current);
-    if (direction === "next") handleNextDepoimento();
-    else handlePrevDepoimento();
+    const prefersReducedMotion = window.matchMedia(
+      "(prefers-reduced-motion: reduce)",
+    ).matches;
+    if (prefersReducedMotion) {
+      return () => clearTimeout(initTimer);
+    }
 
-    holdIntervalRef.current = window.setInterval(() => {
-      if (!depoimentosSliderRef.current) return;
-      const step = direction === "next" ? 14 : -14;
-      depoimentosSliderRef.current.scrollLeft += step;
-    }, 16);
-  };
+    let animationFrameId: number;
+    const speed = 0.6;
 
-  const handleStopHold = () => {
-    if (holdIntervalRef.current) {
-      clearInterval(holdIntervalRef.current);
-      holdIntervalRef.current = null;
-      if (depoimentosSliderRef.current) {
-        const step = getCardStepWidth();
-        const targetIdx = Math.round(depoimentosSliderRef.current.scrollLeft / step);
-        scrollDepoimentoToIndex(Math.max(0, Math.min(targetIdx, totalDepoimentos - 1)));
+    const step = () => {
+      if (
+        !isHoveredRef.current &&
+        !isDraggingRef.current &&
+        depoimentosSliderRef.current
+      ) {
+        depoimentosSliderRef.current.scrollLeft += speed;
+        const singleWidth = getSingleSetWidth();
+        if (singleWidth > 0) {
+          if (depoimentosSliderRef.current.scrollLeft >= singleWidth * 2) {
+            depoimentosSliderRef.current.scrollLeft -= singleWidth;
+          } else if (depoimentosSliderRef.current.scrollLeft <= 5) {
+            depoimentosSliderRef.current.scrollLeft += singleWidth;
+          }
+        }
+      }
+      animationFrameId = requestAnimationFrame(step);
+    };
+
+    animationFrameId = requestAnimationFrame(step);
+
+    return () => {
+      clearTimeout(initTimer);
+      cancelAnimationFrame(animationFrameId);
+    };
+  }, [getSingleSetWidth]);
+
+  const handleSliderScroll = () => {
+    const container = depoimentosSliderRef.current;
+    if (!container) return;
+    const singleWidth = getSingleSetWidth();
+    if (singleWidth > 0) {
+      if (container.scrollLeft >= singleWidth * 2) {
+        container.scrollLeft -= singleWidth;
+      } else if (container.scrollLeft <= 5) {
+        container.scrollLeft += singleWidth;
       }
     }
   };
 
-  // Drag-to-scroll com Pointer Events (arrastar segurando com o mouse/touch)
-  const dragStartRef = useRef<{ startX: number; scrollLeft: number; hasMoved: boolean }>({
-    startX: 0,
-    scrollLeft: 0,
-    hasMoved: false,
-  });
-
   const handlePointerDown = (e: PointerEvent<HTMLDivElement>) => {
     if (!depoimentosSliderRef.current) return;
+    isDraggingRef.current = true;
     setIsDraggingDepoimentos(true);
     dragStartRef.current = {
       startX: e.clientX,
       scrollLeft: depoimentosSliderRef.current.scrollLeft,
-      hasMoved: false,
     };
     depoimentosSliderRef.current.setPointerCapture(e.pointerId);
   };
 
   const handlePointerMove = (e: PointerEvent<HTMLDivElement>) => {
-    if (!isDraggingDepoimentos || !depoimentosSliderRef.current) return;
+    if (!isDraggingRef.current || !depoimentosSliderRef.current) return;
     const dx = e.clientX - dragStartRef.current.startX;
-    if (Math.abs(dx) > 4) {
-      dragStartRef.current.hasMoved = true;
-    }
-    depoimentosSliderRef.current.scrollLeft = dragStartRef.current.scrollLeft - dx;
+    depoimentosSliderRef.current.scrollLeft =
+      dragStartRef.current.scrollLeft - dx;
   };
 
   const handlePointerUp = (e: PointerEvent<HTMLDivElement>) => {
-    if (!isDraggingDepoimentos || !depoimentosSliderRef.current) return;
+    if (!isDraggingRef.current || !depoimentosSliderRef.current) return;
+    isDraggingRef.current = false;
     setIsDraggingDepoimentos(false);
     try {
       depoimentosSliderRef.current.releasePointerCapture(e.pointerId);
     } catch {
-      // Ignorado caso não tenha sido capturado
-    }
-    if (dragStartRef.current.hasMoved) {
-      const step = getCardStepWidth();
-      const targetIdx = Math.round(depoimentosSliderRef.current.scrollLeft / step);
-      scrollDepoimentoToIndex(Math.max(0, Math.min(targetIdx, totalDepoimentos - 1)));
+      // Ignored
     }
   };
 
-  const handleSliderScroll = () => {
-    if (!depoimentosSliderRef.current || isDraggingDepoimentos) return;
-    const step = getCardStepWidth();
-    const currentIdx = Math.round(depoimentosSliderRef.current.scrollLeft / step);
-    setSliderIndex(Math.max(0, Math.min(currentIdx, totalDepoimentos - 1)));
+  const handleMouseEnter = () => {
+    isHoveredRef.current = true;
+  };
+
+  const handleMouseLeave = () => {
+    isHoveredRef.current = false;
   };
 
   const semestresOrdenados = useMemo(
@@ -194,11 +223,13 @@ function Content({ isVolunteer: propIsVolunteer }: ContentProps = {}) {
                 onPointerMove={handlePointerMove}
                 onPointerUp={handlePointerUp}
                 onPointerCancel={handlePointerUp}
+                onMouseEnter={handleMouseEnter}
+                onMouseLeave={handleMouseLeave}
                 onScroll={handleSliderScroll}
               >
-                <div className="cards-depoimento-track">
-                  {depoimentosVoluntario.map((depoimento) => (
-                    <blockquote key={depoimento.id} className="card-quote">
+                <div ref={trackRef} className="cards-depoimento-track">
+                  {repeatedDepoimentos.map((depoimento) => (
+                    <blockquote key={depoimento.loopKey} className="card-quote">
                       <div className="quote-mark" aria-hidden="true">“</div>
                       <p className="quote-text">{depoimento.text}</p>
                       <footer className="card-depoimento-footer">
@@ -217,11 +248,9 @@ function Content({ isVolunteer: propIsVolunteer }: ContentProps = {}) {
                         <div className="author-info">
                           <strong className="author-name">{depoimento.name}</strong>
                           <span className="author-role">{depoimento.roleYear}</span>
-                          {depoimento.semesters && depoimento.semesters.length > 0 && (
+                          {depoimento.semester && (
                             <span className="author-semestres">
-                              {depoimento.semesters.length > 1
-                                ? `${depoimento.semesters[0]} - ${depoimento.semesters[depoimento.semesters.length - 1]}`
-                                : depoimento.semesters[0]}
+                              Semestre {depoimento.semester}
                             </span>
                           )}
                           {depoimento.company && (
@@ -233,48 +262,6 @@ function Content({ isVolunteer: propIsVolunteer }: ContentProps = {}) {
                   ))}
                 </div>
               </div>
-
-              {totalDepoimentos > 1 && (
-                <div className="slider-controles">
-                  <button
-                    type="button"
-                    onMouseDown={() => handleStartHold("prev")}
-                    onMouseUp={handleStopHold}
-                    onMouseLeave={handleStopHold}
-                    onTouchStart={() => handleStartHold("prev")}
-                    onTouchEnd={handleStopHold}
-                    className="slider-btn prev"
-                    aria-label="Depoimento anterior (segure para rolar)"
-                    title="Segure para rolar"
-                  >
-                    ‹
-                  </button>
-                  <div className="slider-dots">
-                    {depoimentosVoluntario.map((_, idx) => (
-                      <button
-                        key={idx}
-                        type="button"
-                        className={`slider-dot ${idx === sliderIndex ? "active" : ""}`}
-                        onClick={() => scrollDepoimentoToIndex(idx)}
-                        aria-label={`Ir para depoimento ${idx + 1}`}
-                      />
-                    ))}
-                  </div>
-                  <button
-                    type="button"
-                    onMouseDown={() => handleStartHold("next")}
-                    onMouseUp={handleStopHold}
-                    onMouseLeave={handleStopHold}
-                    onTouchStart={() => handleStartHold("next")}
-                    onTouchEnd={handleStopHold}
-                    className="slider-btn next"
-                    aria-label="Próximo depoimento (segure para rolar)"
-                    title="Segure para rolar"
-                  >
-                    ›
-                  </button>
-                </div>
-              )}
             </div>
           </div>
 

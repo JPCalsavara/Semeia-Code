@@ -49,6 +49,7 @@ export type VolunteerTestimonial = {
   memberId: string | number;
   name: string;
   image: string | null;
+  semester: string;
   semesters: string[];
   company: string | null;
   roleYear: string;
@@ -178,10 +179,11 @@ export const depoimentosVoluntario: VolunteerTestimonial[] =
       const member = membrosPorId.get(testimonial.memberId);
       if (!member || !testimonial.text.trim()) return null;
 
-      const semIndex =
+      const targetSemester =
         "semester" in testimonial && typeof testimonial.semester === "string"
-          ? member.semestre.indexOf(testimonial.semester)
-          : 0;
+          ? testimonial.semester
+          : member.semestre[0];
+      const semIndex = member.semestre.indexOf(targetSemester);
       const validIndex = semIndex !== -1 ? semIndex : 0;
       const role = member.cargos[validIndex] ?? "";
 
@@ -190,6 +192,7 @@ export const depoimentosVoluntario: VolunteerTestimonial[] =
         memberId: member.id,
         name: member.name,
         image: member.image,
+        semester: targetSemester,
         semesters: member.semestre,
         company: member.company,
         roleYear: role,

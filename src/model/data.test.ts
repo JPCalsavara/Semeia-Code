@@ -21,6 +21,7 @@ describe("conteudo editorial", () => {
       expect(testimonial.memberId !== undefined && testimonial.memberId !== null).toBe(true);
       expect(Array.isArray(testimonial.semesters)).toBe(true);
       expect(testimonial.semesters.length).toBeGreaterThan(0);
+      expect(testimonial.semester).toBeTruthy();
       expect(
         Object.values(membrosVoluntarioPorSemestre)
           .flat()
