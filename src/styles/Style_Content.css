@@ -147,36 +147,58 @@
 
 .cards-depoimento-slider {
   width: 100%;
-  overflow: hidden;
+  overflow-x: auto;
+  overflow-y: hidden;
   border-radius: 20px;
-  padding: 8px 0;
+  padding: 12px 4px;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  cursor: grab;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.cards-depoimento-slider::-webkit-scrollbar {
+  display: none;
+}
+
+.cards-depoimento-slider.is-dragging {
+  cursor: grabbing;
+  scroll-behavior: auto;
+  scroll-snap-type: none;
 }
 
 .cards-depoimento-track {
   display: flex;
   gap: 24px;
-  transition: transform 0.45s cubic-bezier(0.25, 1, 0.5, 1);
-  width: 100%;
+  width: max-content;
+  padding-bottom: 6px;
 }
 
 .cards-depoimento-track .card-quote {
-  /* Exactly 3 cards visible on desktop with 24px gap */
-  flex: 0 0 calc((100% - 48px) / 3);
-  min-width: calc((100% - 48px) / 3);
+  width: 370px;
+  max-width: 380px;
+  flex: 0 0 370px;
   box-sizing: border-box;
+  scroll-snap-align: start;
+  user-select: none;
+  -webkit-user-select: none;
 }
 
 @media (max-width: 900px) {
   .cards-depoimento-track .card-quote {
-    flex: 0 0 calc((100% - 24px) / 2);
-    min-width: calc((100% - 24px) / 2);
+    width: 340px;
+    flex: 0 0 340px;
   }
 }
 
 @media (max-width: 600px) {
   .cards-depoimento-track .card-quote {
-    flex: 0 0 100%;
-    min-width: 100%;
+    width: 85vw;
+    flex: 0 0 85vw;
   }
 }
 
