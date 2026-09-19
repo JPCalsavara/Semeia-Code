@@ -384,16 +384,79 @@
   }
 }
 
-.semester-badge {
-  align-self: flex-start;
-  background: rgba(255, 243, 163, 0.15);
-  color: var(--amarelo-claro);
-  border: 1px solid rgba(255, 243, 163, 0.35);
-  padding: 6px 16px;
+.semester-header-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.membros-scroll-controles {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.slider-btn.mini {
+  width: 36px;
+  height: 36px;
+  font-size: 2rem;
+}
+
+.cards-membros-slider {
+  width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
   border-radius: 20px;
-  font-size: 1.4rem;
-  font-weight: 700;
-  letter-spacing: 0.5px;
+  padding: 8px 4px 16px 4px;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  cursor: grab;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.cards-membros-slider::-webkit-scrollbar {
+  display: none;
+}
+
+.cards-membros-slider.is-dragging {
+  cursor: grabbing;
+  scroll-behavior: auto;
+  scroll-snap-type: none;
+}
+
+.cards-membros-track {
+  display: flex;
+  gap: 20px;
+  width: max-content;
+}
+
+.cards-membros-track .card-membro {
+  width: 216px;
+  max-width: 230px;
+  flex: 0 0 216px;
+  box-sizing: border-box;
+  scroll-snap-align: start;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+@media (max-width: 900px) {
+  .cards-membros-track .card-membro {
+    width: 190px;
+    flex: 0 0 190px;
+  }
+}
+
+@media (max-width: 600px) {
+  .cards-membros-track .card-membro {
+    width: 72vw;
+    flex: 0 0 72vw;
+  }
 }
 
 .cards-membros {
