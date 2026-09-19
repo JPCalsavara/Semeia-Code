@@ -8,6 +8,8 @@ import {
   empresasParceiras,
 } from "../model/data";
 import { useAudience } from "../context/AudienceContext";
+import { ScrollReveal } from "../components/effects/ScrollReveal";
+import { SpotlightCard } from "../components/effects/SpotlightCard";
 import "../styles/Style_Content.css";
 
 type ContentProps = { isVolunteer?: boolean };
@@ -50,40 +52,43 @@ function Content({ isVolunteer: propIsVolunteer }: ContentProps = {}) {
     <section className="conteudo-escola" id="conteudo">
       {isVolunteer ? (
         <>
-          <div className="conteudo-header">
-            <h2>Onde Você Pode Atuar</h2>
-            <p className="conteudo-subtitle">
-              Conheça os papéis no Semeia Code e veja como voluntários transformam vidas e fortalecem suas habilidades.
-            </p>
-          </div>
+          <ScrollReveal>
+            <div className="conteudo-header">
+              <h2>Onde Você Pode Atuar</h2>
+              <p className="conteudo-subtitle">
+                Conheça os papéis no Semeia Code e veja como voluntários transformam vidas e fortalecem suas habilidades.
+              </p>
+            </div>
+          </ScrollReveal>
 
           <div className="cards-conteudo">
-            {dadosDosVoluntarios.map((voluntario) => (
-              <div
-                key={voluntario.id}
-                className={`card-conteudo ${voluntario.color}`}
-              >
-                <picture>
-                  <img src={voluntario.image} alt={voluntario.alt} />
-                </picture>
-                <div className="card-conteudo-body">
-                  <h3 className="card-titulo">
-                    <span>{voluntario.titleLine1}</span>
-                    {voluntario.titleLine2 && (
-                      <span>{voluntario.titleLine2}</span>
-                    )}
-                  </h3>
-                  <p className="card-subtitulo">{voluntario.description}</p>
-                </div>
-              </div>
+            {dadosDosVoluntarios.map((voluntario, index) => (
+              <ScrollReveal key={voluntario.id} delay={index * 0.12}>
+                <SpotlightCard className={`card-conteudo ${voluntario.color}`}>
+                  <picture>
+                    <img src={voluntario.image} alt={voluntario.alt} />
+                  </picture>
+                  <div className="card-conteudo-body">
+                    <h3 className="card-titulo">
+                      <span>{voluntario.titleLine1}</span>
+                      {voluntario.titleLine2 && (
+                        <span>{voluntario.titleLine2}</span>
+                      )}
+                    </h3>
+                    <p className="card-subtitulo">{voluntario.description}</p>
+                  </div>
+                </SpotlightCard>
+              </ScrollReveal>
             ))}
           </div>
 
           <div className="secao-depoimentos-voluntarios">
-            <div className="secao-subtitulo">
-              <h2>Vozes da Nossa Comunidade</h2>
-              <p>Histórias de quem viveu a experiência de ensinar e liderar no projeto.</p>
-            </div>
+            <ScrollReveal>
+              <div className="secao-subtitulo">
+                <h2>Vozes da Nossa Comunidade</h2>
+                <p>Histórias de quem viveu a experiência de ensinar e liderar no projeto.</p>
+              </div>
+            </ScrollReveal>
 
             <div className="slider-depoimentos-container">
               <div className="cards-depoimento-slider">
@@ -181,7 +186,7 @@ function Content({ isVolunteer: propIsVolunteer }: ContentProps = {}) {
                 </div>
                 <div className="cards-membros">
                   {currentMembers.map((member) => (
-                    <article className="card-membro" key={member.id}>
+                    <SpotlightCard className="card-membro" key={member.id}>
                       <div className="membro-foto">
                         {member.image ? (
                           <img
@@ -222,7 +227,7 @@ function Content({ isVolunteer: propIsVolunteer }: ContentProps = {}) {
                           </a>
                         )}
                       </div>
-                    </article>
+                    </SpotlightCard>
                   ))}
                 </div>
               </div>
@@ -264,36 +269,42 @@ function Content({ isVolunteer: propIsVolunteer }: ContentProps = {}) {
         </>
       ) : (
         <>
-          <div className="conteudo-header">
-            <h2>Cada Turma, Uma História</h2>
-            <p className="conteudo-subtitle">
-              Registros e vivências das turmas de escolas públicas acompanhadas pelo Semeia Code.
-            </p>
-          </div>
+          <ScrollReveal>
+            <div className="conteudo-header">
+              <h2>Cada Turma, Uma História</h2>
+              <p className="conteudo-subtitle">
+                Registros e vivências das turmas de escolas públicas acompanhadas pelo Semeia Code.
+              </p>
+            </div>
+          </ScrollReveal>
 
           <SectionSchool />
 
           {depoimentosEscola.length > 0 && (
-            <div className="depoimentos-escola">
-              <h2>Depoimentos</h2>
-              <div className="lista-depoimentos">
-                {depoimentosEscola.map((depoimento) => (
-                  <p key={depoimento.id}>"{depoimento.text}"</p>
+            <ScrollReveal>
+              <div className="depoimentos-escola">
+                <h2>Depoimentos</h2>
+                <div className="lista-depoimentos">
+                  {depoimentosEscola.map((depoimento) => (
+                    <p key={depoimento.id}>"{depoimento.text}"</p>
+                  ))}
+                </div>
+              </div>
+            </ScrollReveal>
+          )}
+
+          <ScrollReveal>
+            <div className="areas-atuacao">
+              <h2>Onde Nossos Voluntários Atuam Hoje</h2>
+              <div className="empresas">
+                {empresasParceiras.map((empresa) => (
+                  <div key={empresa} className="semester-badge">
+                    <span>{empresa}</span>
+                  </div>
                 ))}
               </div>
             </div>
-          )}
-
-          <div className="areas-atuacao">
-            <h2>Onde Nossos Voluntários Atuam Hoje</h2>
-            <div className="empresas">
-              {empresasParceiras.map((empresa) => (
-                <div key={empresa} className="semester-badge">
-                  <span>{empresa}</span>
-                </div>
-              ))}
-            </div>
-          </div>
+          </ScrollReveal>
         </>
       )}
     </section>

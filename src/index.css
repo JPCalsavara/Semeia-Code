@@ -359,6 +359,27 @@ main > .home {
   }
 }
 
+/* Spotlight & Interactive Lighting Effects (Apple & GTA 6 Grade) */
+.spotlight-card {
+  position: relative;
+  isolation: isolate;
+}
+
+.spotlight-overlay {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  opacity: var(--spotlight-opacity, 0);
+  transition: opacity 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  background: radial-gradient(
+    420px circle at var(--spotlight-x, 0px) var(--spotlight-y, 0px),
+    var(--spotlight-color, rgba(241, 179, 1, 0.18)),
+    transparent 70%
+  );
+  z-index: 1;
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;

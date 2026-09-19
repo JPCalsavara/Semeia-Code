@@ -1,4 +1,5 @@
 import { Analytics } from '@vercel/analytics/react';
+import { SmoothScrollProvider } from './components/effects/SmoothScrollProvider';
 import Header from './components/Header';
 import Home from './pages/Home';
 import About from './pages/About';
@@ -10,18 +11,20 @@ import { AudienceProvider } from './context/AudienceProvider';
 
 function App() {
   return (
-    <AudienceProvider>
-      <Header />
-      <main>
-        <Home />
-        <About />
-        <Content />
-        <Data />
-        <History />
-        <Contact />
-      </main>
-      <Analytics />
-    </AudienceProvider>
+    <SmoothScrollProvider>
+      <AudienceProvider>
+        <Header />
+        <main>
+          <Home />
+          <About />
+          <Content />
+          <Data />
+          <History />
+          <Contact />
+        </main>
+        <Analytics />
+      </AudienceProvider>
+    </SmoothScrollProvider>
   );
 }
 

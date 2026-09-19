@@ -1,3 +1,5 @@
+import { motion, useReducedMotion } from "motion/react";
+
 type NavbarProps = {
   isVolunteer: boolean;
   onToggleVolunteer: () => void;
@@ -17,6 +19,8 @@ function Navbar({
   onToggleMenu,
   onCloseMenu,
 }: NavbarProps) {
+  const shouldReduceMotion = useReducedMotion();
+
   const navItems = [
     { href: "#sobre", id: "sobre", label: "Sobre nós" },
     { href: "#conteudo", id: "conteudo", label: "Conteúdo" },
@@ -45,7 +49,7 @@ function Navbar({
       </div>
 
       <div className="navbar-action">
-        <button
+        <motion.button
           type="button"
           onClick={() => {
             onToggleVolunteer();
@@ -53,9 +57,12 @@ function Navbar({
           }}
           aria-pressed={isVolunteer}
           className="btn-volunteer"
+          whileHover={shouldReduceMotion ? undefined : { scale: 1.05 }}
+          whileTap={shouldReduceMotion ? undefined : { scale: 0.95 }}
+          transition={{ type: "spring", stiffness: 400, damping: 22 }}
         >
           {isVolunteer ? "Para escolas" : "Sou Voluntário"}
-        </button>
+        </motion.button>
       </div>
 
       <button

@@ -1,27 +1,29 @@
 import Footer from "../components/Footer";
 import { iconesContato } from "../model/data";
+import { ScrollReveal } from "../components/effects/ScrollReveal";
 import "../styles/Style_Contact.css";
 
 function Contact() {
   return (
     <section className="contato" id="contato">
       <footer className="footer">
-        <div className="area-contato">
-          <div className="semeia-code">
-            <div className="logo-semeia">
-              <img
-                src="/images/logos/Logo Semeia-Photoroom.png"
-                alt="Semeia Code"
-              />
-              <h2>Semeia Code</h2>
+        <ScrollReveal>
+          <div className="area-contato">
+            <div className="semeia-code">
+              <div className="logo-semeia">
+                <img
+                  src="/images/logos/Logo Semeia-Photoroom.png"
+                  alt="Semeia Code"
+                />
+                <h2>Semeia Code</h2>
+              </div>
+              <div className="texto-semeia">
+                <p>
+                  Projeto de extensão universitária que ensina programação em
+                  escolas públicas, semeando talentos pela tecnologia.
+                </p>
+              </div>
             </div>
-            <div className="texto-semeia">
-              <p>
-                Projeto de extensão universitária que ensina programação em
-                escolas públicas, semeando talentos pela tecnologia.
-              </p>
-            </div>
-          </div>
 
           <div className="fale-conosco">
             <h2>Fale conosco</h2>
@@ -63,6 +65,7 @@ function Contact() {
             </div>
           </div>
         </div>
+        </ScrollReveal>
 
         <Footer />
       </footer>

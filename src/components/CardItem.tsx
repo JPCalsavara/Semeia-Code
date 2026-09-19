@@ -1,8 +1,10 @@
+import { SpotlightCard } from "./effects/SpotlightCard";
+
 type CardItemProps = { titulo: string; descricao: string; imagem: string };
 
 function CardItem({ titulo, descricao, imagem }: CardItemProps) {
   return (
-    <div className="card-item">
+    <SpotlightCard className="card-item">
       <div className="card-icon">
         <img src={imagem} alt={titulo} />
       </div>
@@ -10,7 +12,7 @@ function CardItem({ titulo, descricao, imagem }: CardItemProps) {
         <h3>{titulo}</h3>
         <p>{descricao}</p>
       </div>
-    </div>
+    </SpotlightCard>
   );
 }
 
