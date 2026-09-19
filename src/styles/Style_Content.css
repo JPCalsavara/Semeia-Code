@@ -34,7 +34,9 @@
   margin: 0 auto 32px auto;
 }
 
-.secao-subtitulo h2 {
+.secao-subtitulo h2,
+#membros-titulo,
+.membros-titulo {
   color: var(--amarelo-mostarda);
   font-size: 3rem;
   font-weight: 800;
@@ -176,17 +178,26 @@
 }
 
 .cards-depoimento-track .card-quote {
-  width: 370px;
-  max-width: 380px;
-  flex: 0 0 370px;
+  width: 460px;
+  max-width: 460px;
+  flex: 0 0 460px;
   box-sizing: border-box;
   user-select: none;
   -webkit-user-select: none;
 }
 
+@media (max-width: 1150px) {
+  .cards-depoimento-track .card-quote {
+    width: 400px;
+    max-width: 400px;
+    flex: 0 0 400px;
+  }
+}
+
 @media (max-width: 900px) {
   .cards-depoimento-track .card-quote {
     width: 340px;
+    max-width: 340px;
     flex: 0 0 340px;
   }
 }
@@ -194,6 +205,7 @@
 @media (max-width: 600px) {
   .cards-depoimento-track .card-quote {
     width: 85vw;
+    max-width: 85vw;
     flex: 0 0 85vw;
   }
 }
@@ -378,6 +390,18 @@
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+.semester-badge {
+  align-self: flex-start;
+  background: rgba(255, 243, 163, 0.15);
+  color: var(--amarelo-claro);
+  border: 1px solid rgba(255, 243, 163, 0.35);
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-size: 1.4rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
 }
 
 .semester-header-bar {
@@ -621,6 +645,7 @@
 }
 
 .container-foto {
+  position: relative;
   width: 100%;
   height: 220px;
   overflow: hidden;
@@ -637,6 +662,91 @@
 
 .card-escola:hover .container-foto img {
   transform: scale(1.06);
+}
+
+.school-img-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: rgba(15, 50, 108, 0.75);
+  color: var(--amarelo-claro);
+  border: 1px solid rgba(255, 243, 163, 0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  line-height: 1;
+  cursor: pointer;
+  z-index: 3;
+  backdrop-filter: blur(8px);
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+.school-img-btn:hover {
+  background: var(--amarelo-mostarda);
+  color: var(--azul-escuro);
+  border-color: var(--amarelo-mostarda);
+  transform: translateY(-50%) scale(1.08);
+}
+
+.school-img-btn.prev {
+  left: 8px;
+}
+
+.school-img-btn.next {
+  right: 8px;
+}
+
+.school-img-pagination {
+  position: absolute;
+  bottom: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  z-index: 3;
+  background: rgba(6, 22, 40, 0.7);
+  padding: 4px 10px;
+  border-radius: 20px;
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.school-img-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.45);
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: all 0.25s ease;
+}
+
+.school-img-dot.active {
+  background: var(--amarelo-mostarda);
+  width: 16px;
+  border-radius: 4px;
+}
+
+.school-img-counter {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background: rgba(6, 22, 40, 0.75);
+  color: var(--amarelo-claro);
+  font-size: 1.1rem;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: 10px;
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  z-index: 3;
 }
 
 /* Partner Companies Section */
@@ -663,7 +773,8 @@
   margin-top: 12px;
 }
 
-.empresa {
+.empresa,
+.empresas > div {
   padding: 12px 28px;
   border: 1px solid rgba(241, 179, 1, 0.4);
   border-radius: 30px;
@@ -676,7 +787,8 @@
   backdrop-filter: blur(8px);
 }
 
-.empresa:hover {
+.empresa:hover,
+.empresas > div:hover {
   background: var(--amarelo-mostarda);
   color: var(--azul-escuro);
   transform: translateY(-3px) scale(1.03);
@@ -711,7 +823,9 @@
     font-size: 2.6rem;
   }
 
-  .secao-subtitulo h2 {
+  .secao-subtitulo h2,
+  #membros-titulo,
+  .membros-titulo {
     font-size: 2.4rem;
   }
 

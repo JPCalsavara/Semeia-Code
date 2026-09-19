@@ -18,7 +18,7 @@ function Data() {
               <SpotlightCard className="card-impacto">
                 <div className="numero-box">
                   <h2>
-                    <AnimatedCounter value={item.number} />
+                    <AnimatedCounter value={item.number} />+
                   </h2>
                 </div>
                 <h3>{item.description}</h3>

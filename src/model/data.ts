@@ -30,6 +30,7 @@ export type SchoolData = {
   id: string | number;
   name: string;
   image: string;
+  images?: string[];
   color: string;
 };
 
@@ -88,6 +89,7 @@ export type DetailedTimelineItem = {
   role: string;
   location: string;
   image: string;
+  images?: string[];
   description: string;
   highlights: string[];
 };
@@ -123,6 +125,7 @@ export const dadosDasEscolas: SchoolData[] = rawData.schools.map((school) => ({
   id: school.id,
   name: school.name,
   image: school.image,
+  images: (school as unknown as { images?: string[] }).images ?? [school.image],
   color: school.color,
 }));
 
@@ -211,7 +214,10 @@ export const dadosLinhaDoTempo: TimelineData[] = rawData.timeline.map(
   }),
 );
 export const dadosLinhaDoTempoVoluntario: DetailedTimelineItem[] =
-  rawData.volunteerTimeline;
+  rawData.volunteerTimeline.map((item) => ({
+    ...item,
+    images: (item as unknown as { images?: string[] }).images ?? [item.image],
+  }));
 export const empresasParceiras = rawData.partnerCompanies;
 export const iconesContato: Record<"whatsapp" | "instagram", ContactData> = {
   whatsapp: { ...rawData.contacts.whatsapp, image: assets.whatsapp },

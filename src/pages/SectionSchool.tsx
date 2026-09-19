@@ -10,6 +10,7 @@ function SectionSchool() {
           <CardSchool
             nome={escola.name}
             imagem={escola.image}
+            imagens={escola.images}
             corDoCard={escola.color}
           />
         </ScrollReveal>

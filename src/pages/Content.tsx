@@ -272,7 +272,7 @@ function Content({ isVolunteer: propIsVolunteer }: ContentProps = {}) {
           >
             <ScrollReveal>
               <div className="secao-subtitulo">
-                <h2 id="membros-titulo">Todos os voluntários</h2>
+                <h2 id="membros-titulo" className="membros-titulo">Todos os voluntários</h2>
               </div>
             </ScrollReveal>
 
@@ -397,7 +397,7 @@ function Content({ isVolunteer: propIsVolunteer }: ContentProps = {}) {
               <h2>Onde nossos voluntários atuam hoje</h2>
               <div className="empresas">
                 {empresasParceiras.map((empresa) => (
-                  <div key={empresa} className="semester-badge">
+                  <div key={empresa} className="empresa">
                     <span>{empresa}</span>
                   </div>
                 ))}

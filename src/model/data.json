@@ -23,19 +23,34 @@
     {
       "id": 1,
       "name": "Prof. Roberto Paschoalick",
-      "image": "/images/fotos/AlunosEmSala.jpeg",
+      "image": "/images/fotos/AlunosEmSalaEscolaBrasil2026-1.jpeg",
+      "images": [
+        "/images/fotos/AlunosEmSalaEscolaBrasil2026-1.jpeg",
+        "/images/fotos/TurmaEly2025-1.jpeg",
+        "/images/fotos/PrimeiraTurmaSemeia.jpg"
+      ],
       "color": "card-verde"
     },
     {
       "id": 2,
       "name": "Deputado Ary Pedroso",
-      "image": "/images/fotos/Turma.jpeg",
+      "image": "/images/fotos/TurmaEly2025-1.jpeg",
+      "images": [
+        "/images/fotos/TurmaEly2025-1.jpeg",
+        "/images/fotos/SegundaTurmaSemeia.jpg",
+        "/images/fotos/AlunosCertificadoEscolaBrasil2026.1.jpeg"
+      ],
       "color": "card-azul"
     },
     {
       "id": 3,
       "name": "Brasil",
-      "image": "/images/fotos/AlunosCertificado.jpeg",
+      "image": "/images/fotos/AlunosCertificadoEscolaBrasil2026.1.jpeg",
+      "images": [
+        "/images/fotos/AlunosCertificadoEscolaBrasil2026.1.jpeg",
+        "/images/fotos/AlunosEmSalaEscolaBrasil2026-1.jpeg",
+        "/images/fotos/ComeçoSemeiaCode.jpg"
+      ],
       "color": "card-verde"
     }
   ],
@@ -312,6 +327,9 @@
       "role": "Fundadores: João Calsavara e Prof. Dr. Guilherme Palermo",
       "location": "FT Unicamp · Limeira, SP",
       "image": "/images/fotos/ComeçoSemeiaCode.jpg",
+      "images": [
+        "/images/fotos/ComeçoSemeiaCode.jpg"
+      ],
       "description": "Concepção e estruturação do projeto de extensão Semeia Code na Faculdade de Tecnologia da Unicamp, fundado por João Calsavara e pelo Prof. Dr. Guilherme Palermo. A etapa inicial foi dedicada à escrita científica, estruturação pedagógica e seleção dos primeiros voluntários.",
       "highlights": [
         "Fundação oficial por João Calsavara e pelo Prof. Dr. Guilherme Palermo na FT Unicamp.",
@@ -327,6 +345,10 @@
       "role": "Professor e Coordenador: João Calsavara",
       "location": "E. E. Ely · Limeira, SP",
       "image": "/images/fotos/PrimeiraTurmaSemeia.jpg",
+      "images": [
+        "/images/fotos/PrimeiraTurmaSemeia.jpg",
+        "/images/fotos/TurmaEly2025-1.jpeg"
+      ],
       "description": "Início das atividades presenciais com a primeira turma na E. E. Ely em Limeira, ministrando 8 aulas práticas de lógica e programação em Python com apoio dedicado de voluntários.",
       "highlights": [
         "Primeira turma concluída com 13 alunos atendidos na E. E. Ely.",
@@ -342,6 +364,9 @@
       "role": "Coordenador Executivo e Educacional: João Calsavara",
       "location": "Limeira, SP",
       "image": "/images/fotos/SegundaTurmaSemeia.jpg",
+      "images": [
+        "/images/fotos/SegundaTurmaSemeia.jpg"
+      ],
       "description": "Expansão das atividades do projeto, implantação de turmas no período noturno na E. E. Ely e realização de aula especial na Nexus, organização voltada para jovens com altas habilidades.",
       "highlights": [
         "Reestruturação dos cargos internos, modelo de reuniões e processos seletivos.",
@@ -356,7 +381,10 @@
       "title": "3ª Turma: Recorde de Alunos e Entrada da Gestão",
       "role": "Entrada na Equipe: Daniel e Vinícius Romão",
       "location": "Limeira, SP",
-      "image": "/images/fotos/Turma.jpeg",
+      "image": "/images/fotos/AlunosCertificadoEscolaBrasil2026.1.jpeg",
+      "images": [
+        "/images/fotos/AlunosCertificadoEscolaBrasil2026.1.jpeg"
+      ],
       "description": "Entrada de Daniel e Vinícius Romão na equipe e realização da maior classe da história do projeto, atendendo 40 alunos da rede pública e marcando o início da transição de liderança.",
       "highlights": [
         "Entrada de Daniel e Vinícius Romão no projeto Semeia Code em 2026.1.",
@@ -371,7 +399,10 @@
       "title": "Expansão na Escola Brasil: Prog 1 e Prog 2",
       "role": "Diretoria: Daniel Aniceto e Vinícius Romão | Conselho: João Calsavara e Prof. Dr. Guilherme Palermo",
       "location": "E. E. Brasil · Limeira, SP",
-      "image": "/images/fotos/AlunosEmSala.jpeg",
+      "image": "/images/fotos/AlunosEmSalaEscolaBrasil2026-1.jpeg",
+      "images": [
+        "/images/fotos/AlunosEmSalaEscolaBrasil2026-1.jpeg"
+      ],
       "description": "Consolidação da nova diretoria executiva e educacional com atuação na Escola Estadual Brasil, oferecendo simultaneamente dois cursos distintos (Prog 1 e Prog 2) com mais de 15 alunos em cada, totalizando mais de 30 jovens atendidos.",
       "highlights": [
         "Dois cursos simultâneos na Escola Estadual Brasil: Prog 1 e Prog 2.",

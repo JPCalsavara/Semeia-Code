@@ -96,8 +96,14 @@
   }
 
   .dados-geral {
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    display: flex;
+    flex-direction: column;
     gap: 16px;
+    width: 100%;
+  }
+
+  .dados-geral > * {
+    width: 100%;
   }
 
   .card-impacto {
