@@ -1,0 +1,13 @@
+https://www.linkedin.com/in/rafaelsantiagodev/
+https://www.linkedin.com/in/rafael-vribeiro7/
+https://www.linkedin.com/in/jo%C3%A3o-pedro-mamede-silva-a4121a266/
+https://www.linkedin.com/in/luiza-brum-pires-de-brito-798b15376/
+https://www.linkedin.com/in/devcelio/
+https://www.linkedin.com/in/alex-freire-2b4150324/
+https://www.linkedin.com/in/daniel-aniceto-rosell-48bb48305/
+https://www.linkedin.com/in/thiagonakaba/
+https://www.linkedin.com/in/gustadmdev/
+https://www.linkedin.com/in/guilherme-stafocher-massucatto-10ab16376/
+https://www.linkedin.com/in/renan-felipe-rodrigues/
+https://www.linkedin.com/in/gabriel-reis-dev/
+https://www.linkedin.com/in/jo%C3%A3o-pedro-leite-calsavara-b951b6230/

@@ -3,6 +3,7 @@ import {
   dadosDosVoluntarios,
   dadosLinhaDoTempoVoluntario,
   depoimentosVoluntario,
+  membrosUnicos,
   membrosVoluntarioPorSemestre,
   empresasParceiras,
   getSemestresComMembrosOrdenados,
@@ -17,7 +18,9 @@ describe("conteudo editorial", () => {
       expect(testimonial.name).toBeTruthy();
       expect(testimonial.roleYear).toBeTruthy();
       expect(testimonial.text).toBeTruthy();
-      expect(testimonial.memberId).toBeTruthy();
+      expect(testimonial.memberId !== undefined && testimonial.memberId !== null).toBe(true);
+      expect(Array.isArray(testimonial.semesters)).toBe(true);
+      expect(testimonial.semesters.length).toBeGreaterThan(0);
       expect(
         Object.values(membrosVoluntarioPorSemestre)
           .flat()
@@ -48,8 +51,31 @@ describe("conteudo editorial", () => {
         expect(member.name).toBeTruthy();
         expect(member.role).toBeTruthy();
         expect(member).toHaveProperty("image");
+        expect(member).toHaveProperty("linkedin");
+
+        if (member.image) {
+          expect(member.image).toMatch(/^\/images\/membros\/.+\.(jpeg|jpg|png)$/);
+        }
+        if (member.linkedin) {
+          expect(member.linkedin).toContain("linkedin.com/in/");
+        }
       }
     }
+
+    // Valida membros de 2025.2
+    const membros20252 = membrosVoluntarioPorSemestre["2025.2"];
+    expect(membros20252.some((m) => m.name === "João Calsavara")).toBe(true);
+    expect(membros20252.some((m) => m.name === "Daniel Aniceto")).toBe(true);
+    expect(membros20252.some((m) => m.name === "Vinícius Romão")).toBe(true);
+
+    // Valida membros de 2026.1
+    const membros20261 = membrosVoluntarioPorSemestre["2026.1"];
+    expect(membros20261.some((m) => m.name === "João Guilherme")).toBe(true);
+    expect(membros20261.some((m) => m.name === "João Mamade")).toBe(true);
+    expect(membros20261.some((m) => m.name === "Gustavo")).toBe(true);
+    expect(membros20261.some((m) => m.name.includes("Santiago"))).toBe(true);
+    expect(membros20261.some((m) => m.name.includes("Luiza"))).toBe(true);
+    expect(membros20261.some((m) => m.name.includes("Nakaba"))).toBe(true);
   });
 
   it("mantem linha do tempo de voluntariado estruturada por semestre com fotos", () => {
@@ -82,7 +108,7 @@ describe("conteudo editorial", () => {
 
     // Valida 3a turma com 40 alunos e entrada de Romao e Daniel em 2026.1
     const membros20261 = membrosVoluntarioPorSemestre["2026.1"];
-    expect(membros20261.some((m) => m.name === "Daniel")).toBe(true);
+    expect(membros20261.some((m) => m.name.includes("Daniel"))).toBe(true);
     expect(membros20261.some((m) => m.name === "Vinícius Romão")).toBe(true);
 
     const terceiraTurma = dadosLinhaDoTempoVoluntario[3];
@@ -119,5 +145,34 @@ describe("conteudo editorial", () => {
     const timelineSchool = getLinhaDoTempo("schools");
     expect(timelineVol).toHaveLength(5);
     expect(timelineSchool.length).toBeGreaterThan(0);
+  });
+
+  it("mantem membros unicos no data.json com IDs sequenciais e vetores de semestre e cargos", () => {
+    expect(membrosUnicos.length).toBe(19);
+
+    // IDs seriais 1, 2, 3...
+    membrosUnicos.forEach((member, index) => {
+      expect(member.id).toBe(index + 1);
+      expect(Array.isArray(member.semestre)).toBe(true);
+      expect(Array.isArray(member.cargos)).toBe(true);
+      expect(member.semestre.length).toBe(member.cargos.length);
+      expect(member.semestre.length).toBeGreaterThan(0);
+    });
+
+    // Valida que cada semestre exibe o cargo baseado no índice do vetor
+    const joao = membrosUnicos.find((m) => m.name === "João Calsavara")!;
+    expect(joao.semestre).toEqual(["2025.1", "2025.2"]);
+    expect(joao.cargos).toEqual([
+      "Fundador, Professor e Coordenador",
+      "Coordenador Executivo e Educacional",
+    ]);
+
+    const membros20251 = membrosVoluntarioPorSemestre["2025.1"];
+    const joao20251 = membros20251.find((m) => m.name === "João Calsavara")!;
+    expect(joao20251.role).toBe(joao.cargos[0]);
+
+    const membros20252 = membrosVoluntarioPorSemestre["2025.2"];
+    const joao20252 = membros20252.find((m) => m.name === "João Calsavara")!;
+    expect(joao20252.role).toBe(joao.cargos[1]);
   });
 });

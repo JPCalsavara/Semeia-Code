@@ -99,11 +99,27 @@ function Content({ isVolunteer: propIsVolunteer }: ContentProps = {}) {
                       <p className="quote-text">{depoimento.text}</p>
                       <footer className="card-depoimento-footer">
                         <div className="author-avatar">
-                          {depoimento.name.charAt(0)}
+                          {depoimento.image ? (
+                            <img
+                              src={depoimento.image}
+                              alt={`Foto de ${depoimento.name}`}
+                            />
+                          ) : (
+                            <span aria-hidden="true">
+                              {depoimento.name.charAt(0)}
+                            </span>
+                          )}
                         </div>
                         <div className="author-info">
                           <strong className="author-name">{depoimento.name}</strong>
                           <span className="author-role">{depoimento.roleYear}</span>
+                          {depoimento.semesters && depoimento.semesters.length > 0 && (
+                            <span className="author-semestres">
+                              {depoimento.semesters.length > 1
+                                ? `${depoimento.semesters[0]} - ${depoimento.semesters[depoimento.semesters.length - 1]}`
+                                : depoimento.semesters[0]}
+                            </span>
+                          )}
                           {depoimento.company && (
                             <span className="author-company">@{depoimento.company}</span>
                           )}
@@ -178,11 +194,32 @@ function Content({ isVolunteer: propIsVolunteer }: ContentProps = {}) {
                           </span>
                         )}
                       </div>
-                      <div className="membro-info">
-                        <h4>{member.name}</h4>
-                        <p className="membro-cargo">{member.role}</p>
-                        {member.company && (
-                          <span className="membro-empresa">{member.company}</span>
+                      <div className="membro-corpo">
+                        <div className="membro-info">
+                          <h4>{member.name}</h4>
+                          <p className="membro-cargo">{member.role}</p>
+                          {member.company && (
+                            <span className="membro-empresa">{member.company}</span>
+                          )}
+                        </div>
+                        {member.linkedin && (
+                          <a
+                            href={member.linkedin}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="membro-linkedin"
+                            aria-label={`Perfil no LinkedIn de ${member.name}`}
+                            title={`Perfil no LinkedIn de ${member.name}`}
+                          >
+                            <svg
+                              className="linkedin-icon"
+                              viewBox="0 0 24 24"
+                              fill="currentColor"
+                              aria-hidden="true"
+                            >
+                              <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                            </svg>
+                          </a>
                         )}
                       </div>
                     </article>

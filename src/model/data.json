@@ -1,19 +1,19 @@
 {
   "cards": [
     {
-      "id": "free-teaching",
+      "id": 1,
       "title": "Ensino Gratuito",
       "description": "Aulas de lógica e programação sem custo para escolas públicas parceiras.",
       "asset": "plant"
     },
     {
-      "id": "active-volunteering",
+      "id": 2,
       "title": "Voluntariado ativo",
       "description": "Estudantes universitários como professores, monitores e referência.",
       "asset": "handshake"
     },
     {
-      "id": "continuous-growth",
+      "id": 3,
       "title": "Crescimento contínuo",
       "description": "Um projeto que cresce a cada semestre com novas turmas e parcerias.",
       "asset": "tree"
@@ -21,27 +21,27 @@
   ],
   "schools": [
     {
-      "id": "school-classroom",
-      "name": "Turma em sala",
+      "id": 1,
+      "name": "Prof. Roberto Paschoalick",
       "image": "/images/fotos/AlunosEmSala.jpeg",
       "color": "card-verde"
     },
     {
-      "id": "school-class",
-      "name": "Turma Semeia Code",
+      "id": 2,
+      "name": "Deputado Ary Pedroso",
       "image": "/images/fotos/Turma.jpeg",
       "color": "card-azul"
     },
     {
-      "id": "school-certificate",
-      "name": "Alunos certificados",
+      "id": 3,
+      "name": "Brasil",
       "image": "/images/fotos/AlunosCertificado.jpeg",
       "color": "card-verde"
     }
   ],
   "volunteerRoles": [
     {
-      "id": "teacher",
+      "id": 1,
       "titleLine1": "Professor(a)",
       "titleLine2": "voluntário(a)",
       "description": "Ministra as aulas de lógica e programação diretamente com os alunos.",
@@ -50,7 +50,7 @@
       "alt": "Ícone de professor voluntário"
     },
     {
-      "id": "mentor",
+      "id": 2,
       "titleLine1": "Monitor(a)",
       "titleLine2": "voluntário(a)",
       "description": "Apoia os professores no suporte aos alunos.",
@@ -59,7 +59,7 @@
       "alt": "Ícone de monitor voluntário"
     },
     {
-      "id": "marketing",
+      "id": 3,
       "titleLine1": "Marketing",
       "titleLine2": null,
       "description": "Cuida da comunicação do projeto.",
@@ -71,223 +71,241 @@
   "schoolTestimonials": [],
   "volunteerTestimonials": [
     {
-      "id": "volunteer-testimonial-1",
-      "memberId": "member-2025-1-joao",
+      "id": 1,
+      "memberId": 1,
+      "semester": "2025.1",
       "text": "O projeto foi fundamental para mim aprender a liderar, aprender na prática a aprender, criar processos, errar, acertar e ir evoluindo junto com o projeto."
     },
     {
-      "id": "volunteer-testimonial-2",
-      "memberId": "member-2025-1-renan",
-      "text": "Vivenciar o ensino de tecnologia nas escolas públicas foi uma experiência enriquecedora que fortaleceu minhas habilidades de comunicação e trabalho em equipe."
+      "id": 2,
+      "memberId": 2,
+      "semester": "2025.1",
+      "text": "O projeto fortaleceu meu currículo e ajudou em minhas entrevistas de processos seletivos com uma experiência real que causou impacto no ramo de tecnologia."
     },
     {
-      "id": "volunteer-testimonial-3",
-      "memberId": "member-2025-2-celio",
+      "id": 3,
+      "memberId": 7,
+      "semester": "2025.2",
       "text": "Poder contribuir diretamente com o aprendizado de jovens e ver o brilho no olho deles ao executarem o primeiro código não tem preço."
     },
     {
-      "id": "volunteer-testimonial-4",
-      "memberId": "member-2026-1-daniel",
+      "id": 4,
+      "memberId": 4,
+      "semester": "2026.1",
       "text": "Evoluí imensamente como profissional e como pessoa. O Semeia Code gera um impacto real na comunidade e na nossa formação."
     }
   ],
   "volunteerMembers": [
     {
-      "id": "member-2025-1-joao",
-      "semester": "2025.1",
+      "id": 1,
       "name": "João Calsavara",
       "company": "Mottu",
-      "role": "Fundador, Professor e Coordenador",
-      "image": null
+      "semestre": ["2025.1", "2025.2"],
+      "cargos": [
+        "Fundador, Professor e Coordenador",
+        "Coordenador Executivo e Educacional"
+      ],
+      "image": "/images/membros/JoaoCalsavara.jpg",
+      "linkedin": "https://www.linkedin.com/in/jo%C3%A3o-pedro-leite-calsavara-b951b6230/"
     },
     {
-      "id": "member-2025-1-renan",
-      "semester": "2025.1",
+      "id": 2,
       "name": "Renan Rodrigues",
       "company": "iFood",
-      "role": "Professor",
-      "image": null
+      "semestre": ["2025.1"],
+      "cargos": ["Professor"],
+      "image": "/images/membros/RenanRodrigues.jpeg",
+      "linkedin": "https://www.linkedin.com/in/renan-felipe-rodrigues/"
     },
     {
-      "id": "member-2025-1-gabriel",
-      "semester": "2025.1",
+      "id": 3,
       "name": "Gabriel Reis",
       "company": "Arco",
-      "role": "Monitor",
-      "image": null
+      "semestre": ["2025.1"],
+      "cargos": ["Monitor"],
+      "image": null,
+      "linkedin": "https://www.linkedin.com/in/gabriel-reis-dev/"
     },
     {
-      "id": "member-2025-2-samuel",
-      "semester": "2025.2",
+      "id": 4,
+      "name": "Daniel Aniceto",
+      "company": "Elo Group",
+      "semestre": ["2025.2", "2026.1", "2026.2"],
+      "cargos": ["Professor", "Professor", "Diretor Executivo"],
+      "image": "/images/membros/Daniel.jpeg",
+      "linkedin": "https://www.linkedin.com/in/daniel-aniceto-rosell-48bb48305/"
+    },
+    {
+      "id": 5,
+      "name": "Vinícius Romão",
+      "company": null,
+      "semestre": ["2025.2", "2026.1", "2026.2"],
+      "cargos": ["Professor", "Monitor", "Diretor Educacional"],
+      "image": "/images/membros/ViniciusRomão.jpeg",
+      "linkedin": "https://www.linkedin.com/in/viniciusromaoti/"
+    },
+    {
+      "id": 6,
       "name": "Samuel Lima",
       "company": "Raízen",
-      "role": "Monitor",
-      "image": null
+      "semestre": ["2025.2"],
+      "cargos": ["Monitor"],
+      "image": null,
+      "linkedin": null
     },
     {
-      "id": "member-2025-2-celio",
-      "semester": "2025.2",
-      "name": "Celio",
+      "id": 7,
+      "name": "Celio Junior",
       "company": "Nubank",
-      "role": "Professor",
-      "image": null
+      "semestre": ["2025.2"],
+      "cargos": ["Professor"],
+      "image": null,
+      "linkedin": "https://www.linkedin.com/in/devcelio/"
     },
     {
-      "id": "member-2025-2-maria",
-      "semester": "2025.2",
-      "name": "Maria",
+      "id": 8,
+      "name": "Maria Stella",
       "company": null,
-      "role": "Monitor",
-      "image": null
+      "semestre": ["2025.2"],
+      "cargos": ["Monitora"],
+      "image": null,
+      "linkedin": null
     },
     {
-      "id": "member-2025-2-alex",
-      "semester": "2025.2",
-      "name": "Alex",
+      "id": 9,
+      "name": "Alex Freire",
       "company": null,
-      "role": "Professor",
-      "image": null
+      "semestre": ["2025.2", "2026.2"],
+      "cargos": ["Professor", "Professor"],
+      "image": "/images/membros/AlexFreire.jpeg",
+      "linkedin": "https://www.linkedin.com/in/alex-freire-2b4150324/"
     },
     {
-      "id": "member-2026-1-daniel",
-      "semester": "2026.1",
-      "name": "Daniel",
-      "company": "Elo Group",
-      "role": "Professor",
-      "image": null
-    },
-    {
-      "id": "member-2026-1-vinicius",
-      "semester": "2026.1",
-      "name": "Vinícius Romão",
-      "company": null,
-      "role": "Monitor",
-      "image": null
-    },
-    {
-      "id": "member-2026-1-joao-guilherme",
-      "semester": "2026.1",
+      "id": 10,
       "name": "João Guilherme",
       "company": null,
-      "role": "Professor",
-      "image": null
+      "semestre": ["2026.1"],
+      "cargos": ["Professor"],
+      "image": "/images/membros/JohnGui.jpeg",
+      "linkedin": "https://www.linkedin.com/in/joaoguilhermefernandesfrota/"
     },
     {
-      "id": "member-2026-2-daniel-aniceto",
-      "semester": "2026.2",
-      "name": "Daniel Aniceto",
+      "id": 11,
+      "name": "João Mamade",
       "company": null,
-      "role": "Diretor Executivo",
-      "image": null
+      "semestre": ["2026.1"],
+      "cargos": ["Professor"],
+      "image": null,
+      "linkedin": "https://www.linkedin.com/in/jo%C3%A3o-pedro-mamede-silva-a4121a266/"
     },
     {
-      "id": "member-2026-2-vinicius-romao",
-      "semester": "2026.2",
-      "name": "Vinícius Romão",
+      "id": 12,
+      "name": "Gustavo",
       "company": null,
-      "role": "Diretor Educacional",
-      "image": null
+      "semestre": ["2026.1"],
+      "cargos": ["Professor"],
+      "image": "/images/membros/Gustavo.jpeg",
+      "linkedin": "https://www.linkedin.com/in/gustadmdev/"
     },
     {
-      "id": "member-2026-2-alex",
-      "semester": "2026.2",
-      "name": "Alex",
+      "id": 13,
+      "name": "Rafael Santiago",
       "company": null,
-      "role": "Professor",
-      "image": null
+      "semestre": ["2026.1", "2026.2"],
+      "cargos": ["Professor", "Professor"],
+      "image": "/images/membros/Santiago.jpeg",
+      "linkedin": "https://www.linkedin.com/in/rafaelsantiagodev/"
     },
     {
-      "id": "member-2026-2-guilherme",
-      "semester": "2026.2",
-      "name": "Guilherme",
+      "id": 14,
+      "name": "Luiza Brum",
       "company": null,
-      "role": "Professor",
-      "image": null
+      "semestre": ["2026.1", "2026.2"],
+      "cargos": ["Monitora", "Monitora"],
+      "image": "/images/membros/LuizaBrum.jpeg",
+      "linkedin": "https://www.linkedin.com/in/luiza-brum-pires-de-brito-798b15376/"
     },
     {
-      "id": "member-2026-2-rafael-s",
-      "semester": "2026.2",
-      "name": "Rafael S.",
+      "id": 15,
+      "name": "Thiago Nakaba",
       "company": null,
-      "role": "Professor",
-      "image": null
+      "semestre": ["2026.1", "2026.2"],
+      "cargos": ["Monitor", "Monitor"],
+      "image": "/images/membros/ThiagoNakaba.jpeg",
+      "linkedin": "https://www.linkedin.com/in/thiagonakaba/"
     },
     {
-      "id": "member-2026-2-rafael-v",
-      "semester": "2026.2",
-      "name": "Rafael V.",
+      "id": 16,
+      "name": "Guilherme Massucatto",
       "company": null,
-      "role": "Professor",
-      "image": null
+      "semestre": ["2026.2"],
+      "cargos": ["Professor"],
+      "image": "/images/membros/GuilhermeMassucatto.jpeg",
+      "linkedin": "https://www.linkedin.com/in/guilherme-stafocher-massucatto-10ab16376/"
     },
     {
-      "id": "member-2026-2-kaua",
-      "semester": "2026.2",
-      "name": "Kauã",
+      "id": 17,
+      "name": "Rafael Vergueiro",
       "company": null,
-      "role": "Monitor",
-      "image": null
+      "semestre": ["2026.2"],
+      "cargos": ["Professor"],
+      "image": "/images/membros/RafaelLet.jpeg",
+      "linkedin": "https://www.linkedin.com/in/rafael-vribeiro7/"
     },
     {
-      "id": "member-2026-2-luiza",
-      "semester": "2026.2",
-      "name": "Luiza",
+      "id": 18,
+      "name": "Kauã Andrade",
       "company": null,
-      "role": "Monitora",
-      "image": null
+      "semestre": ["2026.2"],
+      "cargos": ["Monitor"],
+      "image": "/images/membros/Kaua.jpeg",
+      "linkedin": "linkedin.com/in/kaua-silva-andrade/?lipi=urn%3Ali%3Apage%3Ad_flagship3_detail_base%3BbeQGRa8dR3uJ8F%2FWsQngBA%3D%3D"
     },
     {
-      "id": "member-2026-2-thiago",
-      "semester": "2026.2",
-      "name": "Thiago",
+      "id": 19,
+      "name": "Yasmin Betioli",
       "company": null,
-      "role": "Monitor",
-      "image": null
-    },
-    {
-      "id": "member-2026-2-yasmin",
-      "semester": "2026.2",
-      "name": "Yasmin",
-      "company": null,
-      "role": "Monitora",
-      "image": null
+      "semestre": ["2026.2"],
+      "cargos": ["Monitora"],
+      "image": "/images/membros/YasminBetioli.jpeg",
+      "linkedin": null
     }
   ],
   "impact": [
-    { "id": "students", "number": "50", "description": "alunos impactados" },
-    { "id": "organizers", "number": "10", "description": "organizadores" },
-    { "id": "classes", "number": "2", "description": "turmas simultâneas" }
+    { "id": 1, "number": "50", "description": "alunos impactados" },
+    { "id": 2, "number": "10", "description": "organizadores" },
+    { "id": 3, "number": "2", "description": "turmas simultâneas" }
   ],
   "timeline": [
     {
-      "id": "2024-2",
+      "id": 1,
       "title": "2024.2: Fundação e estruturação",
       "description": "Fundação do Semeia Code na FT Unicamp por João Calsavara e Prof. Dr. Guilherme Palermo, estruturando o projeto, metodologia e primeiras parcerias."
     },
     {
-      "id": "2025-1",
+      "id": 2,
       "title": "2025.1: Primeira turma na E. E. Ely",
       "description": "Início das atividades práticas presenciais com 13 alunos do ensino médio, ministrando aulas de lógica e programação em Python."
     },
     {
-      "id": "2025-2",
+      "id": 3,
       "title": "2025.2: Expansão do projeto",
       "description": "Aulas noturnas na E. E. Ely e edição especial na Nexus, ampliando a equipe voluntária e consolidando a gestão pedagógica."
     },
     {
-      "id": "2026-1",
+      "id": 4,
       "title": "2026.1: Recorde de 40 alunos e transição",
       "description": "Entrada de Daniel e Vinícius Romão, maior classe da história com 40 alunos simultâneos e início da transição de liderança do projeto."
     },
     {
-      "id": "2026-2",
+      "id": 5,
       "title": "2026.2: Escola Brasil - Prog 1 e Prog 2",
       "description": "Atuação na Escola Estadual Brasil com 2 cursos distintos (Prog 1 e Prog 2) com mais de 15 alunos em cada turma, sob a liderança de Daniel e Vinícius Romão."
     }
   ],
   "volunteerTimeline": [
     {
-      "id": "2024-2-fundacao",
+      "id": 1,
       "semester": "2024.2",
       "period": "Jul 2024 - Fev 2025",
       "title": "Fundação e Estruturação",
@@ -302,7 +320,7 @@
       ]
     },
     {
-      "id": "2025-1-primeira-turma",
+      "id": 2,
       "semester": "2025.1",
       "period": "Mar 2025 - Jun 2025",
       "title": "1ª Turma na E. E. Ely",
@@ -317,7 +335,7 @@
       ]
     },
     {
-      "id": "2025-2-segunda-turma",
+      "id": 3,
       "semester": "2025.2",
       "period": "Jul 2025 - Dez 2025",
       "title": "2ª Turma e Expansão",
@@ -332,7 +350,7 @@
       ]
     },
     {
-      "id": "2026-1-terceira-turma",
+      "id": 4,
       "semester": "2026.1",
       "period": "Fev 2026 - Jul 2026",
       "title": "3ª Turma: Recorde de Alunos e Entrada da Gestão",
@@ -347,7 +365,7 @@
       ]
     },
     {
-      "id": "2026-2-quarta-turma",
+      "id": 5,
       "semester": "2026.2",
       "period": "Ago 2026 - Presente",
       "title": "Expansão na Escola Brasil: Prog 1 e Prog 2",

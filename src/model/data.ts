@@ -20,21 +20,21 @@ export type AssetName =
   | "instagram";
 
 export type CardData = {
-  id: string;
+  id: string | number;
   title: string;
   description: string;
   image: string;
 };
 
 export type SchoolData = {
-  id: string;
+  id: string | number;
   name: string;
   image: string;
   color: string;
 };
 
 export type VolunteerRole = {
-  id: string;
+  id: string | number;
   titleLine1: string;
   titleLine2: string | null;
   description: string;
@@ -43,32 +43,44 @@ export type VolunteerRole = {
   alt: string;
 };
 
-export type Testimonial = { id: string; text: string };
+export type Testimonial = { id: string | number; text: string };
 export type VolunteerTestimonial = {
-  id: string;
-  memberId: string;
+  id: string | number;
+  memberId: string | number;
   name: string;
+  image: string | null;
+  semesters: string[];
   company: string | null;
   roleYear: string;
   text: string;
 };
+export type RawVolunteerMember = {
+  id: number | string;
+  name: string;
+  company: string | null;
+  semestre: string[];
+  cargos: string[];
+  image: string | null;
+  linkedin?: string | null;
+};
 export type VolunteerMember = {
-  id: string;
+  id: string | number;
   semester: string;
   name: string;
   company: string | null;
   role: string;
   image: string | null;
+  linkedin?: string | null;
 };
-export type ImpactData = { id: string; number: string; description: string };
+export type ImpactData = { id: string | number; number: string; description: string };
 export type TimelineData = {
-  id: string;
+  id: string | number;
   title: string;
   description: string;
   image: string;
 };
 export type DetailedTimelineItem = {
-  id: string;
+  id: string | number;
   semester?: string;
   period: string;
   title: string;
@@ -126,23 +138,61 @@ export const dadosDosVoluntarios: VolunteerRole[] = rawData.volunteerRoles.map(
 );
 
 export const depoimentosEscola: Testimonial[] = rawData.schoolTestimonials;
-export const membrosVoluntario: VolunteerMember[] = rawData.volunteerMembers;
-const membrosPorId = new Map(
-  membrosVoluntario.map((member) => [member.id, member]),
+export const membrosUnicos: RawVolunteerMember[] = rawData.volunteerMembers;
+
+export const membrosPorId = new Map<string | number, RawVolunteerMember>(
+  membrosUnicos.map((member) => [member.id, member]),
 );
+
+export const semestresDisponiveis: string[] = Array.from(
+  new Set(membrosUnicos.flatMap((m) => m.semestre)),
+).sort((a, b) => a.localeCompare(b));
+
+export const membrosVoluntarioPorSemestre: Record<string, VolunteerMember[]> = {};
+
+for (const sem of semestresDisponiveis) {
+  membrosVoluntarioPorSemestre[sem] = [];
+  for (const rawMember of membrosUnicos) {
+    const idx = rawMember.semestre.indexOf(sem);
+    if (idx !== -1) {
+      membrosVoluntarioPorSemestre[sem].push({
+        id: rawMember.id,
+        semester: sem,
+        name: rawMember.name,
+        company: rawMember.company,
+        role: rawMember.cargos[idx] ?? "",
+        image: rawMember.image,
+        linkedin: rawMember.linkedin ?? null,
+      });
+    }
+  }
+}
+
+export const membrosVoluntario: VolunteerMember[] = Object.values(
+  membrosVoluntarioPorSemestre,
+).flat();
 
 export const depoimentosVoluntario: VolunteerTestimonial[] =
   rawData.volunteerTestimonials
-    .map((testimonial) => {
+    .map((testimonial): VolunteerTestimonial | null => {
       const member = membrosPorId.get(testimonial.memberId);
       if (!member || !testimonial.text.trim()) return null;
+
+      const semIndex =
+        "semester" in testimonial && typeof testimonial.semester === "string"
+          ? member.semestre.indexOf(testimonial.semester)
+          : 0;
+      const validIndex = semIndex !== -1 ? semIndex : 0;
+      const role = member.cargos[validIndex] ?? "";
 
       return {
         id: testimonial.id,
         memberId: member.id,
         name: member.name,
+        image: member.image,
+        semesters: member.semestre,
         company: member.company,
-        roleYear: `${member.role} - ${member.semester}`,
+        roleYear: role,
         text: testimonial.text,
       };
     })
@@ -150,14 +200,6 @@ export const depoimentosVoluntario: VolunteerTestimonial[] =
       (testimonial): testimonial is VolunteerTestimonial =>
         testimonial !== null,
     );
-
-export const membrosVoluntarioPorSemestre = membrosVoluntario.reduce<
-  Record<string, VolunteerMember[]>
->((groups, member) => {
-  groups[member.semester] ??= [];
-  groups[member.semester].push(member);
-  return groups;
-}, {});
 export const dadosImpacto: ImpactData[] = rawData.impact;
 export const dadosLinhaDoTempo: TimelineData[] = rawData.timeline.map(
   (item) => ({
