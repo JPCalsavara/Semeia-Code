@@ -366,6 +366,11 @@
     gap: 36px;
   }
 
+  .sobre-card-list {
+    flex-direction: column;
+    gap: 14px;
+  }
+
   .aulas-grid {
     grid-template-columns: 1fr;
     gap: 20px;
@@ -374,8 +379,12 @@
 
 @media (max-width: 768px) {
   .sobre {
-    padding: 36px 24px;
+    padding: 32px 20px;
     border-radius: 18px;
+  }
+
+  .sobre-header {
+    margin-bottom: 26px;
   }
 
   .sobre-header h2 {
@@ -383,15 +392,50 @@
   }
 
   .sobre-texto p.lead-paragraph {
-    font-size: 1.6rem;
+    font-size: 1.55rem;
   }
 
   .sobre-texto p {
-    font-size: 1.45rem;
+    font-size: 1.4rem;
+  }
+
+  .sobre-cards-container {
+    padding: 20px 18px;
+    border-radius: 16px;
+  }
+
+  .cards-title {
+    font-size: 1.65rem;
+  }
+
+  .card-item {
+    padding: 14px 16px;
+    gap: 14px;
+    border-radius: 14px;
+  }
+
+  .card-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+  }
+
+  .card-icon img {
+    width: 26px;
+    height: 26px;
+  }
+
+  .card-info h3 {
+    font-size: 1.55rem;
+  }
+
+  .card-info p {
+    font-size: 1.3rem;
+    line-height: 1.45;
   }
 
   .sobre-aula {
-    padding: 36px 24px;
+    padding: 32px 20px;
     border-radius: 18px;
     gap: 28px;
   }
@@ -405,3 +449,117 @@
     gap: 10px;
   }
 }
+
+@media (max-width: 480px) {
+  .sobre {
+    padding: 24px 16px;
+    border-radius: 16px;
+  }
+
+  .badge-tag {
+    font-size: 1.15rem;
+    padding: 4px 12px;
+  }
+
+  .sobre-header {
+    margin-bottom: 20px;
+  }
+
+  .sobre-header h2 {
+    font-size: clamp(2rem, 6.5vw, 2.4rem);
+  }
+
+  .sobre-texto p.lead-paragraph {
+    font-size: 1.45rem;
+    line-height: 1.55;
+  }
+
+  .sobre-texto p {
+    font-size: 1.3rem;
+    line-height: 1.55;
+  }
+
+  .sobre-cards-container {
+    padding: 16px 14px;
+    border-radius: 14px;
+  }
+
+  .cards-title {
+    font-size: 1.5rem;
+  }
+
+  .card-item {
+    padding: 12px 14px;
+    gap: 12px;
+    border-radius: 12px;
+  }
+
+  .card-icon {
+    width: 42px;
+    height: 42px;
+    border-radius: 10px;
+  }
+
+  .card-icon img {
+    width: 22px;
+    height: 22px;
+  }
+
+  .card-info h3 {
+    font-size: 1.45rem;
+  }
+
+  .card-info p {
+    font-size: 1.2rem;
+  }
+
+  .sobre-aula {
+    padding: 24px 16px;
+    border-radius: 16px;
+    gap: 22px;
+  }
+
+  .sobre-aula-header h2 {
+    font-size: clamp(2rem, 6.5vw, 2.4rem);
+  }
+
+  .sobre-aula-subtitle {
+    font-size: 1.35rem;
+    line-height: 1.5;
+  }
+
+  .aula-card {
+    padding: 20px 16px;
+    border-radius: 16px;
+    gap: 12px;
+  }
+
+  .aula-card-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+  }
+
+  .aula-card h3 {
+    font-size: 1.6rem;
+  }
+
+  .aula-card p {
+    font-size: 1.3rem;
+  }
+
+  .sobre-aula-banner {
+    padding: 16px 14px;
+    border-radius: 14px;
+  }
+
+  .banner-icon {
+    font-size: 2rem;
+  }
+
+  .banner-content p {
+    font-size: 1.3rem;
+    line-height: 1.55;
+  }
+}
+
