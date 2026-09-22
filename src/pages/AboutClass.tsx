@@ -14,9 +14,6 @@ function AboutClass() {
 
       <div className="aulas-grid">
         <div className="aula-card">
-          <div className="aula-card-icon">
-            <img src={iconSchool} alt="Parceria escolar" />
-          </div>
           <h3>1. Parceria Ativa</h3>
           <p>
             Os universitários buscam ativamente instituições parceiras, alinhando o conteúdo pedagógico e horários com os professores responsáveis.
@@ -24,9 +21,6 @@ function AboutClass() {
         </div>
 
         <div className="aula-card">
-          <div className="aula-card-icon">
-            <img src={iconPencil} alt="Aulas práticas" />
-          </div>
           <h3>2. Ensino Prático</h3>
           <p>
             Durante os encontros, nossos estudantes assumem a sala de aula para ensinar lógica e programação de maneira acessível e engajadora.
@@ -34,9 +28,6 @@ function AboutClass() {
         </div>
 
         <div className="aula-card">
-          <div className="aula-card-icon">
-            <img src={iconTree} alt="Experiência transformadora" />
-          </div>
           <h3>3. Impacto Duplo</h3>
           <p>
             Capacitamos os jovens para o futuro digital enquanto proporcionamos aos universitários uma experiência transformadora de docência e liderança.

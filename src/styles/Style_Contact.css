@@ -3,6 +3,7 @@
 }
 
 .footer {
+  margin-top: 7%;
   background-color: var(--azul-navbar);
   border-radius: 12px;
   padding: 50px 100px;
@@ -18,7 +19,7 @@
   color: var(--azul-claro);
   font-weight: 400;
   margin-top: 20px;
-  text-align: center;
+  text-align: left;
   font-size: 14px;
 }
 
@@ -64,6 +65,7 @@
 .fale-conosco h2 {
   color: var(--branco);
   font-size: 20px;
+  margin-left: 4%;
 }
 
 .icones-contato {
@@ -71,15 +73,16 @@
   align-items: center;
   margin-top: 15px;
   gap: 16px;
+  margin-left: -3vw;
 }
 
 .icone-link {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 44px;
-  height: 44px;
-  border-radius: 12px;
+  width: 70px;
+  height: 70px;
+  border-radius: 50px;
   background-color: var(--azul);
   box-shadow: 0 4px 12px rgba(10, 40, 85, 0.3);
   transition: transform 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
@@ -98,13 +101,21 @@
 }
 
 .icone-link.whatsapp:hover {
-  background-color: #557959;
+  background-color: #648d68;
+}
+
+.icone-link.linkedIn {
+  background-color: var(--azul-claro);
+}
+
+.icone-link.linkedIn:hover {
+  background-color: #becad8;
 }
 
 /* Control icon image size nicely */
 .icone-link img {
-  width: 28px;
-  height: 28px;
+  width: 40px;
+  height: 40px;
   object-fit: contain;
   display: block;
 }

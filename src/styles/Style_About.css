@@ -15,6 +15,7 @@
   border: 1px solid rgba(44, 101, 179, 0.15);
   position: relative;
   overflow: hidden;
+  margin-bottom: 5%;
 }
 
 .sobre::before {
@@ -24,7 +25,7 @@
   left: 0;
   width: 6px;
   height: 100%;
-  background: linear-gradient(180deg, var(--amarelo-mostarda) 0%, var(--verde) 100%);
+  background: var(--amarelo-mostarda);
   border-radius: 6px 0 0 6px;
 }
 
@@ -33,22 +34,12 @@
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background: rgba(44, 101, 179, 0.08);
   color: var(--azul-escuro);
-  font-size: 1.3rem;
+  font-size: 1.8rem;
   font-weight: 700;
   letter-spacing: 0.8px;
   text-transform: uppercase;
-  padding: 6px 16px;
-  border-radius: 30px;
-  border: 1px solid rgba(44, 101, 179, 0.2);
-  margin-bottom: 14px;
-}
-
-.badge-tag.alt {
-  background: rgba(241, 179, 1, 0.15);
-  color: var(--amarelo-claro);
-  border-color: rgba(241, 179, 1, 0.35);
+  margin-bottom: 20px;
 }
 
 /* Section Header */
@@ -79,20 +70,13 @@
 }
 
 .sobre-texto p {
-  color: #334e68;
+  color: var(--azul-escuro);
   font-size: 1.65rem;
   line-height: 1.75;
 }
 
-.sobre-texto p.lead-paragraph {
-  font-size: 1.85rem;
-  color: var(--azul-escuro);
-  font-weight: 400;
-  line-height: 1.6;
-}
-
 .sobre-texto strong {
-  color: var(--azul-escuro);
+  color: var(--azul);
   font-weight: 700;
 }
 
@@ -226,7 +210,7 @@
 
 /* SECTION 2: ABOUT CLASS (NOSSAS AULAS) */
 .sobre-aula {
-  background: linear-gradient(135deg, #103775 0%, var(--azul-escuro) 100%);
+  background: var(--azul-navbar);
   border-radius: 24px;
   padding: 56px 48px;
   box-shadow: 0 20px 45px rgba(0, 0, 0, 0.25);
@@ -237,6 +221,7 @@
   gap: 40px;
   position: relative;
   overflow: hidden;
+  margin-bottom: 5%;
 }
 
 .sobre-aula::after {
@@ -246,7 +231,6 @@
   right: -50px;
   width: 250px;
   height: 250px;
-  background: radial-gradient(circle, rgba(241, 179, 1, 0.15) 0%, transparent 70%);
   pointer-events: none;
 }
 
@@ -279,10 +263,10 @@
 }
 
 .aula-card {
-  background: rgba(255, 255, 255, 0.06);
+  background: var(--azul-escuro);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  border: 2px solid rgba(11, 2, 33, 0.12);
   border-radius: 20px;
   padding: 32px 24px;
   display: flex;
@@ -299,22 +283,8 @@
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
 }
 
-.aula-card-icon {
-  width: 56px;
-  height: 56px;
-  border-radius: 14px;
-  background: rgba(255, 243, 163, 0.15);
-  border: 1px solid rgba(255, 243, 163, 0.3);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 8px;
-}
-
-.aula-card-icon img {
-  width: 32px;
-  height: 32px;
-  object-fit: contain;
+.aula-card span{
+  color: #f3e273;
 }
 
 .aula-card h3 {
@@ -331,8 +301,8 @@
 
 /* Banner Footer */
 .sobre-aula-banner {
-  background: rgba(241, 179, 1, 0.12);
-  border: 1px solid rgba(241, 179, 1, 0.3);
+  background: var(--azul-escuro);
+  border: 2px solid rgba(11, 2, 33, 0.12);
   border-radius: 16px;
   padding: 24px 28px;
 }
@@ -366,11 +336,6 @@
     gap: 36px;
   }
 
-  .sobre-card-list {
-    flex-direction: column;
-    gap: 14px;
-  }
-
   .aulas-grid {
     grid-template-columns: 1fr;
     gap: 20px;
@@ -379,12 +344,8 @@
 
 @media (max-width: 768px) {
   .sobre {
-    padding: 32px 20px;
+    padding: 36px 24px;
     border-radius: 18px;
-  }
-
-  .sobre-header {
-    margin-bottom: 26px;
   }
 
   .sobre-header h2 {
@@ -392,50 +353,15 @@
   }
 
   .sobre-texto p.lead-paragraph {
-    font-size: 1.55rem;
+    font-size: 1.6rem;
   }
 
   .sobre-texto p {
-    font-size: 1.4rem;
-  }
-
-  .sobre-cards-container {
-    padding: 20px 18px;
-    border-radius: 16px;
-  }
-
-  .cards-title {
-    font-size: 1.65rem;
-  }
-
-  .card-item {
-    padding: 14px 16px;
-    gap: 14px;
-    border-radius: 14px;
-  }
-
-  .card-icon {
-    width: 48px;
-    height: 48px;
-    border-radius: 12px;
-  }
-
-  .card-icon img {
-    width: 26px;
-    height: 26px;
-  }
-
-  .card-info h3 {
-    font-size: 1.55rem;
-  }
-
-  .card-info p {
-    font-size: 1.3rem;
-    line-height: 1.45;
+    font-size: 1.45rem;
   }
 
   .sobre-aula {
-    padding: 32px 20px;
+    padding: 36px 24px;
     border-radius: 18px;
     gap: 28px;
   }
@@ -449,117 +375,3 @@
     gap: 10px;
   }
 }
-
-@media (max-width: 480px) {
-  .sobre {
-    padding: 24px 16px;
-    border-radius: 16px;
-  }
-
-  .badge-tag {
-    font-size: 1.15rem;
-    padding: 4px 12px;
-  }
-
-  .sobre-header {
-    margin-bottom: 20px;
-  }
-
-  .sobre-header h2 {
-    font-size: clamp(2rem, 6.5vw, 2.4rem);
-  }
-
-  .sobre-texto p.lead-paragraph {
-    font-size: 1.45rem;
-    line-height: 1.55;
-  }
-
-  .sobre-texto p {
-    font-size: 1.3rem;
-    line-height: 1.55;
-  }
-
-  .sobre-cards-container {
-    padding: 16px 14px;
-    border-radius: 14px;
-  }
-
-  .cards-title {
-    font-size: 1.5rem;
-  }
-
-  .card-item {
-    padding: 12px 14px;
-    gap: 12px;
-    border-radius: 12px;
-  }
-
-  .card-icon {
-    width: 42px;
-    height: 42px;
-    border-radius: 10px;
-  }
-
-  .card-icon img {
-    width: 22px;
-    height: 22px;
-  }
-
-  .card-info h3 {
-    font-size: 1.45rem;
-  }
-
-  .card-info p {
-    font-size: 1.2rem;
-  }
-
-  .sobre-aula {
-    padding: 24px 16px;
-    border-radius: 16px;
-    gap: 22px;
-  }
-
-  .sobre-aula-header h2 {
-    font-size: clamp(2rem, 6.5vw, 2.4rem);
-  }
-
-  .sobre-aula-subtitle {
-    font-size: 1.35rem;
-    line-height: 1.5;
-  }
-
-  .aula-card {
-    padding: 20px 16px;
-    border-radius: 16px;
-    gap: 12px;
-  }
-
-  .aula-card-icon {
-    width: 44px;
-    height: 44px;
-    border-radius: 12px;
-  }
-
-  .aula-card h3 {
-    font-size: 1.6rem;
-  }
-
-  .aula-card p {
-    font-size: 1.3rem;
-  }
-
-  .sobre-aula-banner {
-    padding: 16px 14px;
-    border-radius: 14px;
-  }
-
-  .banner-icon {
-    font-size: 2rem;
-  }
-
-  .banner-content p {
-    font-size: 1.3rem;
-    line-height: 1.55;
-  }
-}
-

@@ -8,6 +8,7 @@ import iconMarketing from "../assets/icons/icons8-marketing-100.png";
 import iconCirculoVerde from "../assets/icons/Circulo-verde.png";
 import iconWhatsapp from "../assets/icons/icons8-whatsapp-logo-96.png";
 import iconInstagram from "../assets/icons/icons8-instagram-96.png";
+import iconLinkedIn from "../assets/icons/icons8-linkedin-96.png";
 
 export type AssetName =
   | "plant"
@@ -17,7 +18,8 @@ export type AssetName =
   | "pencil"
   | "marketing"
   | "whatsapp"
-  | "instagram";
+  | "instagram"
+  | "linkedIn";
 
 export type CardData = {
   id: string | number;
@@ -104,6 +106,7 @@ const assets: Record<AssetName, string> = {
   marketing: iconMarketing,
   whatsapp: iconWhatsapp,
   instagram: iconInstagram,
+  linkedIn: iconLinkedIn,
 };
 
 const resolveAsset = (assetName: string): string => {
@@ -206,22 +209,28 @@ export const depoimentosVoluntario: VolunteerTestimonial[] =
       (testimonial): testimonial is VolunteerTestimonial =>
         testimonial !== null,
     );
+
 export const dadosImpacto: ImpactData[] = rawData.impact;
+
 export const dadosLinhaDoTempo: TimelineData[] = rawData.timeline.map(
   (item) => ({
     ...item,
     image: iconCirculoVerde,
   }),
 );
+
 export const dadosLinhaDoTempoVoluntario: DetailedTimelineItem[] =
   rawData.volunteerTimeline.map((item) => ({
     ...item,
     images: (item as unknown as { images?: string[] }).images ?? [item.image],
   }));
+
 export const empresasParceiras = rawData.partnerCompanies;
-export const iconesContato: Record<"whatsapp" | "instagram", ContactData> = {
+
+export const iconesContato: Record<"whatsapp" | "instagram" | "linkedIn", ContactData> = {
   whatsapp: { ...rawData.contacts.whatsapp, image: assets.whatsapp },
   instagram: { ...rawData.contacts.instagram, image: assets.instagram },
+  linkedIn: { ...rawData.contacts.linkedIn, image: assets.linkedIn },
 };
 
 export type Audience = "schools" | "volunteers";
@@ -265,4 +274,3 @@ export function getPapeisVoluntario(): VolunteerRole[] {
 export function getEscolasAtendidas(): SchoolData[] {
   return dadosDasEscolas;
 }
-

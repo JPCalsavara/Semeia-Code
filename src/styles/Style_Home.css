@@ -14,7 +14,7 @@
       rgba(15, 50, 108, 0.78) 48%,
       rgba(15, 50, 108, 0.38) 100%
     ),
-    url("/images/fotos/AlunosEmSalaEscolaBrasil2026-1.jpeg") center / cover no-repeat;
+    url("/legacy/Imagens/WhatsApp\ Image\ 2026-09-10\ at\ 11.39.53.jpeg") center / cover no-repeat;
 }
 
 .home::before {
@@ -22,10 +22,11 @@
   position: absolute;
   inset: 0;
   z-index: -1;
-  background: linear-gradient(
-    180deg,
-    rgba(15, 50, 108, 0.2),
-    rgba(15, 50, 108, 0.55)
+  background-image: linear-gradient(
+    to top,
+    #0f326c 0%,
+    #0f326c 5%,
+    transparent 100%
   );
 }
 
@@ -38,7 +39,7 @@
 }
 
 .content .eyebrow {
-  color: var(--verde);
+  color: var(--amarelo-claro);
   text-transform: uppercase;
   font-size: 20px;
   font-weight: 600;
@@ -68,9 +69,9 @@
   margin-top: 40px;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 700px) {
   .home {
-    padding-top: clamp(100px, 15vh, 130px);
+    padding-top: 180px;
     background-position: 65% center;
   }
 
@@ -79,12 +80,11 @@
   }
 
   .content .eyebrow {
-    font-size: 1.4rem;
+    font-size: 1.5rem;
     line-height: 1.4;
   }
 
   .content h1 {
-    font-size: clamp(3.2rem, 11vw, 4.6rem);
+    font-size: clamp(3.4rem, 12vw, 5rem);
   }
 }
-

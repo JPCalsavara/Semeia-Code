@@ -25,46 +25,57 @@ function Contact() {
               </div>
             </div>
 
-          <div className="fale-conosco">
-            <h2>Fale conosco</h2>
-            <div className="icones-contato">
-              {iconesContato.whatsapp && (
-                <a
-                  href={iconesContato.whatsapp.url || "https://wa.me/?text=Ol%C3%A1%2C+gostaria+de+saber+mais+sobre+o+Semeia+Code!"}
-                  aria-label={iconesContato.whatsapp.label}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="icone-link whatsapp"
-                >
-                  <img src={iconesContato.whatsapp.image} alt={iconesContato.whatsapp.label} />
-                </a>
-              )}
-              {iconesContato.instagram?.url ? (
-                <a
-                  href={iconesContato.instagram.url}
-                  aria-label={iconesContato.instagram.label}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="icone-link instagram"
-                >
-                  <img src={iconesContato.instagram.image} alt={iconesContato.instagram.label} />
-                </a>
-              ) : null}
+            <div className="fale-conosco">
+              <h2>Fale conosco</h2>
+              <div className="icones-contato">
+                {iconesContato.whatsapp && (
+                  <a
+                    href={iconesContato.whatsapp.url || "https://wa.me/?text=Ol%C3%A1%2C+gostaria+de+saber+mais+sobre+o+Semeia+Code!"}
+                    aria-label={iconesContato.whatsapp.label}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="icone-link whatsapp"
+                  >
+                    <img src={iconesContato.whatsapp.image} alt={iconesContato.whatsapp.label} />
+                  </a>
+                )}
+                {iconesContato.instagram?.url ? (
+                  <a
+                    href={iconesContato.instagram.url}
+                    aria-label={iconesContato.instagram.label}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="icone-link instagram"
+                  >
+                    <img src={iconesContato.instagram.image} alt={iconesContato.instagram.label} />
+                  </a>
+                ) : null}
+                {iconesContato.linkedIn && (
+                  <a
+                    href={iconesContato.linkedIn.url || "https://www.linkedin.com/company/semeiacode/posts/"}
+                    aria-label={iconesContato.linkedIn.label}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="icone-link linkedIn"
+                  >
+                    <img src={iconesContato.linkedIn.image} alt={iconesContato.linkedIn.label} />
+                  </a>
+                )}
+              </div>
             </div>
-          </div>
 
-          <div className="navegacao">
-            <h2>Navegação</h2>
-            <div className="elementos-navegacao">
-              <nav className="nav-contato">
-                <a href="#sobre">Sobre nós</a>
-                <a href="#conteudo">Conteúdo</a>
-                <a href="#dados">Dados</a>
-                <a href="#historia">História</a>
-              </nav>
+            <div className="navegacao">
+              <h2>Navegação</h2>
+              <div className="elementos-navegacao">
+                <nav className="nav-contato">
+                  <a href="#sobre">Sobre nós</a>
+                  <a href="#conteudo">Conteúdo</a>
+                  <a href="#dados">Dados</a>
+                  <a href="#historia">História</a>
+                </nav>
+              </div>
             </div>
           </div>
-        </div>
         </ScrollReveal>
 
         <Footer />

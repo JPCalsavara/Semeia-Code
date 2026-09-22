@@ -32,9 +32,7 @@ html {
 }
 
 body {
-  background:
-    linear-gradient(135deg, rgba(44, 101, 179, 0.22), transparent 42%),
-    var(--azul-escuro);
+  background-color: #0f326b;
   min-height: 100vh;
   overflow-x: hidden;
 }

@@ -29,7 +29,7 @@
   gap: 1rem;
 }
 
-.linha-do-tempo > * {
+.linha-do-tempo>* {
   position: relative;
   z-index: 2;
 }
@@ -42,7 +42,7 @@
   bottom: 18px;
   left: 16px;
   width: 4px;
-  background: linear-gradient(180deg, var(--verde) 0%, var(--amarelo-mostarda) 100%);
+  background: var(--verde);
   border-radius: 2px;
   z-index: 1;
 }
@@ -51,7 +51,8 @@
   position: relative;
   z-index: 2;
   margin-bottom: 0;
-  padding-left: 64px; /* Reserves space so cards NEVER overlap the dots */
+  padding-left: 64px;
+  /* Reserves space so cards NEVER overlap the dots */
   display: flex;
   flex-direction: column;
 }
@@ -85,8 +86,9 @@
 }
 
 .linha-texto {
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: var(--azul-navbar);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.25);
   border-radius: 18px;
   padding: 24px 28px;
   backdrop-filter: blur(10px);
@@ -101,7 +103,7 @@
 }
 
 .linha-texto h3 {
-  color: var(--amarelo-claro);
+  color: var(--amarelo-mostarda);
   font-size: 1.9rem;
   font-weight: 700;
   margin-bottom: 8px;
@@ -194,7 +196,6 @@
   background: var(--amarelo-mostarda);
   color: var(--azul-escuro);
   border-color: var(--amarelo-mostarda);
-  transform: translateY(-50%) scale(1.08);
 }
 
 .timeline-img-btn.prev {
@@ -214,7 +215,7 @@
   align-items: center;
   gap: 6px;
   z-index: 3;
-  background: rgba(6, 22, 40, 0.7);
+  background: var(--azul-escuro);
   padding: 6px 12px;
   border-radius: 20px;
   backdrop-filter: blur(8px);
@@ -242,15 +243,15 @@
   position: absolute;
   top: 12px;
   right: 12px;
-  background: rgba(6, 22, 40, 0.75);
-  color: var(--amarelo-claro);
   font-size: 1.15rem;
   font-weight: 700;
   padding: 4px 10px;
   border-radius: 12px;
   backdrop-filter: blur(8px);
-  border: 1px solid rgba(255, 255, 255, 0.15);
   z-index: 3;
+  background: var(--azul-escuro);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--amarelo-claro);
 }
 
 .linha-meta {
@@ -270,7 +271,7 @@
 }
 
 .timeline-semester-badge {
-  background: var(--amarelo-mostarda);
+  background: var(--amarelo-claro);
   color: var(--azul-escuro);
   font-weight: 800;
   font-size: 1.25rem;
@@ -280,9 +281,7 @@
 }
 
 .timeline-period {
-  background: rgba(241, 179, 1, 0.15);
   color: var(--amarelo-claro);
-  border: 1px solid rgba(241, 179, 1, 0.35);
   padding: 4px 14px;
   border-radius: 20px;
   font-size: 1.25rem;
@@ -297,9 +296,9 @@
 }
 
 .timeline-role {
-  color: var(--verde);
+  color: #ffffff;
   font-size: 1.45rem;
-  font-weight: 700;
+  font-weight: 600;
   margin-bottom: 10px;
 }
 

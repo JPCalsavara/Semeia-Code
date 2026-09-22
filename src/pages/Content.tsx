@@ -210,7 +210,7 @@ function Content({ isVolunteer: propIsVolunteer }: ContentProps = {}) {
           <div className="secao-depoimentos-voluntarios">
             <ScrollReveal>
               <div className="secao-subtitulo">
-                <h2>Vozes da Nossa Comunidade</h2>
+                <h2>Vozes da nossa comunidade</h2>
                 <p>Histórias de quem viveu a experiência de ensinar e liderar no projeto.</p>
               </div>
             </ScrollReveal>
