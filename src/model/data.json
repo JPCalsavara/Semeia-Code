@@ -205,7 +205,7 @@
       "cargos": [
         "Professor"
       ],
-      "image": "/images/membros/Celio.jpeg",
+      "image": "/images/membros/Celio.png",
       "linkedin": "https://www.linkedin.com/in/devcelio/"
     },
     {
@@ -370,7 +370,7 @@
         "Monitora"
       ],
       "image": "/images/membros/YasminBetioli.jpeg",
-      "linkedin": null
+      "linkedin": "https://www.linkedin.com/in/yasmin-caetano-21171b3a6/"
     }
   ],
   "impact": [
@@ -452,9 +452,9 @@
       "title": "2ª Turma e Expansão",
       "role": "Coordenador Executivo e Educacional: João Calsavara",
       "location": "Limeira, SP",
-      "image": "/images/fotos/SegundaTurmaSemeia.jpg",
+      "image": "/images/fotos/SegundaTurmaSemeia1.jpg",
       "images": [
-        "/images/fotos/SegundaTurmaSemeia.jpg"
+        "/images/fotos/SegundaTurmaSemeia1.jpg", "/images/fotos/SegundaTurmaSemeia2.jpg"
       ],
       "description": "Expansão das atividades do projeto, implantação de turmas no período noturno na E. E. Ely e realização de aula especial na Nexus, organização voltada para jovens com altas habilidades."
     },
