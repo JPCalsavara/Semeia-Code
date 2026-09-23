@@ -96,7 +96,8 @@
   }
 
   .dados-geral {
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    display: flex;
+    flex-direction: column;
     gap: 16px;
   }
 

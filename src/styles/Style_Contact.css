@@ -71,6 +71,7 @@
 .icones-contato {
   display: flex;
   align-items: center;
+  justify-content: center;
   margin-top: 15px;
   gap: 16px;
   margin-left: -3vw;
