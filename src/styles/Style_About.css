@@ -343,9 +343,16 @@
 }
 
 @media (max-width: 768px) {
+  .about-container {
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
   .sobre {
     padding: 36px 24px;
     border-radius: 18px;
+    max-width: 100%;
+    box-sizing: border-box;
   }
 
   .sobre-header h2 {
@@ -360,10 +367,33 @@
     font-size: 1.45rem;
   }
 
+  .sobre-cards-container {
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  .sobre-card-list {
+    flex-direction: column;
+    gap: 14px;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  .card-item {
+    min-width: 0;
+    box-sizing: border-box;
+  }
+
+  .card-info {
+    min-width: 0;
+  }
+
   .sobre-aula {
     padding: 36px 24px;
     border-radius: 18px;
     gap: 28px;
+    max-width: 100%;
+    box-sizing: border-box;
   }
 
   .sobre-aula-header h2 {
