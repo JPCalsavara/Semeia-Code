@@ -61,7 +61,7 @@ function Navbar({
           whileTap={shouldReduceMotion ? undefined : { scale: 0.95 }}
           transition={{ type: "spring", stiffness: 400, damping: 22 }}
         >
-          {isVolunteer ? "Para escolas" : "Sou Voluntário"}
+          {isVolunteer ? "Para escolas" : "Quero ser Voluntário"}
         </motion.button>
       </div>
 
