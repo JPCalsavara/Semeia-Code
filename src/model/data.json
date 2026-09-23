@@ -95,15 +95,15 @@
     },
     {
       "id": 3,
-      "memberId": 7,
-      "semester": "2025.2",
-      "text": "Poder contribuir diretamente com o aprendizado de jovens e ver o brilho no olho deles ao executarem o primeiro código não tem preço."
+      "memberId": 4,
+      "semester": "2026.1",
+      "text": "A didática e a vivência prática que tive no Semeia foram essenciais para minha entrada na EloGroup. É uma ótima forma de aplicar a faculdade no mundo real. Participem!"
     },
     {
       "id": 4,
-      "memberId": 4,
-      "semester": "2026.1",
-      "text": "Evoluí imensamente como profissional e como pessoa. O Semeia Code gera um impacto real na comunidade e na nossa formação."
+      "memberId": 3,
+      "semester": "2025.1",
+      "text": "Experiências práticas são essenciais na faculdade. No Semeia, ensinar foi além do código: desenvolvi comunicação, trabalho em equipe e preparo para diferentes cenários do mercado."
     }
   ],
   "volunteerMembers": [
@@ -145,7 +145,7 @@
       "cargos": [
         "Monitor"
       ],
-      "image": null,
+      "image": "/images/membros/GabrielReis.jpeg",
       "linkedin": "https://www.linkedin.com/in/gabriel-reis-dev/"
     },
     {
@@ -205,7 +205,7 @@
       "cargos": [
         "Professor"
       ],
-      "image": null,
+      "image": "/images/membros/Celio.jpeg",
       "linkedin": "https://www.linkedin.com/in/devcelio/"
     },
     {
@@ -227,8 +227,7 @@
       "company": null,
       "semestre": [
         "2025.2",
-        "2026.2",
-        "2026.1"
+        "2026.2"
       ],
       "cargos": [
         "Professor",
@@ -311,6 +310,7 @@
       "name": "Thiago Nakaba",
       "company": null,
       "semestre": [
+        "2026.1",
         "2026.2"
       ],
       "cargos": [

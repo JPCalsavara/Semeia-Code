@@ -222,6 +222,10 @@ export const dadosLinhaDoTempo: TimelineData[] = rawData.timeline.map(
 export const dadosLinhaDoTempoVoluntario: DetailedTimelineItem[] =
   rawData.volunteerTimeline.map((item) => ({
     ...item,
+    highlights: (item as unknown as { highlights?: string[] }).highlights ?? [
+      item.period,
+      item.role,
+    ],
     images: (item as unknown as { images?: string[] }).images ?? [item.image],
   }));
 

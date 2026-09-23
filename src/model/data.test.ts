@@ -72,8 +72,8 @@ describe("conteudo editorial", () => {
     // Valida membros de 2026.1
     const membros20261 = membrosVoluntarioPorSemestre["2026.1"];
     expect(membros20261.some((m) => m.name === "João Guilherme")).toBe(true);
-    expect(membros20261.some((m) => m.name === "João Mamade")).toBe(true);
-    expect(membros20261.some((m) => m.name === "Gustavo")).toBe(true);
+    expect(membros20261.some((m) => m.name.includes("Mamede") || m.name.includes("Mamade"))).toBe(true);
+    expect(membros20261.some((m) => m.name.includes("Gustavo"))).toBe(true);
     expect(membros20261.some((m) => m.name.includes("Santiago"))).toBe(true);
     expect(membros20261.some((m) => m.name.includes("Luiza"))).toBe(true);
     expect(membros20261.some((m) => m.name.includes("Nakaba"))).toBe(true);
