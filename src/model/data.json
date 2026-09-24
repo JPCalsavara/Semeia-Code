@@ -34,18 +34,16 @@
       "name": "Escola Brasil",
       "image": "/images/fotos/AlunosCertificadoEscolaBrasil2026.1.jpeg",
       "images": [
-        "/images/fotos/AlunosCertificadoEscolaBrasil2026.1.jpeg",
-        "/images/fotos/AlunosEmSalaEscolaBrasil2026-1.jpeg"
+        "/images/fotos/AlunosCertificadoEscolaBrasil2026.1.jpeg"
       ],
       "color": "card-verde"
     },
     {
       "id": 3,
       "name": "Nexus",
-      "image": "/images/fotos/AlunosCertificadoEscolaBrasil2026.1.jpeg",
+      "image": "/images/fotos/AlunosEmSalaEscolaBrasil2026-1.jpeg",
       "images": [
-        "/images/fotos/AlunosCertificadoEscolaBrasil2026.1.jpeg",
-        "/images/fotos/AlunosEmSalaEscolaBrasil2026-1.jpeg"
+       "/images/fotos/AlunosEmSalaEscolaBrasil2026-1.jpeg"
       ],
       "color": "card-azul"
     }
